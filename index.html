@@ -1,23 +1,27 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verma & Associates | Strategic Financial Solutions</title>
+    <title>AK & Co. | Premier Chartered Accountants in Delhi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0F172A;
-            --secondary: #1E40AF;
-            --accent: #E11D48;
-            --light: #F8FAFC;
-            --dark: #0F172A;
-            --text: #334155;
-            --gray: #94A3B8;
-            --success: #10B981;
-            --warning: #F59E0B;
-            --info: #3B82F6;
+            --primary: #002366; /* Navy blue for trust */
+            --secondary: #0056b3; /* Bright blue for accents */
+            --accent: #ff6b35; /* Coral for CTAs */
+            --light: #f8f9fa;
+            --dark: #212529;
+            --text: #495057;
+            --gray: #6c757d;
+            --white: #ffffff;
+            --success: #28a745;
+            --warning: #ffc107;
+            --border-radius: 8px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
         }
 
         * {
@@ -27,17 +31,18 @@
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             color: var(--text);
-            background-color: var(--light);
+            background-color: var(--white);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
+        h1, h2, h3, h4, h5 {
             font-family: 'Playfair Display', serif;
             font-weight: 600;
             color: var(--dark);
+            line-height: 1.3;
         }
 
         .container {
@@ -52,31 +57,22 @@
             position: relative;
         }
 
-        /* Glass Morphism Effect */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 16px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        /* Modern Header */
+        /* Header - Professional & Clean */
         header {
             position: fixed;
             width: 100%;
             z-index: 1000;
-            transition: all 0.4s ease;
+            transition: var(--transition);
             padding: 20px 0;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
 
         header.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 5px 20px rgba(15, 23, 42, 0.1);
             padding: 15px 0;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
 
         .header-container {
@@ -93,28 +89,33 @@
         }
 
         .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--accent);
-            color: white;
-            border-radius: 8px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: var(--border-radius);
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 12px;
-            font-size: 18px;
-            transition: all 0.3s ease;
+            font-size: 20px;
+            transition: var(--transition);
+        }
+
+        .logo:hover .logo-icon {
+            background: var(--accent);
         }
 
         .logo-text {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 700;
-            color: var(--dark);
-            transition: all 0.3s ease;
+            color: var(--primary);
+            letter-spacing: 0.5px;
         }
 
-        header.scrolled .logo-text {
-            color: var(--primary);
+        .logo-text span {
+            color: var(--accent);
+            font-weight: 600;
         }
 
         nav ul {
@@ -131,7 +132,7 @@
             text-decoration: none;
             color: var(--dark);
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             position: relative;
             padding: 8px 0;
         }
@@ -159,51 +160,42 @@
             display: inline-flex;
             align-items: center;
             padding: 12px 28px;
-            border-radius: 8px;
+            border-radius: var(--border-radius);
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: var(--transition);
             position: relative;
             overflow: hidden;
             border: none;
             cursor: pointer;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
         }
 
         .btn-primary {
             background: var(--accent);
-            color: white;
-            box-shadow: 0 10px 20px rgba(225, 29, 72, 0.2);
+            color: var(--white);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(225, 29, 72, 0.3);
+            box-shadow: 0 15px 30px rgba(255, 107, 53, 0.4);
+            background: #ff5a1f;
         }
 
         .btn-outline {
-            border: 2px solid var(--accent);
-            color: var(--accent);
+            border: 2px solid var(--primary);
+            color: var(--primary);
             background: transparent;
         }
 
         .btn-outline:hover {
-            background: var(--accent);
-            color: white;
+            background: var(--primary);
+            color: var(--white);
         }
 
-        .btn-secondary {
-            background: var(--secondary);
-            color: white;
-            box-shadow: 0 10px 20px rgba(30, 64, 175, 0.2);
-        }
-
-        .btn-secondary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(30, 64, 175, 0.3);
-        }
-
-        /* Hero Section */
+        /* Hero Section - Professional with Gradient */
         .hero {
             height: 100vh;
             min-height: 800px;
@@ -211,7 +203,7 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #003366 100%);
         }
 
         .hero::before {
@@ -221,23 +213,24 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+            background: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
             background-size: cover;
-            opacity: 0.15;
+            opacity: 0.1;
             z-index: 0;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 600px;
+            max-width: 700px;
+            color: var(--white);
         }
 
         .hero h1 {
-            font-size: 56px;
-            line-height: 1.2;
+            font-size: 60px;
             margin-bottom: 24px;
             position: relative;
+            color: var(--white);
         }
 
         .hero h1::after {
@@ -253,9 +246,9 @@
 
         .hero p {
             font-size: 18px;
-            color: var(--text);
             margin-bottom: 40px;
             opacity: 0.9;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .hero-btns {
@@ -272,7 +265,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: var(--dark);
+            color: var(--white);
             text-decoration: none;
             font-weight: 500;
             z-index: 2;
@@ -295,68 +288,11 @@
             }
         }
 
-        /* Floating Elements */
-        .floating-element {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.1;
-            z-index: 1;
-        }
-
-        .floating-1 {
-            width: 300px;
-            height: 300px;
-            background: var(--accent);
-            top: 10%;
-            right: 10%;
-            animation: float 8s ease-in-out infinite;
-        }
-
-        .floating-2 {
-            width: 200px;
-            height: 200px;
-            background: var(--secondary);
-            bottom: 15%;
-            left: 10%;
-            animation: float 10s ease-in-out infinite 2s;
-        }
-
-        .floating-3 {
-            width: 150px;
-            height: 150px;
-            background: var(--warning);
-            top: 50%;
-            right: 20%;
-            animation: float 12s ease-in-out infinite 1s;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(5deg);
-            }
-        }
-
-        /* Services Section */
+        /* Services Section - Clean Cards */
         .services {
             position: relative;
-            background: white;
+            background: var(--light);
             overflow: hidden;
-        }
-
-        .services::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
-            background-size: cover;
-            opacity: 0.03;
-            z-index: 0;
         }
 
         .section-header {
@@ -402,61 +338,38 @@
 
         .service-card {
             padding: 40px;
-            border-radius: 16px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
             position: relative;
             overflow: hidden;
             z-index: 1;
-            background: white;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            background: var(--white);
+            box-shadow: var(--box-shadow);
             border: 1px solid rgba(0, 0, 0, 0.03);
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: -1;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(15, 23, 42, 0.1);
-        }
-
-        .service-card:hover::before {
-            opacity: 1;
-        }
-
-        .service-card:hover .service-icon {
-            background: white;
-            color: var(--accent);
-        }
-
-        .service-card:hover h3,
-        .service-card:hover p,
-        .service-card:hover .service-link {
-            color: white;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
 
         .service-icon {
-            width: 70px;
-            height: 70px;
-            background: rgba(30, 64, 175, 0.1);
-            border-radius: 12px;
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 86, 179, 0.1);
+            border-radius: var(--border-radius);
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 24px;
             color: var(--secondary);
-            font-size: 28px;
-            transition: all 0.4s ease;
+            font-size: 32px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--secondary);
+            color: var(--white);
         }
 
         .service-card h3 {
@@ -467,7 +380,6 @@
         .service-card p {
             margin-bottom: 24px;
             color: var(--gray);
-            transition: all 0.4s ease;
         }
 
         .service-link {
@@ -476,7 +388,7 @@
             color: var(--secondary);
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.4s ease;
+            transition: var(--transition);
         }
 
         .service-link i {
@@ -484,28 +396,19 @@
             transition: transform 0.3s ease;
         }
 
+        .service-link:hover {
+            color: var(--primary);
+        }
+
         .service-link:hover i {
             transform: translateX(5px);
         }
 
-        /* About Section */
+        /* About Section - Professional Layout */
         .about {
-            background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+            background: var(--white);
             position: relative;
             overflow: hidden;
-        }
-
-        .about::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
-            background-size: cover;
-            opacity: 0.03;
-            z-index: 0;
         }
 
         .about-container {
@@ -550,11 +453,12 @@
         }
 
         .stat-item {
-            padding: 24px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.05);
-            transition: transform 0.3s ease;
+            padding: 30px;
+            background: var(--light);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            text-align: center;
         }
 
         .stat-item:hover {
@@ -566,7 +470,6 @@
             font-weight: 700;
             color: var(--secondary);
             margin-bottom: 8px;
-            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         .stat-label {
@@ -581,71 +484,17 @@
 
         .main-image {
             width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 25px 50px rgba(15, 23, 42, 0.1);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
             position: relative;
             z-index: 2;
-            transition: transform 0.5s ease;
         }
 
-        .main-image:hover {
-            transform: scale(1.02);
-        }
-
-        .shape-1 {
-            position: absolute;
-            top: -30px;
-            left: -30px;
-            width: 150px;
-            height: 150px;
-            background: var(--accent);
-            border-radius: 30px;
-            transform: rotate(45deg);
-            z-index: 1;
-            opacity: 0.2;
-            animation: pulse 4s infinite;
-        }
-
-        .shape-2 {
-            position: absolute;
-            bottom: -30px;
-            right: -30px;
-            width: 120px;
-            height: 120px;
-            background: var(--secondary);
-            border-radius: 50%;
-            z-index: 1;
-            opacity: 0.2;
-            animation: pulse 5s infinite 1s;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-        }
-
-        /* Process Section */
+        /* Process Section - Clean Timeline */
         .process {
-            background: white;
+            background: var(--light);
             position: relative;
             overflow: hidden;
-        }
-
-        .process::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
-            background-size: cover;
-            opacity: 0.03;
-            z-index: 0;
         }
 
         .process-steps {
@@ -677,7 +526,7 @@
         .step-number {
             width: 80px;
             height: 80px;
-            background: white;
+            background: var(--white);
             border: 2px solid var(--accent);
             border-radius: 50%;
             display: flex;
@@ -688,12 +537,12 @@
             font-weight: 700;
             color: var(--accent);
             position: relative;
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
 
         .step:hover .step-number {
             background: var(--accent);
-            color: white;
+            color: var(--white);
             transform: scale(1.1);
         }
 
@@ -706,57 +555,34 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: rgba(225, 29, 72, 0.1);
+            background: rgba(255, 107, 53, 0.1);
             z-index: -1;
         }
 
         .step h3 {
             margin-bottom: 16px;
             font-size: 22px;
-            transition: color 0.3s ease;
-        }
-
-        .step:hover h3 {
-            color: var(--accent);
         }
 
         .step p {
             color: var(--gray);
-            transition: color 0.3s ease;
         }
 
-        .step:hover p {
-            color: var(--dark);
-        }
-
-        /* Testimonials */
+        /* Testimonials - Elegant Slider */
         .testimonials {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
+            background: var(--primary);
+            color: var(--white);
             position: relative;
             overflow: hidden;
         }
 
-        .testimonials::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
-            background-size: cover;
-            opacity: 0.05;
-            z-index: 0;
-        }
-
         .testimonials .section-header h2,
         .testimonials .section-header p {
-            color: white;
+            color: var(--white);
         }
 
         .testimonials .section-header h2::after {
-            background: white;
+            background: var(--accent);
         }
 
         .testimonial-slider {
@@ -770,12 +596,12 @@
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border-radius: 16px;
+            border-radius: var(--border-radius);
             padding: 40px;
             text-align: center;
             margin: 0 15px;
             opacity: 0.7;
-            transition: all 0.4s ease;
+            transition: var(--transition);
             transform: scale(0.9);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -793,11 +619,11 @@
             object-fit: cover;
             margin: 0 auto 24px;
             border: 3px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
 
         .testimonial-card.active .client-image {
-            border-color: white;
+            border-color: var(--accent);
             transform: scale(1.1);
         }
 
@@ -806,11 +632,6 @@
             font-style: italic;
             margin-bottom: 24px;
             position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-card.active .testimonial-text {
-            font-size: 19px;
         }
 
         .testimonial-text::before,
@@ -835,11 +656,6 @@
             font-size: 20px;
             font-weight: 600;
             margin-bottom: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-card.active .client-name {
-            color: var(--accent);
         }
 
         .client-role {
@@ -862,32 +678,19 @@
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.3);
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
 
         .slider-dot.active {
-            background: white;
+            background: var(--accent);
             transform: scale(1.3);
         }
 
-        /* Contact Section */
+        /* Contact Section - Professional Form */
         .contact {
-            background: white;
+            background: var(--white);
             position: relative;
             overflow: hidden;
-        }
-
-        .contact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
-            background-size: cover;
-            opacity: 0.03;
-            z-index: 0;
         }
 
         .contact-container {
@@ -907,7 +710,7 @@
         .contact-method {
             display: flex;
             gap: 20px;
-            transition: transform 0.3s ease;
+            transition: var(--transition);
         }
 
         .contact-method:hover {
@@ -917,20 +720,20 @@
         .contact-icon {
             width: 60px;
             height: 60px;
-            background: rgba(30, 64, 175, 0.1);
-            border-radius: 12px;
+            background: rgba(0, 86, 179, 0.1);
+            border-radius: var(--border-radius);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--secondary);
             font-size: 24px;
             flex-shrink: 0;
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
 
         .contact-method:hover .contact-icon {
             background: var(--secondary);
-            color: white;
+            color: var(--white);
         }
 
         .contact-details h3 {
@@ -943,9 +746,9 @@
         }
 
         .contact-form {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 25px 50px rgba(15, 23, 42, 0.1);
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
             padding: 40px;
             position: relative;
             overflow: hidden;
@@ -975,15 +778,15 @@
             width: 100%;
             padding: 14px 20px;
             border: 1px solid #E2E8F0;
-            border-radius: 8px;
+            border-radius: var(--border-radius);
             font-size: 16px;
-            transition: all 0.3s ease;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: var(--transition);
+            font-family: 'Montserrat', sans-serif;
         }
 
         .form-control:focus {
             border-color: var(--secondary);
-            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
             outline: none;
         }
 
@@ -999,26 +802,13 @@
             font-weight: 600;
         }
 
-        /* Footer */
+        /* Footer - Professional */
         footer {
             background: var(--primary);
-            color: white;
+            color: var(--white);
             padding: 80px 0 40px;
             position: relative;
             overflow: hidden;
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
-            background-size: cover;
-            opacity: 0.03;
-            z-index: 0;
         }
 
         .footer-container {
@@ -1030,12 +820,16 @@
             z-index: 2;
         }
 
+        .footer-col {
+            transition: var(--transition);
+        }
+
         .footer-col h3 {
             font-size: 20px;
             margin-bottom: 24px;
             position: relative;
             padding-bottom: 16px;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .footer-col h3::after {
@@ -1058,24 +852,30 @@
             width: 40px;
             height: 40px;
             background: var(--accent);
-            color: white;
-            border-radius: 8px;
+            color: var(--white);
+            border-radius: var(--border-radius);
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 12px;
             font-size: 18px;
+            transition: var(--transition);
+        }
+
+        .footer-logo:hover .footer-logo-icon {
+            background: var(--white);
+            color: var(--accent);
         }
 
         .footer-logo-text {
             font-size: 22px;
             font-weight: 700;
-            color: white;
+            color: var(--white);
         }
 
         .footer-about p {
             margin-bottom: 24px;
-            color: var(--gray);
+            color: rgba(255, 255, 255, 0.7);
         }
 
         .social-links {
@@ -1087,13 +887,13 @@
             width: 40px;
             height: 40px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
+            border-radius: var(--border-radius);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--white);
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
 
         .social-link:hover {
@@ -1110,35 +910,34 @@
         }
 
         .footer-links a {
-            color: var(--gray);
+            color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
+            transition: var(--transition);
         }
 
         .footer-links a:hover {
-            color: white;
-            transform: translateX(8px);
+            color: var(--white);
+            padding-left: 5px;
         }
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 30px;
             text-align: center;
-            color: var(--gray);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 14px;
             position: relative;
             z-index: 2;
         }
 
         .footer-bottom a {
-            color: var(--gray);
+            color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: var(--transition);
         }
 
         .footer-bottom a:hover {
-            color: white;
+            color: var(--white);
         }
 
         /* Back to Top Button */
@@ -1149,7 +948,7 @@
             width: 50px;
             height: 50px;
             background: var(--accent);
-            color: white;
+            color: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1157,9 +956,9 @@
             text-decoration: none;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.4s ease;
+            transition: var(--transition);
             z-index: 999;
-            box-shadow: 0 5px 20px rgba(225, 29, 72, 0.3);
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
         }
 
         .back-to-top.active {
@@ -1169,7 +968,7 @@
 
         .back-to-top:hover {
             transform: translateY(-5px);
-            background: var(--secondary);
+            background: #ff5a1f;
         }
 
         /* Mobile Menu */
@@ -1178,9 +977,9 @@
             width: 40px;
             height: 40px;
             background: var(--accent);
-            color: white;
+            color: var(--white);
             border: none;
-            border-radius: 8px;
+            border-radius: var(--border-radius);
             font-size: 20px;
             cursor: pointer;
             z-index: 1001;
@@ -1192,7 +991,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: white;
+            background: var(--white);
             z-index: 1000;
             display: flex;
             flex-direction: column;
@@ -1200,7 +999,7 @@
             align-items: center;
             transform: translateY(-100%);
             opacity: 0;
-            transition: all 0.4s ease;
+            transition: var(--transition);
         }
 
         .mobile-menu.active {
@@ -1223,7 +1022,7 @@
             font-size: 24px;
             font-weight: 600;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: var(--transition);
         }
 
         .mobile-menu ul li a:hover {
@@ -1405,14 +1204,14 @@
     </style>
 </head>
 <body>
-    <!-- Modern Header -->
+    <!-- Professional Header -->
     <header id="header">
         <div class="container header-container">
             <a href="#" class="logo">
                 <div class="logo-icon">
                     <i class="fas fa-calculator"></i>
                 </div>
-                <span class="logo-text">Verma & Associates</span>
+                <span class="logo-text">AK & <span>Co.</span></span>
             </a>
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -1429,7 +1228,7 @@
                 </ul>
             </nav>
             <div class="header-cta">
-                <a href="#contact" class="btn btn-primary">Contact Us</a>
+                <a href="#contact" class="btn btn-outline">Contact Us</a>
             </div>
         </div>
     </header>
@@ -1453,17 +1252,13 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="floating-1"></div>
-        <div class="floating-2"></div>
-        <div class="floating-3"></div>
-        
         <div class="container">
             <div class="hero-content">
-                <h1>Strategic Financial Solutions for Growth-Oriented Businesses</h1>
-                <p>We combine technical expertise with business acumen to deliver comprehensive accounting, tax, and advisory services that drive measurable results.</p>
+                <h1>Empowering Your Financial Future</h1>
+                <p>At <strong>AK & Co.</strong>, we deliver precision-driven chartered accountancy services, combining 18+ years of expertise with innovative strategies. From startups to corporates, our solutions ensure compliance, tax efficiency, and sustainable growth.</p>
                 <div class="hero-btns">
-                    <a href="#services" class="btn btn-primary">Explore Services</a>
-                    <a href="#contact" class="btn btn-outline">Get Consultation</a>
+                    <a href="#services" class="btn btn-primary">Our Services</a>
+                    <a href="#contact" class="btn btn-outline">Free Consultation</a>
                 </div>
             </div>
         </div>
@@ -1477,56 +1272,56 @@
     <section class="services" id="services">
         <div class="container">
             <div class="section-header">
-                <h2>Specialized Financial Services</h2>
-                <p>We offer a comprehensive suite of accounting and advisory services designed to optimize your financial operations and maximize growth potential.</p>
+                <h2>Our Professional Services</h2>
+                <p>Comprehensive financial and accounting services designed to meet the unique needs of Indian businesses and individuals.</p>
             </div>
             <div class="services-grid">
-                <div class="service-card glass-card">
+                <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-file-invoice-dollar"></i>
                     </div>
-                    <h3>Strategic Tax Planning</h3>
-                    <p>Proactive tax strategies that minimize liabilities while ensuring full compliance with evolving regulations.</p>
+                    <h3>GST Services</h3>
+                    <p>Effortless GST registration, return filing, and planning to reduce liabilities while ensuring 100% compliance with evolving GST rules.</p>
                     <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="service-card glass-card">
+                <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-search-dollar"></i>
+                        <i class="fas fa-landmark"></i>
                     </div>
-                    <h3>Forensic Accounting</h3>
-                    <p>Specialized investigative services to detect financial irregularities, fraud, or operational inefficiencies.</p>
+                    <h3>Income Tax</h3>
+                    <p>Strategic tax planning, filing, and advisory to optimize savings for individuals and corporates alike.</p>
                     <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="service-card glass-card">
+                <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-robot"></i>
+                        <i class="fas fa-chart-pie"></i>
                     </div>
-                    <h3>Financial Automation</h3>
-                    <p>Implementation of cutting-edge technologies to streamline accounting processes and improve accuracy.</p>
+                    <h3>Audit & Assurance</h3>
+                    <p>Comprehensive statutory, internal, and tax audits ensuring transparency and compliance with Indian GAAP.</p>
                     <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="service-card glass-card">
+                <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-globe"></i>
+                        <i class="fas fa-briefcase"></i>
                     </div>
-                    <h3>International Expansion</h3>
-                    <p>Guidance on cross-border taxation, compliance, and financial structuring for global operations.</p>
+                    <h3>Company Formation</h3>
+                    <p>End-to-end assistance in company incorporation, ROC compliance, and strategic corporate advisory.</p>
                     <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="service-card glass-card">
+                <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-hand-holding-usd"></i>
                     </div>
-                    <h3>Wealth Management</h3>
-                    <p>Comprehensive strategies for high-net-worth individuals to preserve and grow their assets.</p>
+                    <h3>Investment Advisory</h3>
+                    <p>Customized investment roadmaps aligned with your risk profile, industry trends, and market opportunities.</p>
                     <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="service-card glass-card">
+                <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-file-contract"></i>
+                        <i class="fas fa-balance-scale"></i>
                     </div>
-                    <h3>M&A Due Diligence</h3>
-                    <p>Thorough financial analysis and risk assessment for mergers and acquisitions.</p>
+                    <h3>Legal Compliance</h3>
+                    <p>Comprehensive compliance management ensuring your business meets all statutory and regulatory obligations.</p>
                     <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -1538,32 +1333,30 @@
         <div class="container">
             <div class="about-container">
                 <div class="about-content">
-                    <h2>Trusted Financial Advisors Since 2008</h2>
-                    <p>Verma & Associates was founded with a vision to redefine accounting services by combining technical excellence with strategic business insight. Our team of certified professionals brings together decades of experience across industries.</p>
-                    <p>We pride ourselves on building long-term relationships based on trust, transparency, and measurable results. Our client-centric approach ensures solutions are tailored to your specific needs and goals.</p>
+                    <h2>Trusted Chartered Accountants in Delhi</h2>
+                    <p>Since our inception in 2005, AK & Co. has been a trusted partner to over 500 clients nationwide. Our multidisciplinary team of CAs, tax advisors, and financial analysts blends domain knowledge with advanced analytics to deliver actionable insights.</p>
+                    <p>Whether it’s navigating complex tax reforms, optimizing cash flows, or structuring mergers, we are committed to delivering financial clarity, compliance, and long-term client success.</p>
                     <div class="about-stats">
-                        <div class="stat-item glass-card">
-                            <div class="stat-number">15+</div>
+                        <div class="stat-item">
+                            <div class="stat-number">18+</div>
                             <div class="stat-label">Years Experience</div>
                         </div>
-                        <div class="stat-item glass-card">
-                            <div class="stat-number">200+</div>
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
                             <div class="stat-label">Satisfied Clients</div>
                         </div>
-                        <div class="stat-item glass-card">
-                            <div class="stat-number">₹42Cr</div>
+                        <div class="stat-item">
+                            <div class="stat-number">₹85Cr</div>
                             <div class="stat-label">Client Tax Savings</div>
                         </div>
-                        <div class="stat-item glass-card">
+                        <div class="stat-item">
                             <div class="stat-number">100%</div>
                             <div class="stat-label">Compliance Rate</div>
                         </div>
                     </div>
                 </div>
                 <div class="about-image">
-                    <div class="shape-1"></div>
-                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Our Team" class="main-image">
-                    <div class="shape-2"></div>
+                    <img src="https://images.unsplash.com/photo-1581092921461-39b2f2f8a0f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Our Team" class="main-image">
                 </div>
             </div>
         </div>
@@ -1579,28 +1372,28 @@
             <div class="process-steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Discovery</h3>
-                    <p>In-depth consultation to understand your business, challenges, and financial objectives.</p>
+                    <h3>Initial Consultation</h3>
+                    <p>We begin with in-depth consultations to align on your goals and compliance requirements.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Analysis</h3>
-                    <p>Comprehensive review of your financial position and identification of opportunities.</p>
+                    <h3>Document Analysis</h3>
+                    <p>Secure, accurate, and complete documentation gathering with a thorough review process.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Solution Design</h3>
-                    <p>Development of customized strategies tailored to your specific needs.</p>
+                    <h3>Strategy Development</h3>
+                    <p>Action plans designed around your sector, size, and market position.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
                     <h3>Implementation</h3>
-                    <p>Execution with precision and attention to detail to ensure seamless adoption.</p>
+                    <p>Meticulous implementation ensuring adherence to Indian GAAP & tax laws.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">5</div>
                     <h3>Ongoing Support</h3>
-                    <p>Continuous monitoring and adjustments to maintain optimal performance.</p>
+                    <p>Periodic check-ins to adapt strategies to regulatory or business changes.</p>
                 </div>
             </div>
         </div>
@@ -1611,37 +1404,37 @@
         <div class="container">
             <div class="section-header">
                 <h2>What Our Clients Say</h2>
-                <p>Don't just take our word for it - hear from businesses that have transformed their financial operations with our help.</p>
+                <p>Don't just take our word for it - hear from businesses that have benefited from our services.</p>
             </div>
             <div class="testimonial-slider">
                 <div class="testimonial-card active">
                     <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="client-image">
                     <div class="testimonial-text">
-                        Verma & Associates identified tax savings we didn't know existed. Their strategic approach saved us ₹28 lakh in the first year while ensuring full compliance.
+                        AK & Co. helped us navigate complex GST regulations and saved us ₹42 lakh in the first year itself. Their expertise in Indian tax laws is unparalleled.
                     </div>
-                    <div class="client-name">Rajesh Mehta</div>
-                    <div class="client-role">CEO, Mehta Textiles</div>
+                    <div class="client-name">Rahul Mehta</div>
+                    <div class="client-role">Director, Mehta Textiles Pvt. Ltd.</div>
                 </div>
                 <div class="testimonial-card">
                     <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="client-image">
                     <div class="testimonial-text">
-                        The forensic audit uncovered discrepancies that had gone unnoticed for years. Their attention to detail and investigative approach was truly impressive.
+                        As a startup founder, I needed guidance on compliance and tax planning. The team at AK & Co. provided invaluable advice tailored to the Indian startup ecosystem.
                     </div>
                     <div class="client-name">Priya Sharma</div>
-                    <div class="client-role">CFO, TechSolutions</div>
+                    <div class="client-role">Founder, TechSolutions India</div>
                 </div>
                 <div class="testimonial-card">
                     <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client" class="client-image">
                     <div class="testimonial-text">
-                        Their international tax expertise was invaluable for our expansion into three new markets. They navigated complex regulations with ease.
+                        Their forensic audit uncovered financial irregularities that had gone unnoticed for years. Their attention to detail saved our company from significant losses.
                     </div>
                     <div class="client-name">Amit Patel</div>
-                    <div class="client-role">Director, Patel Industries</div>
+                    <div class="client-role">CFO, Patel Industries</div>
                 </div>
                 <div class="testimonial-card">
                     <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client" class="client-image">
                     <div class="testimonial-text">
-                        The wealth management strategies implemented by Verma & Associates have helped grow our family's assets by 35% in just two years.
+                        The wealth management strategies implemented by AK & Co. have helped grow our family's assets by 28% while ensuring full compliance with Indian tax laws.
                     </div>
                     <div class="client-name">Neha Kapoor</div>
                     <div class="client-role">Kapoor Family Office</div>
@@ -1660,8 +1453,8 @@
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-header">
-                <h2>Ready to Transform Your Financial Operations?</h2>
-                <p>Get in touch with our team to discuss how we can help your business achieve its financial goals.</p>
+                <h2>Get In Touch With Us</h2>
+                <p>Have a financial challenge? Let’s solve it together. Fill out the form or connect with us directly for a confidential consultation within 24 hours.</p>
             </div>
             <div class="contact-container">
                 <div class="contact-info">
@@ -1671,7 +1464,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Our Office</h3>
-                            <p>Financial District, Bandra Kurla Complex, Mumbai 400051</p>
+                            <p>Connaught Place, Block D, 5th Floor, New Delhi - 110001</p>
                         </div>
                     </div>
                     <div class="contact-method">
@@ -1680,7 +1473,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Call Us</h3>
-                            <p>+91 98765 43210<br>022 1234 5678</p>
+                            <p>+91 98765 43210<br>011 1234 5678</p>
                         </div>
                     </div>
                     <div class="contact-method">
@@ -1689,7 +1482,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Email Us</h3>
-                            <p>info@vermacpa.com<br>support@vermacpa.com</p>
+                            <p>info@akcoindia.com<br>support@akcoindia.com</p>
                         </div>
                     </div>
                     <div class="contact-method">
@@ -1698,11 +1491,11 @@
                         </div>
                         <div class="contact-details">
                             <h3>Working Hours</h3>
-                            <p>Monday - Friday: 9:00 - 18:00<br>Saturday: 9:00 - 14:00</p>
+                            <p>Monday - Friday: 9:30 AM - 6:30 PM<br>Saturday: 9:30 AM - 2:00 PM</p>
                         </div>
                     </div>
                 </div>
-                <div class="contact-form glass-card">
+                <div class="contact-form">
                     <form id="contactForm">
                         <div class="form-group">
                             <label for="name" class="form-label">Full Name</label>
@@ -1720,12 +1513,12 @@
                             <label for="service" class="form-label">Service Interest</label>
                             <select id="service" class="form-control" required>
                                 <option value="">Select a service</option>
-                                <option>Tax Planning</option>
-                                <option>Forensic Accounting</option>
-                                <option>Financial Automation</option>
-                                <option>International Expansion</option>
-                                <option>Wealth Management</option>
-                                <option>M&A Due Diligence</option>
+                                <option>GST Services</option>
+                                <option>Income Tax</option>
+                                <option>Audit & Assurance</option>
+                                <option>Company Formation</option>
+                                <option>Investment Advisory</option>
+                                <option>Legal Compliance</option>
                                 <option>Other Inquiry</option>
                             </select>
                         </div>
@@ -1749,10 +1542,10 @@
                         <div class="footer-logo-icon">
                             <i class="fas fa-calculator"></i>
                         </div>
-                        <div class="footer-logo-text">Verma & Associates</div>
+                        <div class="footer-logo-text">AK & Co.</div>
                     </div>
                     <div class="footer-about">
-                        <p>Strategic financial solutions for businesses and individuals seeking to optimize performance and maximize growth potential.</p>
+                        <p>Providing expert chartered accountancy services in Delhi and across India with a focus on compliance and strategic financial planning.</p>
                     </div>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
@@ -1762,18 +1555,18 @@
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h3>Services</h3>
+                    <h3 style="color: #f8f9fa;">Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Tax Planning</a></li>
-                        <li><a href="#">Forensic Accounting</a></li>
-                        <li><a href="#">Financial Automation</a></li>
-                        <li><a href="#">International Expansion</a></li>
-                        <li><a href="#">Wealth Management</a></li>
-                        <li><a href="#">M&A Due Diligence</a></li>
+                        <li><a href="#">GST Services</a></li>
+                        <li><a href="#">Income Tax</a></li>
+                        <li><a href="#">Audit & Assurance</a></li>
+                        <li><a href="#">Company Formation</a></li>
+                        <li><a href="#">Investment Advisory</a></li>
+                        <li><a href="#">Legal Compliance</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>Company</h3>
+                    <h3 style="color: #f8f9fa;">Company</h3>
                     <ul class="footer-links">
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#process">Our Process</a></li>
@@ -1783,18 +1576,18 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>Resources</h3>
+                    <h3 style="color: #f8f9fa;">Resources</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Blog</a></li>
                         <li><a href="#">Tax Calendar</a></li>
-                        <li><a href="#">Financial Tools</a></li>
-                        <li><a href="#">Industry Reports</a></li>
+                        <li><a href="#">GST Updates</a></li>
+                        <li><a href="#">Budget Analysis</a></li>
+                        <li><a href="#">Financial Calculators</a></li>
                         <li><a href="#">FAQs</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Verma & Associates. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p>&copy; 2023 AK & Co., Chartered Accountants. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
             </div>
         </div>
     </footer>
@@ -2013,20 +1806,6 @@
         `;
         document.head.appendChild(style);
 
-        // Service card hover effect enhancement
-        const serviceCards = document.querySelectorAll('.service-card');
-        
-        serviceCards.forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                card.style.setProperty('--mouse-x', `${x}px`);
-                card.style.setProperty('--mouse-y', `${y}px`);
-            });
-        });
-        
         // Animation on scroll
         function animateOnScroll() {
             const elements = document.querySelectorAll('.service-card, .stat-item, .step, .contact-method');
