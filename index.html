@@ -3,380 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capro | Piyush Sighla - Strategic Financial Solutions</title>
+    <title>CA Piyush Singla | Chartered Accountant & Financial Consultant</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
     <style>
+        /* ===== Global Styles ===== */
         :root {
-            --primary: #1a2a3a;
-            --secondary: #d35400;
-            --accent: #3498db;
-            --light: #f8f9fa;
-            --dark: #1a2a3a;
-            --gold: #d4af37;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            --section-padding: 120px 5%;
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --primary-light: #3b82f6;
+            --accent: #f59e0b;
+            --accent-dark: #d97706;
+            --dark: #1e293b;
+            --dark-gray: #334155;
+            --medium-gray: #64748b;
+            --light-gray: #e2e8f0;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --success: #10b981;
+            --error: #ef4444;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Poppins', system-ui, -apple-system, sans-serif;
         }
         
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.7;
-            color: var(--dark);
-            background-color: #ffffff;
-            overflow-x: hidden;
+        html {
             scroll-behavior: smooth;
         }
         
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-        }
-        
-        /* Glass Morphism Effect */
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-        }
-        
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            background: rgba(26, 42, 58, 0.95);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-        }
-        
-        nav.scrolled {
-            padding: 10px 1%;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-            display: flex;
-            align-items: center;
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .logo span {
-            color: var(--gold);
-            margin-left: 4px;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 2.5rem;
-            position: relative;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-            font-size: 1.05rem;
-        }
-        
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--gold);
-            transition: var(--transition);
-        }
-        
-        .nav-links a:hover:after {
-            width: 100%;
-        }
-        
-        .cta-button {
-            background: var(--gold);
+        body {
+            background-color: var(--light);
             color: var(--dark);
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: var(--transition);
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
-            border: none;
-            cursor: pointer;
-            font-size: 1.05rem;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
         
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
-            background: #e8c252;
+        .container {
+            width: 90%;
+            max-width: 1320px;
+            margin: 0 auto;
         }
         
-        .mobile-menu-btn {
-            display: none;
-            font-size: 1.5rem;
-            color: white;
-            background: none;
-            border: none;
-            cursor: pointer;
-            z-index: 1001;
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 0 5%;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, var(--primary) 0%, #2c3e50 100%);
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            opacity: 0.15;
-            z-index: 1;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 700px;
-            color: white;
-        }
-        
-        .hero h1 {
-            font-size: 3.8rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-            max-width: 600px;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .secondary-button {
-            background: transparent;
-            color: white;
-            border: 2px solid var(--gold);
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: var(--transition);
-            text-decoration: none;
-        }
-        
-        .secondary-button:hover {
-            background: var(--gold);
-            color: var(--primary);
-            transform: translateY(-3px);
-        }
-        
-        /* Animated Particles Background */
-        .particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-        
-        .particle {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            animation: float-particle 15s infinite linear;
-        }
-        
-        @keyframes float-particle {
-            0% {
-                transform: translate(0, 0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translate(100px, -100px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-        
-        /* Services Section */
-        .services {
-            padding: var(--section-padding);
-            background: white;
-            position: relative;
+        section {
+            padding: 6rem 0;
         }
         
         .section-title {
+            font-size: 2.75rem;
             text-align: center;
-            margin-bottom: 5rem;
-        }
-        
-        .section-title h2 {
-            font-size: 2.8rem;
-            color: var(--primary);
             margin-bottom: 1.5rem;
             position: relative;
-            display: inline-block;
+            color: var(--dark);
+            font-weight: 700;
+            line-height: 1.2;
         }
         
-        .section-title h2:after {
+        .section-subtitle {
+            text-align: center;
+            color: var(--medium-gray);
+            max-width: 700px;
+            margin: 0 auto 4rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .btn-accent {
+            background: var(--accent);
+            border-color: var(--accent);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
+        }
+        
+        .btn-accent:hover {
+            background: var(--accent-dark);
+            border-color: var(--accent-dark);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
+        }
+        
+        .text-primary {
+            color: var(--primary);
+        }
+        
+        .text-accent {
+            color: var(--accent);
+        }
+        
+        /* ===== Header ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.25rem 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        header.scrolled {
+            padding: 0.8rem 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+        
+        .logo-img {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: white;
+            border-radius: 12px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .logo-text h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--medium-gray);
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.25rem;
+        }
+        
+        nav ul li a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 1.05rem;
+        }
+        
+        nav ul li a::after {
             content: '';
             position: absolute;
-            width: 60px;
-            height: 4px;
-            background: var(--gold);
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+            border-radius: 3px;
         }
         
-        .section-title p {
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.1rem;
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
         }
         
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--dark);
+            z-index: 1001;
         }
         
-        .service-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2.5rem;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
+        /* ===== Hero Slider ===== */
+        .hero {
+            height: 100vh;
+            min-height: 800px;
             position: relative;
             overflow: hidden;
-            z-index: 1;
-            border: 1px solid rgba(0, 0, 0, 0.05);
         }
         
-        .service-card::before {
-            content: '';
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .swiper-slide {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .slide-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(52, 152, 219, 0.05) 100%);
+            object-fit: cover;
             z-index: -1;
-            opacity: 0;
-            transition: var(--transition);
-        }
-        
-        .service-card:hover::before {
-            opacity: 1;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .service-icon {
-            font-size: 2.8rem;
-            color: var(--gold);
-            margin-bottom: 1.8rem;
-            transition: var(--transition);
-        }
-        
-        .service-card:hover .service-icon {
             transform: scale(1.1);
+            transition: transform 10s linear;
         }
         
-        .service-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1.2rem;
-            color: var(--primary);
+        .swiper-slide-active .slide-bg {
+            transform: scale(1);
         }
         
-        .service-card p {
-            color: #666;
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.85) 0%, rgba(30, 41, 59, 0.6) 100%);
+            z-index: -1;
+        }
+        
+        .slide-content {
+            text-align: center;
+            color: white;
+            padding: 0 10%;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .slide-content h1 {
+            font-size: 3.75rem;
             margin-bottom: 1.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease;
         }
         
-        .service-link {
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            transition: var(--transition);
+        .slide-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+            opacity: 0;
         }
         
-        .service-link i {
-            margin-left: 8px;
-            transition: var(--transition);
+        .hero-btns {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+            opacity: 0;
         }
         
-        .service-link:hover {
-            color: var(--secondary);
+        .swiper-pagination-bullet {
+            background: white;
+            opacity: 0.7;
+            width: 12px;
+            height: 12px;
+            transition: all 0.3s ease;
         }
         
-        .service-link:hover i {
-            transform: translateX(5px);
+        .swiper-pagination-bullet-active {
+            background: var(--accent);
+            opacity: 1;
+            transform: scale(1.2);
         }
         
-        /* About Section */
+        /* ===== About Section ===== */
         .about {
-            padding: var(--section-padding);
-            background: var(--light);
+            background: var(--white);
             position: relative;
             overflow: hidden;
         }
@@ -384,365 +331,514 @@
         .about::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 200%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%23d4af37" stroke-width="0.5" stroke-dasharray="5,5"/></svg>');
-            opacity: 0.05;
-            transform: rotate(15deg);
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23e2e8f0"><circle cx="25" cy="25" r="5"/><circle cx="75" cy="25" r="5"/><circle cx="25" cy="75" r="5"/><circle cx="75" cy="75" r="5"/></svg>');
+            opacity: 0.5;
             z-index: 0;
         }
         
         .about-container {
             display: flex;
             align-items: center;
-            gap: 5rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            gap: 4rem;
             position: relative;
             z-index: 1;
         }
         
-        .about-image {
+        .about-img {
             flex: 1;
             position: relative;
-            perspective: 1200px;
-        }
-        
-        .image-wrapper {
-            position: relative;
-            transform-style: preserve-3d;
-            box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
+            border-radius: 20px;
             overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
         }
         
-        .image-wrapper:hover {
-            transform: rotateY(-5deg) rotateX(2deg);
-        }
-        
-        .about-image img {
+        .about-img img {
             width: 100%;
             height: auto;
             display: block;
-            transition: var(--transition);
+            transition: transform 0.5s ease;
         }
         
-        .image-wrapper:hover img {
-            transform: scale(1.03);
+        .about-img:hover img {
+            transform: scale(1.05);
         }
         
-        .image-border {
+        .about-badge {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            border: 2px solid var(--gold);
-            border-radius: 10px;
-            top: 20px;
-            left: 20px;
-            z-index: -1;
-            transition: var(--transition);
+            bottom: -30px;
+            right: -30px;
+            background: var(--primary);
+            color: white;
+            padding: 1.75rem;
+            border-radius: 15px;
+            width: 220px;
+            text-align: center;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite;
         }
         
-        .image-wrapper:hover .image-border {
-            top: 15px;
-            left: 15px;
+        .about-badge h3 {
+            font-size: 2.75rem;
+            margin-bottom: 0.25rem;
+            font-weight: 700;
+        }
+        
+        .about-badge p {
+            font-size: 0.9rem;
+            opacity: 0.9;
         }
         
         .about-content {
             flex: 1;
         }
         
-        .about-content h2 {
-            font-size: 2.8rem;
+        .section-tag {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.1);
             color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
             margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .about-content h3 {
+            font-size: 2.25rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            font-weight: 700;
+            line-height: 1.3;
         }
         
         .about-content p {
-            color: #555;
             margin-bottom: 1.5rem;
-            font-size: 1.1rem;
+            color: var(--medium-gray);
+            line-height: 1.8;
         }
         
-        .signature {
-            margin: 2rem 0;
-            max-width: 200px;
-            opacity: 0.9;
+        .about-list {
+            margin-bottom: 2.5rem;
         }
         
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .stat-item {
-            text-align: center;
-        }
-        
-        .stat-item h3 {
-            font-size: 2.8rem;
-            color: var(--gold);
-            margin-bottom: 0.5rem;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-        }
-        
-        .stat-item p {
-            color: #777;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .about-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
             font-weight: 500;
         }
         
-        /* Testimonials */
-        .testimonials {
-            padding: var(--section-padding);
-            background: white;
+        .about-list i {
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+        
+        .about-btns {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        /* ===== Services Section ===== */
+        .services {
+            background: var(--light);
             position: relative;
+        }
+        
+        .services::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: var(--white);
+            clip-path: polygon(0 70%, 100% 0, 100% 100%, 0% 100%);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: rgba(37, 99, 235, 0.1);
+        }
+        
+        .service-icon {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            font-size: 3.5rem;
+        }
+        
+        .service-content {
+            padding: 2rem;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            font-weight: 700;
+        }
+        
+        .service-content p {
+            color: var(--medium-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .service-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--light-gray);
+        }
+        
+        .service-price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.25rem;
+        }
+        
+        /* ===== Gallery Section ===== */
+        .gallery {
+            background: var(--white);
+            padding-bottom: 8rem;
+        }
+        
+        .gallery-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.6rem 1.5rem;
+            background: var(--light);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--medium-gray);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 280px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-info {
+            color: white;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-info {
+            transform: translateY(0);
+        }
+        
+        .gallery-info h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .gallery-info p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* ===== Testimonials Section ===== */
+        .testimonials {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+        
+        .testimonials::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+        
+        .section-title.white,
+        .section-subtitle.white {
+            color: white;
+        }
+        
+        .section-subtitle.white {
+            opacity: 0.85;
         }
         
         .testimonial-slider {
-            max-width: 1000px;
-            margin: 0 auto;
+            padding: 0 5%;
             position: relative;
+            z-index: 1;
         }
         
         .testimonial-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
             border-radius: 15px;
-            padding: 3rem;
-            box-shadow: var(--shadow);
-            margin: 0 1rem;
-            text-align: center;
-            transition: var(--transition);
+            margin: 1rem;
             position: relative;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .testimonial-card::before {
             content: '\201C';
             position: absolute;
-            top: 30px;
-            left: 30px;
+            top: 20px;
+            left: 20px;
             font-size: 5rem;
-            color: rgba(212, 175, 55, 0.1);
-            font-family: Georgia, serif;
+            color: rgba(255, 255, 255, 0.1);
+            font-family: serif;
             line-height: 1;
         }
         
-        .testimonial-card::after {
-            content: '\201D';
-            position: absolute;
-            bottom: 30px;
-            right: 30px;
-            font-size: 5rem;
-            color: rgba(212, 175, 55, 0.1);
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .client-image {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 1.5rem;
-            border: 3px solid var(--gold);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .testimonial-card p {
-            font-style: italic;
-            color: #555;
+        .testimonial-content {
             margin-bottom: 2rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
             position: relative;
             z-index: 1;
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
         
-        .client-name {
-            font-weight: 700;
-            color: var(--primary);
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+        
+        .author-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            color: white;
+            margin-bottom: 0.25rem;
             font-size: 1.2rem;
         }
         
-        .client-designation {
-            color: var(--gold);
+        .author-info p {
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.9rem;
-            margin-top: 0.3rem;
-            font-weight: 500;
         }
         
-        .rating {
-            color: var(--gold);
-            margin: 1rem 0;
-            font-size: 1.1rem;
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: white !important;
+            background: rgba(255, 255, 255, 0.2);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
         }
         
-        /* CTA Section */
-        .cta-section {
-            padding: 6rem 5%;
-            background: linear-gradient(135deg, var(--primary) 0%, #2c3e50 100%);
-            color: white;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: rgba(255, 255, 255, 0.3);
         }
         
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
-            transform: rotate(30deg);
-            animation: cta-shine 8s infinite linear;
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            font-size: 1.25rem !important;
         }
         
-        @keyframes cta-shine {
-            0% {
-                transform: rotate(30deg) translate(-30%, -30%);
-            }
-            100% {
-                transform: rotate(30deg) translate(30%, 30%);
-            }
-        }
-        
-        .cta-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .cta-content h2 {
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .cta-content p {
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* Contact Section */
+        /* ===== Contact Section ===== */
         .contact {
-            padding: var(--section-padding);
-            background: var(--light);
+            background: var(--white);
             position: relative;
         }
         
         .contact-container {
-            display: flex;
-            gap: 5rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 4rem;
         }
         
         .contact-info {
-            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
         }
         
-        .contact-info h2 {
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-        
-        .contact-info p {
-            color: #555;
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-        
-        .contact-details {
-            margin-top: 2rem;
-        }
-        
-        .contact-item {
+        .contact-card {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 2rem;
+            gap: 1.5rem;
         }
         
         .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 1.5rem;
-            margin-right: 1.5rem;
-            color: var(--gold);
-            margin-top: 5px;
+            flex-shrink: 0;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
         }
         
-        .contact-text h4 {
-            font-size: 1.2rem;
-            color: var(--primary);
-            margin-bottom: 0.3rem;
+        .contact-details h3 {
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
         }
         
-        .contact-text p, .contact-text a {
-            color: #666;
+        .contact-details p, 
+        .contact-details a {
+            color: var(--medium-gray);
             text-decoration: none;
-            transition: var(--transition);
+            transition: color 0.3s ease;
+            line-height: 1.7;
         }
         
-        .contact-text a:hover {
-            color: var(--gold);
+        .contact-details a:hover {
+            color: var(--primary);
         }
         
         .contact-form {
-            flex: 1;
-            background: white;
-            padding: 3.5rem;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            transform: translateY(-50px);
-            position: relative;
-            z-index: 1;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            background: var(--light);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
         
         .form-group {
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.75rem;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 0.8rem;
-            color: var(--primary);
-            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+            font-weight: 600;
             font-size: 1.05rem;
         }
         
         .form-control {
             width: 100%;
-            padding: 1.1rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: 'Poppins', sans-serif;
-            transition: var(--transition);
+            padding: 1rem 1.5rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 10px;
             font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--white);
         }
         
         .form-control:focus {
-            border-color: var(--gold);
             outline: none;
-            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
         
         textarea.form-control {
@@ -750,80 +846,93 @@
             resize: vertical;
         }
         
-        .submit-btn {
-            background: var(--gold);
-            color: var(--primary);
-            border: none;
-            padding: 1.2rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
+        .form-submit {
             width: 100%;
-            font-size: 1.05rem;
-            letter-spacing: 0.5px;
+            padding: 1.1rem;
+            font-size: 1.1rem;
+            margin-top: 1rem;
         }
         
-        .submit-btn:hover {
-            background: #e8c252;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
-        }
-        
-        /* Footer */
+        /* ===== Footer ===== */
         footer {
-            background: var(--primary);
+            background: var(--dark);
             color: white;
-            padding: 6rem 5% 3rem;
+            padding: 5rem 0 0;
             position: relative;
-        }
-        
-        .footer-wave {
-            position: absolute;
-            top: -100px;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%231a2a3a" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%231a2a3a" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%231a2a3a"/></svg>') no-repeat center top/cover;
         }
         
         .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
+            margin-bottom: 4rem;
         }
         
         .footer-col h3 {
             font-size: 1.5rem;
-            margin-bottom: 1.8rem;
+            margin-bottom: 2rem;
             position: relative;
-            font-family: 'Playfair Display', serif;
+            padding-bottom: 15px;
+            font-weight: 700;
         }
         
         .footer-col h3::after {
             content: '';
             position: absolute;
+            bottom: 0;
             left: 0;
-            bottom: -10px;
             width: 50px;
-            height: 2px;
-            background: var(--gold);
+            height: 3px;
+            background: var(--accent);
+            border-radius: 3px;
         }
         
         .footer-col p {
-            opacity: 0.8;
-            margin-bottom: 1.8rem;
-            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            color: #cbd5e1;
+            line-height: 1.8;
+        }
+        
+        .footer-links li {
+            margin-bottom: 1rem;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .footer-links a::before {
+            content: '\f054';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.7rem;
+            color: var(--accent);
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+        
+        .footer-links a:hover::before {
+            color: white;
         }
         
         .social-links {
             display: flex;
             gap: 1rem;
-            margin-top: 1.5rem;
+            margin-top: 2rem;
         }
         
         .social-links a {
@@ -833,52 +942,28 @@
             width: 45px;
             height: 45px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
+            border-radius: 12px;
             color: white;
-            transition: var(--transition);
-            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
         }
         
         .social-links a:hover {
-            background: var(--gold);
-            color: var(--primary);
+            background: var(--accent);
             transform: translateY(-5px);
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 1.2rem;
-        }
-        
-        .footer-links a {
-            color: white;
-            opacity: 0.8;
-            text-decoration: none;
-            transition: var(--transition);
-            display: inline-block;
-            font-size: 1.05rem;
-        }
-        
-        .footer-links a:hover {
-            opacity: 1;
-            color: var(--gold);
-            transform: translateX(5px);
+            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.2);
         }
         
         .newsletter-form {
-            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
         
         .newsletter-form input {
-            width: 100%;
-            padding: 1rem;
+            padding: 0.9rem 1.25rem;
+            border-radius: 10px;
             border: none;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            font-family: 'Poppins', sans-serif;
             background: rgba(255, 255, 255, 0.1);
             color: white;
         }
@@ -887,144 +972,23 @@
             color: rgba(255, 255, 255, 0.7);
         }
         
-        .newsletter-form button {
-            background: var(--gold);
-            color: var(--primary);
-            border: none;
-            padding: 1rem;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
+        .newsletter-form .btn {
             width: 100%;
         }
         
-        .newsletter-form button:hover {
-            background: #e8c252;
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
+        .footer-bottom {
             text-align: center;
-            padding-top: 4rem;
-            margin-top: 3rem;
+            padding: 2rem 0;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            opacity: 0.7;
+            color: #94a3b8;
             font-size: 0.95rem;
         }
         
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            :root {
-                --section-padding: 100px 5%;
-            }
-            
-            .hero h1 {
-                font-size: 3.2rem;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .about-container, .contact-container {
-                flex-direction: column;
-            }
-            
-            .contact-form {
-                transform: translateY(0);
-                margin-top: 3rem;
-            }
-            
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .section-title h2, .about-content h2, .contact-info h2 {
-                font-size: 2.4rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            :root {
-                --section-padding: 80px 5%;
-            }
-            
-            nav {
-                padding: 1.2rem 5%;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                height: 100vh;
-                background: var(--primary);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                transition: var(--transition);
-                z-index: 1000;
-                box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
-            }
-            
-            .nav-links.active {
-                right: 0;
-            }
-            
-            .nav-links li {
-                margin: 1.5rem 0;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-                z-index: 1001;
-            }
-            
-            .hero h1 {
-                font-size: 2.4rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .section-title h2, .about-content h2, .contact-info h2 {
-                font-size: 2rem;
-            }
-            
-            .service-card {
-                padding: 2rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .section-title h2, .about-content h2, .contact-info h2 {
-                font-size: 1.8rem;
-            }
-            
-            .contact-form {
-                padding: 2rem;
-            }
-            
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Animations */
+        /* ===== Animations ===== */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -1032,457 +996,857 @@
             }
         }
         
-        .animate-fadeInUp {
-            animation: fadeInUp 1s ease forwards;
-        }
-        
-        .delay-1 {
-            animation-delay: 0.2s;
-        }
-        
-        .delay-2 {
-            animation-delay: 0.4s;
-        }
-        
-        .delay-3 {
-            animation-delay: 0.6s;
-        }
-        
-        /* 3D Card Effects */
-        .card-3d {
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
-            transform-style: preserve-3d;
-            transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
-        }
-        
-        .card-3d:hover {
-            transform: perspective(1000px) rotateY(-5deg) rotateX(5deg) translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* Floating Animation */
-        @keyframes float {
+        @keyframes pulse {
             0% {
-                transform: translateY(0px);
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
             }
-            50% {
-                transform: translateY(-20px);
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 99, 235, 0);
             }
             100% {
-                transform: translateY(0px);
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
             }
         }
         
+        /* ===== Responsive Design ===== */
+        @media (max-width: 1200px) {
+            .container {
+                width: 95%;
+                max-width: 100%;
+            }
+            
+            .about-container {
+                gap: 3rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            section {
+                padding: 5rem 0;
+            }
+            
+            .about-container {
+                flex-direction: column;
+            }
+            
+            .about-img {
+                margin-bottom: 3rem;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .about-badge {
+                right: 0;
+            }
+            
+            .slide-content h1 {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--white);
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 100px 2rem 2rem;
+                box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+                transition: right 0.4s ease;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            nav ul li {
+                width: 100%;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 0.75rem 0;
+                border-bottom: 1px solid var(--light-gray);
+            }
+            
+            nav ul li a::after {
+                display: none;
+            }
+            
+            .section-title {
+                font-size: 2.25rem;
+            }
+            
+            .slide-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .slide-content p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            section {
+                padding: 4rem 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .slide-content {
+                padding: 0 5%;
+            }
+            
+            .slide-content h1 {
+                font-size: 2rem;
+            }
+            
+            .about-btns {
+                flex-direction: column;
+            }
+            
+            .about-badge {
+                width: 180px;
+                padding: 1.25rem;
+                right: 0;
+                bottom: -20px;
+            }
+            
+            .about-badge h3 {
+                font-size: 2rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .footer-col {
+                margin-bottom: 2rem;
+            }
+        }
+        .floating-buttons {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1000;
+}
 
-        /* Scroll Reveal Animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 1s ease;
-        }
-        
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Preloader */
-        .preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--primary);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-        
-        .preloader.fade-out {
-            opacity: 0;
-        }
-        
-        .loader {
-            width: 50px;
-            height: 50px;
-            border: 5px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            border-top-color: var(--gold);
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-        
-        /* Scroll Indicator Animation */
-        @keyframes scrollAnimation {
-            0% {
-                top: 5px;
-                opacity: 0;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                top: 20px;
-                opacity: 0;
-            }
-        }
+.floating-btn {
+    width: 60px;
+    height: 60px;
+    background:#1e40af;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s ease;
+    text-decoration: none;
+    position: relative;
+}
+
+.floating-btn:hover {
+    transform: scale(1.2) rotate(10deg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.back-to-top {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .floating-buttons {
+        bottom: 20px;
+        right: 20px;
+        gap: 15px;
+    }
+
+    .floating-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .floating-btn::after {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}
     </style>
 </head>
 <body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="loader"></div>
-    </div>
-    
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="logo">
-            <a href="#home"><img src="logo.png" alt="Piyush Sighla CA Logo" class="floating" width="80px"></a>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo-img">PS</div>
+                <div class="logo-text">
+                    <h2>CA Piyush Singla</h2>
+                    <p>Chartered Accountant</p>
+                </div>
+            </a>
+            
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#contact" class="cta-button">Get Consultation</a></li>
-        </ul>
-        <button class="mobile-menu-btn">
-            <i class="fas fa-bars"></i>
-        </button>
-    </nav>
-    
-    <!-- Hero Section -->
+    </header>
+
+    <!-- Hero Slider -->
     <section class="hero" id="home">
-        <div class="particles" id="particles"></div>
-        <div class="hero-content">
-            <h1 class="animate-fadeInUp">Strategic Financial Solutions for Sustainable Growth</h1>
-            <p class="animate-fadeInUp delay-1">Piyush Sighla, Chartered Accountant, delivers bespoke financial strategies that drive profitability, ensure compliance, and optimize tax efficiency for businesses and individuals.</p>
-            <div class="hero-buttons animate-fadeInUp delay-2">
-                <a href="#services" class="cta-button">Explore Services</a>
-                <a href="#contact" class="secondary-button">Schedule Meeting</a>
-            </div>
-        </div>
-        
-        <!-- Animated Scroll Indicator -->
-        <div class="scroll-indicator animate-fadeInUp delay-3" style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); text-align: center;">
-            <p style="margin-bottom: 15px; font-size: 0.9rem; opacity: 0.8;">SCROLL DOWN</p>
-            <div style="width: 20px; height: 35px; border: 2px solid rgba(255,255,255,0.5); border-radius: 10px; margin: 0 auto; position: relative;">
-                <div style="width: 4px; height: 8px; background: white; border-radius: 2px; position: absolute; top: 5px; left: 50%; transform: translateX(-50%); animation: scrollAnimation 2s infinite;"></div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="section-title">
-            <h2>Comprehensive Financial Services</h2>
-            <p>Tailored solutions designed to address your unique financial challenges and opportunities</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card card-3d reveal">
-                <div class="service-icon">
-                    <i class="fas fa-chart-pie"></i>
+        <div class="swiper hero-slider">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <img src="https://plus.unsplash.com/premium_photo-1661761077411-d50cba031848?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWNjb3VudGluZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Financial Planning" class="slide-bg">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <h1>Strategic Financial Solutions for Your Business</h1>
+                        <p>With over 12 years of experience in taxation and auditing, we provide comprehensive financial services tailored to your business needs.</p>
+                        <div class="hero-btns">
+                            <a href="#services" class="btn btn-accent">Our Services</a>
+                            <a href="#contact" class="btn btn-outline">Get Consultation</a>
+                        </div>
+                    </div>
                 </div>
-                <h3>Strategic Tax Planning</h3>
-                <p>Proactive tax strategies that minimize liabilities while ensuring full compliance with evolving regulations across jurisdictions.</p>
-                <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="service-card card-3d reveal">
-                <div class="service-icon">
-                    <i class="fas fa-balance-scale"></i>
+                
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2111&q=80" alt="Tax Services" class="slide-bg">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <h1>Expert Tax Planning & Compliance</h1>
+                        <p>Maximize your savings and minimize liabilities with our professional tax advisory and filing services.</p>
+                        <div class="hero-btns">
+                            <a href="#contact" class="btn btn-accent">Book Appointment</a>
+                            <a href="#about" class="btn btn-outline">About Us</a>
+                        </div>
+                    </div>
                 </div>
-                <h3>Audit & Assurance</h3>
-                <p>Comprehensive audit services that enhance financial credibility and provide stakeholders with confidence in your reporting.</p>
-                <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="service-card card-3d reveal">
-                <div class="service-icon">
-                    <i class="fas fa-briefcase"></i>
+                
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1574426414661-32be23a9b6c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGJvb2trZWVwaW5nfGVufDB8fDB8fHww" alt="Business Growth" class="slide-bg">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <h1>Grow Your Business with Confidence</h1>
+                        <p>From startup advisory to corporate compliance, we provide the financial expertise you need to succeed.</p>
+                        <div class="hero-btns">
+                            <a href="#testimonials" class="btn btn-accent">Client Stories</a>
+                            <a href="#contact" class="btn btn-outline">Contact Now</a>
+                        </div>
+                    </div>
                 </div>
-                <h3>Business Advisory</h3>
-                <p>Strategic guidance to optimize operations, improve profitability, and position your business for sustainable growth.</p>
-                <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="service-card card-3d reveal">
-                <div class="service-icon">
-                    <i class="fas fa-file-invoice-dollar"></i>
-                </div>
-                <h3>GST Compliance</h3>
-                <p>End-to-end GST services including registration, return filing, refund claims, and litigation support.</p>
-                <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="service-card card-3d reveal">
-                <div class="service-icon">
-                    <i class="fas fa-rocket"></i>
-                </div>
-                <h3>Startup Services</h3>
-                <p>Specialized financial solutions for startups including incorporation, funding strategy, and compliance management.</p>
-                <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="service-card card-3d reveal">
-                <div class="service-icon">
-                    <i class="fas fa-hand-holding-usd"></i>
-                </div>
-                <h3>Wealth Management</h3>
-                <p>Personalized investment strategies and estate planning to preserve and grow your wealth effectively.</p>
-                <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-            </div>
+            
+            <div class="swiper-pagination"></div>
         </div>
     </section>
-    
+
     <!-- About Section -->
     <section class="about" id="about">
-        <div class="about-container">
-            <div class="about-image reveal">
-                <div class="image-wrapper">
-                    <img src="piyush.png" alt="Piyush Sighla - Chartered Accountant" class="floating">
-                    <div class="image-border"></div>
-                </div>
-            </div>
-            <div class="about-content">
-                <h2 class="reveal">Piyush Sighla, FCA</h2>
-                <p class="reveal">With over 15 years of distinguished experience in financial strategy and compliance, Piyush Sighla is a Fellow Chartered Accountant committed to delivering exceptional value to clients across diverse industries.</p>
-                <p class="reveal">His expertise encompasses international taxation, mergers & acquisitions, financial restructuring, and regulatory compliance, helping clients navigate complex financial landscapes with confidence.</p>
-                
-                <div class="signature reveal">
-                </div>
-                
-                <div class="stats reveal">
-                    <div class="stat-item">
-                        <h3>15+</h3>
-                        <p>Years Experience</p>
+        <div class="container">
+            <span class="section-tag">About Me</span>
+            <h2 class="section-title">Professional <span class="text-primary">Chartered Accountant</span> in Noida</h2>
+            <p class="section-subtitle">With a commitment to excellence and client satisfaction, I provide personalized financial solutions to help businesses thrive.</p>
+            
+            <div class="about-container">
+                <div class="about-img">
+                    <img src="piyush.png" alt="CA Piyush Singla">
+                    <div class="about-badge">
+                        <h3>12+</h3>
+                        <p>Years of Experience</p>
                     </div>
-                    <div class="stat-item">
-                        <h3>500+</h3>
-                        <p>Satisfied Clients</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>100%</h3>
-                        <p>Client Retention</p>
+                </div>
+                
+                <div class="about-content">
+                    <h3>Helping Businesses Achieve Financial Success</h3>
+                    <p>I am Piyush Singla, a qualified Chartered Accountant with extensive experience in taxation, auditing, and financial consulting. My practice is built on the principles of integrity, professionalism, and personalized service.</p>
+                    
+                    <p>After completing my CA in 2010 from The Institute of Chartered Accountants of India, I've worked with businesses across various sectors, helping them navigate complex financial landscapes while optimizing their tax positions.</p>
+                    
+                    <ul class="about-list">
+                        <li><i class="fas fa-check"></i> Member of ICAI since 2010</li>
+                        <li><i class="fas fa-check"></i> Specialized in GST Implementation & Compliance</li>
+                        <li><i class="fas fa-check"></i> Expert in Income Tax Planning & Filing</li>
+                        <li><i class="fas fa-check"></i> Corporate Audit & Financial Reporting</li>
+                        <li><i class="fas fa-check"></i> Business Advisory & Startup Consulting</li>
+                    </ul>
+                    
+                    <div class="about-btns">
+                        <a href="#contact" class="btn">Contact Me</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <span class="section-tag">Services</span>
+            <h2 class="section-title">Professional <span class="text-primary">Financial Services</span></h2>
+            <p class="section-subtitle">Comprehensive accounting and taxation solutions tailored to meet your business requirements and ensure regulatory compliance.</p>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Taxation Services</h3>
+                        <p>Comprehensive tax planning and compliance services including Income Tax, GST, TDS, and International Taxation to optimize your tax position.</p>
+                        <div class="service-meta">
+                            <a href="#contact" class="btn btn-outline">Get Service</a>
+                            <span class="service-price">From ₹5,000</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Auditing & Assurance</h3>
+                        <p>Professional audit services including statutory audits, internal audits, tax audits, and other assurance engagements for businesses.</p>
+                        <div class="service-meta">
+                            <a href="#contact" class="btn btn-outline">Get Service</a>
+                            <span class="service-price">From ₹15,000</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>GST Services</h3>
+                        <p>End-to-end GST solutions including registration, return filing, refunds, and advisory services to ensure seamless compliance.</p>
+                        <div class="service-meta">
+                            <a href="#contact" class="btn btn-outline">Get Service</a>
+                            <span class="service-price">From ₹3,000</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Company Law Services</h3>
+                        <p>Incorporation, compliance, ROC filings, and other corporate legal services to keep your business in good standing.</p>
+                        <div class="service-meta">
+                            <a href="#contact" class="btn btn-outline">Get Service</a>
+                            <span class="service-price">From ₹10,000</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Financial Planning</h3>
+                        <p>Strategic financial planning, investment advisory, and wealth management services for individuals and businesses.</p>
+                        <div class="service-meta">
+                            <a href="#contact" class="btn btn-outline">Get Service</a>
+                            <span class="service-price">From ₹8,000</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Business Advisory</h3>
+                        <p>Expert advice on business setup, expansion, mergers, acquisitions, and other strategic financial decisions.</p>
+                        <div class="service-meta">
+                            <a href="#contact" class="btn btn-outline">Get Service</a>
+                            <span class="service-price">From ₹12,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <span class="section-tag">Gallery</span>
+            <h2 class="section-title">Our <span class="text-primary">Professional</span> Journey</h2>
+            <p class="section-subtitle">Moments from our professional engagements, client meetings, and industry events.</p>
+            
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="seminars">Seminars</button>
+                <button class="filter-btn" data-filter="meetings">Client Meetings</button>
+                <button class="filter-btn" data-filter="awards">Awards</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="seminars">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Tax Seminar">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>GST Seminar 2023</h4>
+                            <p>Speaking at National GST Conference</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="meetings">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2111&q=80" alt="Client Meeting">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Annual Review Meeting</h4>
+                            <p>With TechSolutions Pvt. Ltd.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="awards">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Award Ceremony">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Best CA Award 2022</h4>
+                            <p>National Finance Excellence Awards</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="seminars">
+                    <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Workshop">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Startup Taxation Workshop</h4>
+                            <p>At Indian Startup Conclave</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="meetings">
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Consultation">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Business Consultation</h4>
+                            <p>With Retail Chain Client</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="awards">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Recognition">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h4>Industry Recognition</h4>
+                            <p>Finance Leaders Summit 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
-        <div class="section-title">
-            <h2>Client Success Stories</h2>
-            <p>Hear from business leaders who have transformed their financial operations with our guidance</p>
-        </div>
-        <div class="testimonial-slider">
-            <div class="testimonial-card card-3d reveal">
-                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client" class="client-image">
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+        <div class="container">
+            <span class="section-tag">Testimonials</span>
+            <h2 class="section-title white">What Our <span class="text-accent">Clients</span> Say</h2>
+            <p class="section-subtitle white">Hear from businesses and individuals who have benefited from our professional services.</p>
+            
+            <div class="testimonial-slider swiper">
+                <div class="swiper-wrapper">
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>CA Piyush Singla has been handling our company's taxation for the past 5 years. His expertise in GST and tax planning has saved us significant money while ensuring full compliance. What I appreciate most is his proactive approach - he always keeps us informed about upcoming changes that might affect our business.</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-img">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Sharma">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Rahul Sharma</h4>
+                                    <p>Director, TechSolutions Pvt. Ltd.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>As a startup founder, I was completely lost when it came to company incorporation and tax compliance. CA Piyush guided us through every step and made the process seamless. His advice on structuring our finances has been invaluable for our growth. We've since expanded to 3 cities and his strategic input has been crucial.</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-img">
+                                    <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Arjun Mehta">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Arjun Mehta</h4>
+                                    <p>Founder, AppInnovate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>We've been working with CA Piyush for our audit and compliance needs for several years now. His attention to detail and thorough understanding of accounting standards is impressive. The audit process is smooth and he provides practical recommendations to improve our financial processes. Highly recommended for any business looking for professional CA services.</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-img">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Patel">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Priya Patel</h4>
+                                    <p>CFO, GreenEarth Organics</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 4 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>What sets CA Piyush apart is his ability to explain complex financial matters in simple terms. He doesn't just file returns but educates us on tax optimization strategies. Our business finances have never been better organized. The personalized service and quick response to queries make him our trusted financial advisor.</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-img">
+                                    <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Neha Gupta">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Neha Gupta</h4>
+                                    <p>Owner, FashionHub Retail</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p>"Piyush's strategic tax planning saved our multinational corporation over ₹2.3 crore in tax liabilities last fiscal year while ensuring full compliance across all jurisdictions. His team's attention to detail is exceptional."</p>
-                <h4 class="client-name">Rajiv Malhotra</h4>
-                <p class="client-designation">CFO, TechnoGlobal Solutions</p>
+                
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
     </section>
-    
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2 class="reveal">Ready to Optimize Your Financial Strategy?</h2>
-            <p class="reveal">Schedule a consultation with Piyush Sighla today and discover how our bespoke financial solutions can drive your business forward.</p>
-            <a href="#contact" class="secondary-button reveal">Book Your Consultation</a>
-        </div>
-    </section>
-    
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <div class="contact-container">
-            <div class="contact-info">
-                <h2 class="reveal">Connect With Us</h2>
-                <p class="reveal">Have questions about our services or want to discuss your specific financial needs? Our team is ready to assist you.</p>
-                
-                <div class="contact-details">
-                    <div class="contact-item reveal">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h4>Corporate Office</h4>
-                            <p>Level 12, Financial Tower<br>Nariman Point, Mumbai 400021</p>
-                        </div>
-                    </div>
-                    <div class="contact-item reveal">
+        <div class="container">
+            <span class="section-tag">Contact</span>
+            <h2 class="section-title">Get In <span class="text-primary">Touch</span></h2>
+            <p class="section-subtitle">Reach out for professional consultation or to discuss your accounting and taxation needs.</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
                         <div class="contact-icon">
                             <i class="fas fa-phone-alt"></i>
                         </div>
-                        <div class="contact-text">
-                            <h4>Contact Number</h4>
-                            <p><a href="tel:+912266667777">+91 22 6666 7777</a><br>
-                            <a href="tel:+919876543210">+91 98765 43210</a></p>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <a href="tel:+919876543210">+91 98765 43210</a>
+                            <p>Monday to Friday, 9:30 AM - 6:30 PM</p>
                         </div>
                     </div>
-                    <div class="contact-item reveal">
+                    
+                    <div class="contact-card">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <div class="contact-text">
-                            <h4>Email Address</h4>
-                            <p><a href="mailto:piyush@capro.co.in">piyush@capro.co.in</a><br>
-                            <a href="mailto:info@capro.co.in">info@capro.co.in</a></p>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:piyush@caservices.com">piyush@caservices.com</a>
+                            <p>Response within 24 hours</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Office Address</h3>
+                            <p>123 Financial Street, Sector 18<br>Noida, Uttar Pradesh - 201301</p>
+                            <a href="#" class="text-primary">Get Directions</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Appointments</h3>
+                            <p>Book a consultation at your convenience</p>
+                            <a href="#" class="btn">Book Now</a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="contact-form card-3d reveal">
-                <form id="consultationForm">
-                    <div class="form-group">
-                        <label for="name">Your Name*</label>
-                        <input type="text" id="name" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address*</label>
-                        <input type="email" id="email" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="company">Company Name</label>
-                        <input type="text" id="company" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="service">Service Interested In*</label>
-                        <select id="service" class="form-control" required>
-                            <option value="">Select a service</option>
-                            <option value="tax">Tax Planning</option>
-                            <option value="audit">Audit & Assurance</option>
-                            <option value="gst">GST Services</option>
-                            <option value="consulting">Business Consulting</option>
-                            <option value="startup">Startup Services</option>
-                            <option value="wealth">Wealth Management</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Your Requirements*</label>
-                        <textarea id="message" class="form-control" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Request Consultation</button>
-                </form>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Required</label>
+                            <select id="service" class="form-control">
+                                <option value="">Select a service</option>
+                                <option value="taxation">Taxation Services</option>
+                                <option value="audit">Auditing Services</option>
+                                <option value="gst">GST Services</option>
+                                <option value="company-law">Company Law Services</option>
+                                <option value="financial-planning">Financial Planning</option>
+                                <option value="business-advisory">Business Advisory</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn form-submit">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer>
-        <div class="footer-wave"></div>
-        <div class="footer-container">
-            <div class="footer-col">
-                <h3>CAPRO</h3>
-                <p>Providing strategic financial solutions that drive growth, ensure compliance, and optimize tax efficiency for businesses and individuals.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>CA Piyush Singla</h3>
+                    <p>Providing professional accounting, taxation, and financial advisory services to businesses and individuals since 2010.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Taxation Services</a></li>
+                        <li><a href="#">Auditing & Assurance</a></li>
+                        <li><a href="#">GST Services</a></li>
+                        <li><a href="#">Company Law Services</a></li>
+                        <li><a href="#">Financial Planning</a></li>
+                        <li><a href="#">Business Advisory</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for financial updates, tax tips, and business insights.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address" required>
+                        <button type="submit" class="btn btn-accent">Subscribe</button>
+                    </form>
                 </div>
             </div>
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 CA Piyush Singla. All Rights Reserved. | <a href="#" style="color: var(--accent);">Privacy Policy</a> | <a href="#" style="color: var(--accent);">Terms of Service</a></p>
             </div>
-            <div class="footer-col">
-                <h3>Services</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Tax Planning</a></li>
-                    <li><a href="#">Audit & Assurance</a></li>
-                    <li><a href="#">Business Advisory</a></li>
-                    <li><a href="#">GST Compliance</a></li>
-                    <li><a href="#">Startup Services</a></li>
-                    <li><a href="#">Wealth Management</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Newsletter</h3>
-                <p>Subscribe to our newsletter for financial insights, tax updates, and business strategies.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Your Email Address" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2023 Capro Financial Advisory. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #d35400;"></i> by CAPRO Team</p>
         </div>
     </footer>
-    
+<!-- Floating Buttons -->
+<div class="floating-buttons" role="navigation">
+    <a href="https://wa.me/919876543210" class="floating-btn whatsapp-btn" target="_blank" aria-label="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
+    <a href="#home" class="floating-btn back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
-        // Preloader
-        window.addEventListener('load', function() {
-            const preloader = document.querySelector('.preloader');
-            preloader.classList.add('fade-out');
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 500);
-        });
-        
         // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
         
-        mobileMenuBtn.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.innerHTML = navMenu.classList.contains('active') ? 
                 '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
         
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
+        // Close menu when clicking on a link
+        document.querySelectorAll('#nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                navMenu.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
         
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
             } else {
-                navbar.classList.remove('scrolled');
+                header.classList.remove('scrolled');
             }
         });
         
-        // Smooth scrolling for anchor links
+        // Initialize Hero Slider
+        const heroSlider = new Swiper('.hero-slider', {
+            loop: true,
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+        
+        // Initialize Testimonial Slider
+        const testimonialSlider = new Swiper('.testimonial-slider', {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                }
+            }
+        });
+        
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
                 const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
                 const targetElement = document.querySelector(targetId);
+                
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
@@ -1492,119 +1856,105 @@
             });
         });
         
-        // Create particles for hero section
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 30;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
+        // Gallery filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
                 
-                // Random size between 2px and 6px
-                const size = Math.random() * 4 + 2;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
+                const filter = btn.getAttribute('data-filter');
                 
-                // Random position
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Contact form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
                 
-                // Random opacity
-                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                // Get form values
+                const name = this.querySelector('#name').value;
+                const email = this.querySelector('#email').value;
+                const service = this.querySelector('#service').value;
                 
-                // Random animation duration and delay
-                const duration = Math.random() * 20 + 10;
-                const delay = Math.random() * 10;
-                particle.style.animationDuration = `${duration}s`;
-                particle.style.animationDelay = `${delay}s`;
+                // Show success message
+                const successMsg = `Thank you, ${name}! Your message has been sent. We will contact you at ${email} regarding ${service || 'your inquiry'} soon.`;
+                alert(successMsg);
                 
-                particlesContainer.appendChild(particle);
-            }
+                // Reset form
+                this.reset();
+            });
         }
         
-        createParticles();
-        
-        // Testimonial slider
-        let currentTestimonial = 0;
-        const testimonials = [
-            {
-                image: "https://randomuser.me/api/portraits/women/65.jpg",
-                quote: "The financial restructuring plan developed by Capro helped us secure ₹10 crore in venture funding while optimizing our capital structure. Piyush's insights were invaluable during our Series B round.",
-                name: "Neha Kapoor",
-                designation: "Founder & CEO, GreenTech Innovations",
-                rating: 5
-            },
-            {
-                image: "https://randomuser.me/api/portraits/men/32.jpg",
-                quote: "As a family-owned business transitioning to professional management, Capro provided the financial governance framework we needed. Their audit services uncovered efficiencies that improved our margins by 18%.",
-                name: "Vikram Mehta",
-                designation: "Director, Mehta Textiles Ltd.",
-                rating: 5
-            },
-            {
-                image: "https://randomuser.me/api/portraits/women/44.jpg",
-                quote: "Piyush's international tax expertise saved our company from potential double taxation issues in our European expansion. His proactive approach to compliance gives us complete peace of mind.",
-                name: "Priya Desai",
-                designation: "CFO, Global Pharma Solutions",
-                rating: 5
-            }
-        ];
-        
-        function updateTestimonial() {
-            const testimonial = testimonials[currentTestimonial];
-            const testimonialElement = document.querySelector('.testimonial-card');
-            
-            // Create rating stars
-            let stars = '';
-            for (let i = 0; i < testimonial.rating; i++) {
-                stars += '<i class="fas fa-star"></i>';
-            }
-            
-            testimonialElement.innerHTML = `
-                <img src="${testimonial.image}" alt="Client" class="client-image">
-                <div class="rating">${stars}</div>
-                <p>"${testimonial.quote}"</p>
-                <h4 class="client-name">${testimonial.name}</h4>
-                <p class="client-designation">${testimonial.designation}</p>
-            `;
-            
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                alert(`Thank you for subscribing with ${emailInput.value}! You'll receive our next newsletter.`);
+                emailInput.value = '';
+            });
         }
         
-        // Change testimonial every 6 seconds
-        setInterval(updateTestimonial, 6000);
-        
-        // Initialize first testimonial
-        updateTestimonial();
-        
-        // Scroll reveal animation
-        function scrollReveal() {
-            const revealElements = document.querySelectorAll('.reveal');
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.about-content, .service-card, .gallery-item, .contact-card');
             
-            revealElements.forEach(element => {
+            elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
                 const screenPosition = window.innerHeight / 1.2;
                 
                 if (elementPosition < screenPosition) {
-                    element.classList.add('active');
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
                 }
             });
+        };
+
+        // Back to Top Button Visibility
+const backToTop = document.querySelector('.back-to-top');
+window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('visible', window.scrollY > 300);
+});
+
+// Smooth Scrolling (already in your code)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth',
+            });
         }
+    });
+});
         
-        window.addEventListener('scroll', scrollReveal);
-        window.addEventListener('load', scrollReveal);
-        
-        // Form submission
-        const contactForm = document.getElementById('consultationForm');
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Here you would typically send the form data to your server
-            // For demo purposes, we'll just show an alert
-            alert('Thank you for your consultation request. We will contact you shortly.');
-            contactForm.reset();
+        // Set initial state for animated elements
+        document.querySelectorAll('.about-content, .service-card, .gallery-item, .contact-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
     </script>
 </body>
 </html>
