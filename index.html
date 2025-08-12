@@ -1,194 +1,164 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AK & Co. | Premier Chartered Accountants in Delhi</title>
+    <title>Capro | Piyush Sighla - Strategic Financial Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         :root {
-            --primary: #002366; /* Navy blue for trust */
-            --secondary: #0056b3; /* Bright blue for accents */
-            --accent: #ff6b35; /* Coral for CTAs */
+            --primary: #1a2a3a;
+            --secondary: #d35400;
+            --accent: #3498db;
             --light: #f8f9fa;
-            --dark: #212529;
-            --text: #495057;
-            --gray: #6c757d;
-            --white: #ffffff;
-            --success: #28a745;
-            --warning: #ffc107;
-            --border-radius: 8px;
-            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            --transition: all 0.3s ease;
+            --dark: #1a2a3a;
+            --gold: #d4af37;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --section-padding: 120px 5%;
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text);
-            background-color: var(--white);
-            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: #ffffff;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
-
-        h1, h2, h3, h4, h5 {
+        
+        h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
             font-weight: 600;
-            color: var(--dark);
-            line-height: 1.3;
         }
-
-        .container {
-            width: 90%;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 15px;
+        
+        /* Glass Morphism Effect */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
         }
-
-        section {
-            padding: 100px 0;
-            position: relative;
-        }
-
-        /* Header - Professional & Clean */
-        header {
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            transition: var(--transition);
-            padding: 20px 0;
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-        }
-
-        header.scrolled {
-            padding: 15px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .header-container {
+        
+        /* Navigation */
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(26, 42, 58, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
         }
-
+        
+        nav.scrolled {
+            padding: 10px 1%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
         .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
             display: flex;
             align-items: center;
-            text-decoration: none;
-            z-index: 1001;
+            font-family: 'Playfair Display', serif;
         }
-
         
-        .logo-text {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-            letter-spacing: 0.5px;
+        .logo span {
+            color: var(--gold);
+            margin-left: 4px;
         }
-
-        .logo-text span {
-            color: var(--accent);
-            font-weight: 600;
-        }
-
-        nav ul {
+        
+        .nav-links {
             display: flex;
             list-style: none;
         }
-
-        nav ul li {
-            margin-left: 30px;
+        
+        .nav-links li {
+            margin-left: 2.5rem;
             position: relative;
         }
-
-        nav ul li a {
+        
+        .nav-links a {
+            color: white;
             text-decoration: none;
-            color: var(--dark);
             font-weight: 500;
             transition: var(--transition);
             position: relative;
-            padding: 8px 0;
+            font-size: 1.05rem;
         }
-
-        nav ul li a::after {
+        
+        .nav-links a:after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
             width: 0;
             height: 2px;
-            background: var(--accent);
-            transition: width 0.3s ease;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--gold);
+            transition: var(--transition);
         }
-
-        nav ul li a:hover::after {
+        
+        .nav-links a:hover:after {
             width: 100%;
         }
-
-        .header-cta {
-            margin-left: 40px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 12px 28px;
-            border-radius: var(--border-radius);
+        
+        .cta-button {
+            background: var(--gold);
+            color: var(--dark);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
             font-weight: 600;
-            text-decoration: none;
             transition: var(--transition);
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
             border: none;
             cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: 0.5px;
+            font-size: 1.05rem;
         }
-
-        .btn-primary {
-            background: var(--accent);
-            color: var(--white);
-            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
-        }
-
-        .btn-primary:hover {
+        
+        .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(255, 107, 53, 0.4);
-            background: #ff5a1f;
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
+            background: #e8c252;
         }
-
-        .btn-outline {
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            background: transparent;
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
         }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        /* Hero Section - Professional with Gradient */
+        
+        /* Hero Section */
         .hero {
             height: 100vh;
-            min-height: 800px;
             display: flex;
             align-items: center;
+            padding: 0 5%;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, var(--primary) 0%, #003366 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #2c3e50 100%);
         }
-
+        
         .hero::before {
             content: '';
             position: absolute;
@@ -196,1603 +166,1445 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
-            background-size: cover;
-            opacity: 0.1;
-            z-index: 0;
+            background: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            opacity: 0.15;
+            z-index: 1;
         }
-
+        
         .hero-content {
             position: relative;
             z-index: 2;
             max-width: 700px;
-            color: var(--white);
+            color: white;
         }
-
+        
         .hero h1 {
-            font-size: 60px;
-            margin-bottom: 24px;
-            position: relative;
-            color: var(--white);
+            font-size: 3.8rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-
-        .hero h1::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background: var(--accent);
-            border-radius: 2px;
-        }
-
+        
         .hero p {
-            font-size: 18px;
-            margin-bottom: 40px;
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
             opacity: 0.9;
-            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
         }
-
-        .hero-btns {
+        
+        .hero-buttons {
             display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
-
-        .scroll-down {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: var(--white);
+        
+        .secondary-button {
+            background: transparent;
+            color: white;
+            border: 2px solid var(--gold);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
             text-decoration: none;
-            font-weight: 500;
-            z-index: 2;
         }
-
-        .scroll-down i {
-            margin-top: 10px;
-            animation: bounce 2s infinite;
+        
+        .secondary-button:hover {
+            background: var(--gold);
+            color: var(--primary);
+            transform: translateY(-3px);
         }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
+        
+        /* Animated Particles Background */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float-particle 15s infinite linear;
+        }
+        
+        @keyframes float-particle {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+                opacity: 0;
             }
-            40% {
-                transform: translateY(-10px);
+            10% {
+                opacity: 1;
             }
-            60% {
-                transform: translateY(-5px);
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(100px, -100px) rotate(360deg);
+                opacity: 0;
             }
         }
-
-        /* Services Section - Clean Cards */
+        
+        /* Services Section */
         .services {
+            padding: var(--section-padding);
+            background: white;
             position: relative;
-            background: var(--light);
-            overflow: hidden;
         }
-
-        .section-header {
+        
+        .section-title {
             text-align: center;
-            margin-bottom: 60px;
-            position: relative;
-            z-index: 2;
+            margin-bottom: 5rem;
         }
-
-        .section-header h2 {
-            font-size: 42px;
-            margin-bottom: 16px;
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
             position: relative;
             display: inline-block;
         }
-
-        .section-header h2::after {
+        
+        .section-title h2:after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            width: 60px;
+            height: 4px;
+            background: var(--gold);
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--accent);
-            border-radius: 2px;
         }
-
-        .section-header p {
+        
+        .section-title p {
+            color: #666;
             max-width: 700px;
             margin: 0 auto;
-            color: var(--gray);
-            font-size: 18px;
+            font-size: 1.1rem;
         }
-
+        
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .service-card {
-            padding: 40px;
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            background: var(--white);
-            box-shadow: var(--box-shadow);
-            border: 1px solid rgba(0, 0, 0, 0.03);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(0, 86, 179, 0.1);
-            border-radius: var(--border-radius);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-            color: var(--secondary);
-            font-size: 32px;
-            transition: var(--transition);
-        }
-
-        .service-card:hover .service-icon {
-            background: var(--secondary);
-            color: var(--white);
-        }
-
-        .service-card h3 {
-            font-size: 24px;
-            margin-bottom: 16px;
-        }
-
-        .service-card p {
-            margin-bottom: 24px;
-            color: var(--gray);
-        }
-
-        .service-link {
-            display: inline-flex;
-            align-items: center;
-            color: var(--secondary);
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .service-link i {
-            margin-left: 8px;
-            transition: transform 0.3s ease;
-        }
-
-        .service-link:hover {
-            color: var(--primary);
-        }
-
-        .service-link:hover i {
-            transform: translateX(5px);
-        }
-
-        /* About Section - Professional Layout */
-        .about {
-            background: var(--white);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-container {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .about-content {
-            flex: 1;
-        }
-
-        .about-content h2 {
-            font-size: 42px;
-            margin-bottom: 24px;
-            position: relative;
-        }
-
-        .about-content h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background: var(--accent);
-            border-radius: 2px;
-        }
-
-        .about-content p {
-            margin-bottom: 24px;
-            color: var(--gray);
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .stat-item {
-            padding: 30px;
-            background: var(--light);
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            text-align: center;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-number {
-            font-size: 36px;
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 8px;
-        }
-
-        .stat-label {
-            color: var(--gray);
-            font-size: 16px;
-        }
-
-        .about-image {
-            flex: 1;
-            position: relative;
-        }
-
-        .main-image {
-            width: 100%;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Process Section - Clean Timeline */
-        .process {
-            background: var(--light);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .process-steps {
-            display: flex;
-            gap: 30px;
-            margin-top: 60px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .process-steps::before {
-            content: '';
-            position: absolute;
-            top: 40px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent) 0%, var(--secondary) 100%);
-            z-index: 1;
-        }
-
-        .step {
-            flex: 1;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .step-number {
-            width: 80px;
-            height: 80px;
-            background: var(--white);
-            border: 2px solid var(--accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--accent);
-            position: relative;
-            transition: var(--transition);
-        }
-
-        .step:hover .step-number {
-            background: var(--accent);
-            color: var(--white);
-            transform: scale(1.1);
-        }
-
-        .step-number::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: rgba(255, 107, 53, 0.1);
-            z-index: -1;
-        }
-
-        .step h3 {
-            margin-bottom: 16px;
-            font-size: 22px;
-        }
-
-        .step p {
-            color: var(--gray);
-        }
-
-        /* Testimonials - Elegant Slider */
-        .testimonials {
-            background: var(--primary);
-            color: var(--white);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .testimonials .section-header h2,
-        .testimonials .section-header p {
-            color: var(--white);
-        }
-
-        .testimonials .section-header h2::after {
-            background: var(--accent);
-        }
-
-        .testimonial-slider {
-            max-width: 1000px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
             margin: 0 auto;
-            position: relative;
-            z-index: 2;
         }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: var(--border-radius);
-            padding: 40px;
-            text-align: center;
-            margin: 0 15px;
-            opacity: 0.7;
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
             transition: var(--transition);
-            transform: scale(0.9);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .testimonial-card.active {
-            opacity: 1;
-            transform: scale(1);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .client-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 24px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            transition: var(--transition);
-        }
-
-        .testimonial-card.active .client-image {
-            border-color: var(--accent);
-            transform: scale(1.1);
-        }
-
-        .testimonial-text {
-            font-size: 18px;
-            font-style: italic;
-            margin-bottom: 24px;
-            position: relative;
-        }
-
-        .testimonial-text::before,
-        .testimonial-text::after {
-            content: '"';
-            font-size: 40px;
-            color: rgba(255, 255, 255, 0.3);
-            position: absolute;
-        }
-
-        .testimonial-text::before {
-            top: -20px;
-            left: -10px;
-        }
-
-        .testimonial-text::after {
-            bottom: -40px;
-            right: -10px;
-        }
-
-        .client-name {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .client-role {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 16px;
-        }
-
-        .slider-nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 40px;
-            gap: 10px;
-            z-index: 2;
-            position: relative;
-        }
-
-        .slider-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .slider-dot.active {
-            background: var(--accent);
-            transform: scale(1.3);
-        }
-
-        /* Contact Section - Professional Form */
-        .contact {
-            background: var(--white);
             position: relative;
             overflow: hidden;
+            z-index: 1;
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 60px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .contact-method {
-            display: flex;
-            gap: 20px;
-            transition: var(--transition);
-        }
-
-        .contact-method:hover {
-            transform: translateX(10px);
-        }
-
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(0, 86, 179, 0.1);
-            border-radius: var(--border-radius);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--secondary);
-            font-size: 24px;
-            flex-shrink: 0;
-            transition: var(--transition);
-        }
-
-        .contact-method:hover .contact-icon {
-            background: var(--secondary);
-            color: var(--white);
-        }
-
-        .contact-details h3 {
-            font-size: 20px;
-            margin-bottom: 8px;
-        }
-
-        .contact-details p {
-            color: var(--gray);
-        }
-
-        .contact-form {
-            background: var(--white);
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            padding: 40px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-form::before {
+        
+        .service-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--accent) 0%, var(--secondary) 100%);
-        }
-
-        .form-group {
-            margin-bottom: 24px;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 14px 20px;
-            border: 1px solid #E2E8F0;
-            border-radius: var(--border-radius);
-            font-size: 16px;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(52, 152, 219, 0.05) 100%);
+            z-index: -1;
+            opacity: 0;
             transition: var(--transition);
-            font-family: 'Montserrat', sans-serif;
         }
-
-        .form-control:focus {
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
-            outline: none;
+        
+        .service-card:hover::before {
+            opacity: 1;
         }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
-
-        .submit-btn {
-            width: 100%;
-            padding: 16px;
-            font-size: 16px;
+        
+        .service-icon {
+            font-size: 2.8rem;
+            color: var(--gold);
+            margin-bottom: 1.8rem;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+        
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            color: var(--primary);
+        }
+        
+        .service-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-link {
+            color: var(--gold);
+            text-decoration: none;
             font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: var(--transition);
         }
-
-        /* Footer - Professional */
-        footer {
-            background: var(--primary);
-            color: var(--white);
-            padding: 80px 0 40px;
+        
+        .service-link i {
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+        
+        .service-link:hover {
+            color: var(--secondary);
+        }
+        
+        .service-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* About Section */
+        .about {
+            padding: var(--section-padding);
+            background: var(--light);
             position: relative;
             overflow: hidden;
         }
-
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
-            position: relative;
-            z-index: 2;
+        
+        .about::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%23d4af37" stroke-width="0.5" stroke-dasharray="5,5"/></svg>');
+            opacity: 0.05;
+            transform: rotate(15deg);
+            z-index: 0;
         }
-
-        .footer-col {
+        
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            position: relative;
+            perspective: 1200px;
+        }
+        
+        .image-wrapper {
+            position: relative;
+            transform-style: preserve-3d;
+            box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .image-wrapper:hover {
+            transform: rotateY(-5deg) rotateX(2deg);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
             transition: var(--transition);
         }
-
-        .footer-col h3 {
-            font-size: 20px;
-            margin-bottom: 24px;
-            position: relative;
-            padding-bottom: 16px;
-            font-family: 'Montserrat', sans-serif;
+        
+        .image-wrapper:hover img {
+            transform: scale(1.03);
         }
-
+        
+        .image-border {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--gold);
+            border-radius: 10px;
+            top: 20px;
+            left: 20px;
+            z-index: -1;
+            transition: var(--transition);
+        }
+        
+        .image-wrapper:hover .image-border {
+            top: 15px;
+            left: 15px;
+        }
+        
+        .about-content {
+            flex: 1;
+        }
+        
+        .about-content h2 {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-content p {
+            color: #555;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .signature {
+            margin: 2rem 0;
+            max-width: 200px;
+            opacity: 0.9;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 2.8rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        
+        .stat-item p {
+            color: #777;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: var(--section-padding);
+            background: white;
+            position: relative;
+        }
+        
+        .testimonial-slider {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+            margin: 0 1rem;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-card::before {
+            content: '\201C';
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            font-size: 5rem;
+            color: rgba(212, 175, 55, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-card::after {
+            content: '\201D';
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            font-size: 5rem;
+            color: rgba(212, 175, 55, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .client-image {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            border: 3px solid var(--gold);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card p {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .client-name {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .client-designation {
+            color: var(--gold);
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+            font-weight: 500;
+        }
+        
+        .rating {
+            color: var(--gold);
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--primary) 0%, #2c3e50 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            transform: rotate(30deg);
+            animation: cta-shine 8s infinite linear;
+        }
+        
+        @keyframes cta-shine {
+            0% {
+                transform: rotate(30deg) translate(-30%, -30%);
+            }
+            100% {
+                transform: rotate(30deg) translate(30%, 30%);
+            }
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-content p {
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: var(--section-padding);
+            background: var(--light);
+            position: relative;
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .contact-info p {
+            color: #555;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .contact-details {
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-right: 1.5rem;
+            color: var(--gold);
+            margin-top: 5px;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-text p, .contact-text a {
+            color: #666;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .contact-text a:hover {
+            color: var(--gold);
+        }
+        
+        .contact-form {
+            flex: 1;
+            background: white;
+            padding: 3.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transform: translateY(-50px);
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 1.1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+        
+        .form-control:focus {
+            border-color: var(--gold);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 180px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: var(--gold);
+            color: var(--primary);
+            border: none;
+            padding: 1.2rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .submit-btn:hover {
+            background: #e8c252;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 6rem 5% 3rem;
+            position: relative;
+        }
+        
+        .footer-wave {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%231a2a3a" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%231a2a3a" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%231a2a3a"/></svg>') no-repeat center top/cover;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.8rem;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+        }
+        
         .footer-col h3::after {
             content: '';
             position: absolute;
-            bottom: 0;
             left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--accent);
+            bottom: -10px;
+            width: 50px;
+            height: 2px;
+            background: var(--gold);
         }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            margin-bottom: 24px;
+        
+        .footer-col p {
+            opacity: 0.8;
+            margin-bottom: 1.8rem;
+            font-size: 1.05rem;
         }
-
-     
-        .footer-logo-text {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--white);
-        }
-
-        .footer-about p {
-            margin-bottom: 24px;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
+        
         .social-links {
             display: flex;
-            gap: 16px;
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: var(--border-radius);
+        
+        .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
-            text-decoration: none;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
             transition: var(--transition);
+            font-size: 1.2rem;
         }
-
-        .social-link:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
+        
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--primary);
+            transform: translateY(-5px);
         }
-
+        
         .footer-links {
             list-style: none;
         }
-
+        
         .footer-links li {
-            margin-bottom: 16px;
+            margin-bottom: 1.2rem;
         }
-
+        
         .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
+            color: white;
+            opacity: 0.8;
             text-decoration: none;
             transition: var(--transition);
+            display: inline-block;
+            font-size: 1.05rem;
         }
-
+        
         .footer-links a:hover {
-            color: var(--white);
-            padding-left: 5px;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 30px;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 14px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .footer-bottom a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-bottom a:hover {
-            color: var(--white);
-        }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--accent);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            z-index: 999;
-            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
-        }
-
-        .back-to-top.active {
             opacity: 1;
-            visibility: visible;
+            color: var(--gold);
+            transform: translateX(5px);
         }
-
-        .back-to-top:hover {
-            transform: translateY(-5px);
-            background: #ff5a1f;
+        
+        .newsletter-form {
+            margin-top: 1.5rem;
         }
-
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            width: 40px;
-            height: 40px;
-            background: var(--accent);
-            color: var(--white);
+        
+        .newsletter-form input {
+            width: 100%;
+            padding: 1rem;
             border: none;
-            border-radius: var(--border-radius);
-            font-size: 20px;
-            cursor: pointer;
-            z-index: 1001;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
         }
+        
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .newsletter-form button {
+            background: var(--gold);
+            color: var(--primary);
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+        }
+        
+        .newsletter-form button:hover {
+            background: #e8c252;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 4rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.95rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            :root {
+                --section-padding: 100px 5%;
+            }
+            
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .about-container, .contact-container {
+                flex-direction: column;
+            }
+            
+            .contact-form {
+                transform: translateY(0);
+                margin-top: 3rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title h2, .about-content h2, .contact-info h2 {
+                font-size: 2.4rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: 80px 5%;
+            }
+            
+            nav {
+                padding: 1.2rem 5%;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background: var(--primary);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                z-index: 1000;
+                box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1001;
+            }
+            
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .section-title h2, .about-content h2, .contact-info h2 {
+                font-size: 2rem;
+            }
+            
+            .service-card {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2, .about-content h2, .contact-info h2 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-form {
+                padding: 2rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 1s ease forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+        
+        /* 3D Card Effects */
+        .card-3d {
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            transform-style: preserve-3d;
+            transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+        }
+        
+        .card-3d:hover {
+            transform: perspective(1000px) rotateY(-5deg) rotateX(5deg) translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Floating Animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
 
-        .mobile-menu {
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Preloader */
+        .preloader {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--white);
-            z-index: 1000;
+            background: var(--primary);
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            transform: translateY(-100%);
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .preloader.fade-out {
             opacity: 0;
-            transition: var(--transition);
         }
-
-        .mobile-menu.active {
-            transform: translateY(0);
-            opacity: 1;
+        
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            border-top-color: var(--gold);
+            animation: spin 1s linear infinite;
         }
-
-        .mobile-menu ul {
-            list-style: none;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .mobile-menu ul li {
-            margin: 20px 0;
-        }
-
-        .mobile-menu ul li a {
-            color: var(--dark);
-            font-size: 24px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .mobile-menu ul li a:hover {
-            color: var(--accent);
-        }
-
-        .mobile-menu .btn {
-            margin: 10px 0;
-        }
-
-        .mobile-menu-close {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            background: none;
-            border: none;
-            font-size: 30px;
-            color: var(--dark);
-            cursor: pointer;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .hero h1 {
-                font-size: 48px;
-            }
-            
-            .about-container {
-                gap: 40px;
+        
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
             }
         }
-
-        @media (max-width: 992px) {
-            section {
-                padding: 80px 0;
+        
+        /* Scroll Indicator Animation */
+        @keyframes scrollAnimation {
+            0% {
+                top: 5px;
+                opacity: 0;
             }
-            
-            .hero {
-                min-height: auto;
-                padding: 150px 0 100px;
-                height: auto;
+            50% {
+                opacity: 1;
             }
-            
-            .hero h1 {
-                font-size: 42px;
-            }
-            
-            .hero-content {
-                max-width: 100%;
-                text-align: center;
-            }
-            
-            .hero h1::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .hero-btns {
-                justify-content: center;
-            }
-            
-            .about-container {
-                flex-direction: column;
-            }
-            
-            .about-image {
-                order: -1;
-                margin-bottom: 60px;
-            }
-            
-            .process-steps {
-                flex-direction: column;
-                gap: 60px;
-            }
-            
-            .process-steps::before {
-                width: 2px;
-                height: 100%;
-                top: 0;
-                left: 50%;
-            }
-            
-            .step-number {
-                margin-bottom: 16px;
-            }
-            
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .mobile-menu-btn {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            
-            nav {
-                display: none;
-            }
-            
-            .header-cta {
-                display: none;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .section-header h2 {
-                font-size: 36px;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-form {
-                order: -1;
-                margin-bottom: 60px;
-            }
-            
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .footer-col {
-                margin-bottom: 30px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 32px;
-            }
-            
-            .hero p {
-                font-size: 16px;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-                gap: 16px;
-            }
-            
-            .section-header h2 {
-                font-size: 28px;
-            }
-            
-            .section-header p {
-                font-size: 16px;
-            }
-            
-            .about-stats {
-                grid-template-columns: 1fr;
-            }
-            
-            .service-card {
-                padding: 30px;
-            }
-            
-            .testimonial-card {
-                padding: 30px 20px;
-            }
-            
-            .back-to-top {
-                width: 40px;
-                height: 40px;
-                bottom: 20px;
-                right: 20px;
+            100% {
+                top: 20px;
+                opacity: 0;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Professional Header -->
-    <header id="header">
-        <div class="container header-container">
-            <a href="#" class="logo">
-                <div class="logo-icon">
-                </div>
-                <span class="logo-text">AK & <span>Co.</span></span>
-            </a>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#process">Process</a></li>
-                    <li><a href="#testimonials">Clients</a></li>
-                </ul>
-            </nav>
-            <div class="header-cta">
-                <a href="#contact" class="btn btn-outline">Contact Us</a>
-            </div>
-        </div>
-    </header>
-    
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <button class="mobile-menu-close" id="mobileMenuClose">
-            <i class="fas fa-times"></i>
-        </button>
-        <ul>
-            <li><a href="#home" class="mobile-nav-link">Home</a></li>
-            <li><a href="#services" class="mobile-nav-link">Services</a></li>
-            <li><a href="#about" class="mobile-nav-link">About</a></li>
-            <li><a href="#process" class="mobile-nav-link">Process</a></li>
-            <li><a href="#testimonials" class="mobile-nav-link">Clients</a></li>
-        </ul>
-        <div class="mobile-menu-btns">
-            <a href="#contact" class="btn btn-primary mobile-nav-link">Contact Us</a>
-        </div>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
     </div>
-
+    
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">
+            <a href="#home"><img src="logo.png" alt="Piyush Sighla CA Logo" class="floating" width="80px"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact" class="cta-button">Get Consultation</a></li>
+        </ul>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+    
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Empowering Your Financial Future</h1>
-                <p>At <strong>AK & Co.</strong>, we deliver precision-driven chartered accountancy services, combining 18+ years of expertise with innovative strategies. From startups to corporates, our solutions ensure compliance, tax efficiency, and sustainable growth.</p>
-                <div class="hero-btns">
-                    <a href="#services" class="btn btn-primary">Our Services</a>
-                    <a href="#contact" class="btn btn-outline">Free Consultation</a>
-                </div>
+        <div class="particles" id="particles"></div>
+        <div class="hero-content">
+            <h1 class="animate-fadeInUp">Strategic Financial Solutions for Sustainable Growth</h1>
+            <p class="animate-fadeInUp delay-1">Piyush Sighla, Chartered Accountant, delivers bespoke financial strategies that drive profitability, ensure compliance, and optimize tax efficiency for businesses and individuals.</p>
+            <div class="hero-buttons animate-fadeInUp delay-2">
+                <a href="#services" class="cta-button">Explore Services</a>
+                <a href="#contact" class="secondary-button">Schedule Meeting</a>
             </div>
         </div>
-        <a href="#services" class="scroll-down">
-            Scroll Down
-            <i class="fas fa-chevron-down"></i>
-        </a>
+        
+        <!-- Animated Scroll Indicator -->
+        <div class="scroll-indicator animate-fadeInUp delay-3" style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); text-align: center;">
+            <p style="margin-bottom: 15px; font-size: 0.9rem; opacity: 0.8;">SCROLL DOWN</p>
+            <div style="width: 20px; height: 35px; border: 2px solid rgba(255,255,255,0.5); border-radius: 10px; margin: 0 auto; position: relative;">
+                <div style="width: 4px; height: 8px; background: white; border-radius: 2px; position: absolute; top: 5px; left: 50%; transform: translateX(-50%); animation: scrollAnimation 2s infinite;"></div>
+            </div>
+        </div>
     </section>
-
+    
     <!-- Services Section -->
     <section class="services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Professional Services</h2>
-                <p>Comprehensive financial and accounting services designed to meet the unique needs of Indian businesses and individuals.</p>
+        <div class="section-title">
+            <h2>Comprehensive Financial Services</h2>
+            <p>Tailored solutions designed to address your unique financial challenges and opportunities</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card card-3d reveal">
+                <div class="service-icon">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+                <h3>Strategic Tax Planning</h3>
+                <p>Proactive tax strategies that minimize liabilities while ensuring full compliance with evolving regulations across jurisdictions.</p>
+                <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                    </div>
-                    <h3>GST Services</h3>
-                    <p>Effortless GST registration, return filing, and planning to reduce liabilities while ensuring 100% compliance with evolving GST rules.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            <div class="service-card card-3d reveal">
+                <div class="service-icon">
+                    <i class="fas fa-balance-scale"></i>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-landmark"></i>
-                    </div>
-                    <h3>Income Tax</h3>
-                    <p>Strategic tax planning, filing, and advisory to optimize savings for individuals and corporates alike.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <h3>Audit & Assurance</h3>
+                <p>Comprehensive audit services that enhance financial credibility and provide stakeholders with confidence in your reporting.</p>
+                <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card card-3d reveal">
+                <div class="service-icon">
+                    <i class="fas fa-briefcase"></i>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-pie"></i>
-                    </div>
-                    <h3>Audit & Assurance</h3>
-                    <p>Comprehensive statutory, internal, and tax audits ensuring transparency and compliance with Indian GAAP.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <h3>Business Advisory</h3>
+                <p>Strategic guidance to optimize operations, improve profitability, and position your business for sustainable growth.</p>
+                <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card card-3d reveal">
+                <div class="service-icon">
+                    <i class="fas fa-file-invoice-dollar"></i>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3>Company Formation</h3>
-                    <p>End-to-end assistance in company incorporation, ROC compliance, and strategic corporate advisory.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <h3>GST Compliance</h3>
+                <p>End-to-end GST services including registration, return filing, refund claims, and litigation support.</p>
+                <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card card-3d reveal">
+                <div class="service-icon">
+                    <i class="fas fa-rocket"></i>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-hand-holding-usd"></i>
-                    </div>
-                    <h3>Investment Advisory</h3>
-                    <p>Customized investment roadmaps aligned with your risk profile, industry trends, and market opportunities.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                <h3>Startup Services</h3>
+                <p>Specialized financial solutions for startups including incorporation, funding strategy, and compliance management.</p>
+                <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card card-3d reveal">
+                <div class="service-icon">
+                    <i class="fas fa-hand-holding-usd"></i>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-balance-scale"></i>
-                    </div>
-                    <h3>Legal Compliance</h3>
-                    <p>Comprehensive compliance management ensuring your business meets all statutory and regulatory obligations.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
+                <h3>Wealth Management</h3>
+                <p>Personalized investment strategies and estate planning to preserve and grow your wealth effectively.</p>
+                <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
-
+    
     <!-- About Section -->
     <section class="about" id="about">
-        <div class="container">
-            <div class="about-container">
-                <div class="about-content">
-                    <h2>Trusted Chartered Accountants in Delhi</h2>
-                    <p>Since our inception in 2005, AK & Co. has been a trusted partner to over 500 clients nationwide. Our multidisciplinary team of CAs, tax advisors, and financial analysts blends domain knowledge with advanced analytics to deliver actionable insights.</p>
-                    <p>Whether it’s navigating complex tax reforms, optimizing cash flows, or structuring mergers, we are committed to delivering financial clarity, compliance, and long-term client success.</p>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">18+</div>
-                            <div class="stat-label">Years Experience</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">500+</div>
-                            <div class="stat-label">Satisfied Clients</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">₹85Cr</div>
-                            <div class="stat-label">Client Tax Savings</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Compliance Rate</div>
-                        </div>
+        <div class="about-container">
+            <div class="about-image reveal">
+                <div class="image-wrapper">
+                    <img src="piyush.png" alt="Piyush Sighla - Chartered Accountant" class="floating">
+                    <div class="image-border"></div>
+                </div>
+            </div>
+            <div class="about-content">
+                <h2 class="reveal">Piyush Sighla, FCA</h2>
+                <p class="reveal">With over 15 years of distinguished experience in financial strategy and compliance, Piyush Sighla is a Fellow Chartered Accountant committed to delivering exceptional value to clients across diverse industries.</p>
+                <p class="reveal">His expertise encompasses international taxation, mergers & acquisitions, financial restructuring, and regulatory compliance, helping clients navigate complex financial landscapes with confidence.</p>
+                
+                <div class="signature reveal">
+                </div>
+                
+                <div class="stats reveal">
+                    <div class="stat-item">
+                        <h3>15+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>Satisfied Clients</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Client Retention</p>
                     </div>
                 </div>
-                <div class="about-image">
-                    <img src="https://media.istockphoto.com/id/1030276592/photo/indian-team.jpg?s=612x612&w=0&k=20&c=AR3J-DA8iFN5IQSfw7Jnvd06Dhec9ngT4D9sig16U8c=" alt="Our Team" class="main-image">
-                </div>
             </div>
         </div>
     </section>
-
-    <!-- Process Section -->
-    <section class="process" id="process">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Client-Centric Process</h2>
-                <p>We follow a structured approach to ensure every engagement delivers maximum value and meets your specific requirements.</p>
-            </div>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Initial Consultation</h3>
-                    <p>We begin with in-depth consultations to align on your goals and compliance requirements.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Document Analysis</h3>
-                    <p>Secure, accurate, and complete documentation gathering with a thorough review process.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Strategy Development</h3>
-                    <p>Action plans designed around your sector, size, and market position.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Implementation</h3>
-                    <p>Meticulous implementation ensuring adherence to Indian GAAP & tax laws.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">5</div>
-                    <h3>Ongoing Support</h3>
-                    <p>Periodic check-ins to adapt strategies to regulatory or business changes.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2>What Our Clients Say</h2>
-                <p>Don't just take our word for it - hear from businesses that have benefited from our services.</p>
-            </div>
-            <div class="testimonial-slider">
-                <div class="testimonial-card active">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="client-image">
-                    <div class="testimonial-text">
-                        AK & Co. helped us navigate complex GST regulations and saved us ₹42 lakh in the first year itself. Their expertise in Indian tax laws is unparalleled.
-                    </div>
-                    <div class="client-name">Rahul Mehta</div>
-                    <div class="client-role">Director, Mehta Textiles Pvt. Ltd.</div>
+        <div class="section-title">
+            <h2>Client Success Stories</h2>
+            <p>Hear from business leaders who have transformed their financial operations with our guidance</p>
+        </div>
+        <div class="testimonial-slider">
+            <div class="testimonial-card card-3d reveal">
+                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client" class="client-image">
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                 </div>
-                <div class="testimonial-card">
-                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="client-image">
-                    <div class="testimonial-text">
-                        As a startup founder, I needed guidance on compliance and tax planning. The team at AK & Co. provided invaluable advice tailored to the Indian startup ecosystem.
-                    </div>
-                    <div class="client-name">Priya Sharma</div>
-                    <div class="client-role">Founder, TechSolutions India</div>
-                </div>
-                <div class="testimonial-card">
-                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client" class="client-image">
-                    <div class="testimonial-text">
-                        Their forensic audit uncovered financial irregularities that had gone unnoticed for years. Their attention to detail saved our company from significant losses.
-                    </div>
-                    <div class="client-name">Amit Patel</div>
-                    <div class="client-role">CFO, Patel Industries</div>
-                </div>
-                <div class="testimonial-card">
-                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client" class="client-image">
-                    <div class="testimonial-text">
-                        The wealth management strategies implemented by AK & Co. have helped grow our family's assets by 28% while ensuring full compliance with Indian tax laws.
-                    </div>
-                    <div class="client-name">Neha Kapoor</div>
-                    <div class="client-role">Kapoor Family Office</div>
-                </div>
-            </div>
-            <div class="slider-nav">
-                <div class="slider-dot active" data-slide="0"></div>
-                <div class="slider-dot" data-slide="1"></div>
-                <div class="slider-dot" data-slide="2"></div>
-                <div class="slider-dot" data-slide="3"></div>
+                <p>"Piyush's strategic tax planning saved our multinational corporation over ₹2.3 crore in tax liabilities last fiscal year while ensuring full compliance across all jurisdictions. His team's attention to detail is exceptional."</p>
+                <h4 class="client-name">Rajiv Malhotra</h4>
+                <p class="client-designation">CFO, TechnoGlobal Solutions</p>
             </div>
         </div>
     </section>
-
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="reveal">Ready to Optimize Your Financial Strategy?</h2>
+            <p class="reveal">Schedule a consultation with Piyush Sighla today and discover how our bespoke financial solutions can drive your business forward.</p>
+            <a href="#contact" class="secondary-button reveal">Book Your Consultation</a>
+        </div>
+    </section>
+    
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Get In Touch With Us</h2>
-                <p>Have a financial challenge? Let’s solve it together. Fill out the form or connect with us directly for a confidential consultation within 24 hours.</p>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-method">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2 class="reveal">Connect With Us</h2>
+                <p class="reveal">Have questions about our services or want to discuss your specific financial needs? Our team is ready to assist you.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item reveal">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <div class="contact-details">
-                            <h3>Our Office</h3>
-                            <p>Connaught Place, Block D, 5th Floor, New Delhi - 110001</p>
+                        <div class="contact-text">
+                            <h4>Corporate Office</h4>
+                            <p>Level 12, Financial Tower<br>Nariman Point, Mumbai 400021</p>
                         </div>
                     </div>
-                    <div class="contact-method">
+                    <div class="contact-item reveal">
                         <div class="contact-icon">
                             <i class="fas fa-phone-alt"></i>
                         </div>
-                        <div class="contact-details">
-                            <h3>Call Us</h3>
-                            <p>+91 98765 43210<br>011 1234 5678</p>
+                        <div class="contact-text">
+                            <h4>Contact Number</h4>
+                            <p><a href="tel:+912266667777">+91 22 6666 7777</a><br>
+                            <a href="tel:+919876543210">+91 98765 43210</a></p>
                         </div>
                     </div>
-                    <div class="contact-method">
+                    <div class="contact-item reveal">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <div class="contact-details">
-                            <h3>Email Us</h3>
-                            <p>info@akcoindia.com<br>support@akcoindia.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-method">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Working Hours</h3>
-                            <p>Monday - Friday: 9:30 AM - 6:30 PM<br>Saturday: 9:30 AM - 2:00 PM</p>
+                        <div class="contact-text">
+                            <h4>Email Address</h4>
+                            <p><a href="mailto:piyush@capro.co.in">piyush@capro.co.in</a><br>
+                            <a href="mailto:info@capro.co.in">info@capro.co.in</a></p>
                         </div>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Full Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email Address</label>
-                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
-                        </div>
-                        <div class="form-group">
-                            <label for="service" class="form-label">Service Interest</label>
-                            <select id="service" class="form-control" required>
-                                <option value="">Select a service</option>
-                                <option>GST Services</option>
-                                <option>Income Tax</option>
-                                <option>Audit & Assurance</option>
-                                <option>Company Formation</option>
-                                <option>Investment Advisory</option>
-                                <option>Legal Compliance</option>
-                                <option>Other Inquiry</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="form-label">Your Message</label>
-                            <textarea id="message" class="form-control" placeholder="How can we help you?" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
-                    </form>
-                </div>
+            </div>
+            <div class="contact-form card-3d reveal">
+                <form id="consultationForm">
+                    <div class="form-group">
+                        <label for="name">Your Name*</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address*</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Interested In*</label>
+                        <select id="service" class="form-control" required>
+                            <option value="">Select a service</option>
+                            <option value="tax">Tax Planning</option>
+                            <option value="audit">Audit & Assurance</option>
+                            <option value="gst">GST Services</option>
+                            <option value="consulting">Business Consulting</option>
+                            <option value="startup">Startup Services</option>
+                            <option value="wealth">Wealth Management</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Requirements*</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Request Consultation</button>
+                </form>
             </div>
         </div>
     </section>
-
+    
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <div class="footer-logo-icon">
-                        </div>
-                        <div class="footer-logo-text">AK & Co.</div>
-                    </div>
-                    <div class="footer-about">
-                        <p>Providing expert chartered accountancy services in Delhi and across India with a focus on compliance and strategic financial planning.</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h3 style="color: #f8f9fa;">Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">GST Services</a></li>
-                        <li><a href="#">Income Tax</a></li>
-                        <li><a href="#">Audit & Assurance</a></li>
-                        <li><a href="#">Company Formation</a></li>
-                        <li><a href="#">Investment Advisory</a></li>
-                        <li><a href="#">Legal Compliance</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3 style="color: #f8f9fa;">Company</h3>
-                    <ul class="footer-links">
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#process">Our Process</a></li>
-                        <li><a href="#testimonials">Client Stories</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">News & Insights</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3 style="color: #f8f9fa;">Resources</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Tax Calendar</a></li>
-                        <li><a href="#">GST Updates</a></li>
-                        <li><a href="#">Budget Analysis</a></li>
-                        <li><a href="#">Financial Calculators</a></li>
-                        <li><a href="#">FAQs</a></li>
-                    </ul>
+        <div class="footer-wave"></div>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>CAPRO</h3>
+                <p>Providing strategic financial solutions that drive growth, ensure compliance, and optimize tax efficiency for businesses and individuals.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 AK & Co., Chartered Accountants. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
             </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Tax Planning</a></li>
+                    <li><a href="#">Audit & Assurance</a></li>
+                    <li><a href="#">Business Advisory</a></li>
+                    <li><a href="#">GST Compliance</a></li>
+                    <li><a href="#">Startup Services</a></li>
+                    <li><a href="#">Wealth Management</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter for financial insights, tax updates, and business strategies.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Capro Financial Advisory. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #d35400;"></i> by CAPRO Team</p>
         </div>
     </footer>
     
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
     <script>
-        // Header Scroll Effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            const backToTop = document.getElementById('backToTop');
-            
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-            
-            if (window.scrollY > 300) {
-                backToTop.classList.add('active');
-            } else {
-                backToTop.classList.remove('active');
-            }
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.querySelector('.preloader');
+            preloader.classList.add('fade-out');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
         });
-
+        
         // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileMenuClose = document.getElementById('mobileMenuClose');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
         
         mobileMenuBtn.addEventListener('click', function() {
-            mobileMenu.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
         
-        mobileMenuClose.addEventListener('click', function() {
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-        
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = '';
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
-
-        // Testimonial Slider
-        const testimonialCards = document.querySelectorAll('.testimonial-card');
-        const dots = document.querySelectorAll('.slider-dot');
-        let currentTestimonial = 0;
-        let autoSlideInterval;
-
-        function showTestimonial(index) {
-            testimonialCards.forEach(card => card.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
-            
-            testimonialCards[index].classList.add('active');
-            dots[index].classList.add('active');
-            
-            currentTestimonial = index;
-        }
-
-        function startAutoSlide() {
-            autoSlideInterval = setInterval(() => {
-                currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
-                showTestimonial(currentTestimonial);
-            }, 5000);
-        }
-
-        function stopAutoSlide() {
-            clearInterval(autoSlideInterval);
-        }
-
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                stopAutoSlide();
-                showTestimonial(index);
-                startAutoSlide();
-            });
-        });
-
-        // Start auto slide on page load
-        startAutoSlide();
-
-        // Pause auto slide when hovering over testimonials
-        const testimonialSlider = document.querySelector('.testimonial-slider');
-        testimonialSlider.addEventListener('mouseenter', stopAutoSlide);
-        testimonialSlider.addEventListener('mouseleave', startAutoSlide);
-
-        // Form Submission
-        const contactForm = document.getElementById('contactForm');
         
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Simulate form submission
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitBtn.disabled = true;
-            
-            setTimeout(() => {
-                submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-                
-                // Create success notification
-                const notification = document.createElement('div');
-                notification.className = 'form-notification';
-                notification.innerHTML = `
-                    <div class="notification-content">
-                        <i class="fas fa-check-circle"></i>
-                        <div>
-                            <h4>Thank You!</h4>
-                            <p>Your message has been sent successfully. We'll contact you soon.</p>
-                        </div>
-                    </div>
-                `;
-                
-                document.body.appendChild(notification);
-                
-                // Remove notification after 5 seconds
-                setTimeout(() => {
-                    notification.style.opacity = '0';
-                    setTimeout(() => {
-                        document.body.removeChild(notification);
-                    }, 300);
-                }, 5000);
-                
-                // Reset form after 2 seconds
-                setTimeout(() => {
-                    this.reset();
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                }, 2000);
-            }, 1500);
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         });
-
-        // Smooth scrolling for navigation links
+        
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
                 const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
+                if (targetId === '#') return;
                 
+                const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 100,
+                        top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
                 }
             });
         });
-
-        // Back to top button
-        document.getElementById('backToTop').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Add notification style
-        const style = document.createElement('style');
-        style.textContent = `
-            .form-notification {
-                position: fixed;
-                bottom: 30px;
-                right: 30px;
-                background: white;
-                border-radius: 12px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                padding: 20px;
-                max-width: 350px;
-                transform: translateY(100px);
-                opacity: 0;
-                animation: slideUp 0.5s forwards;
-                z-index: 1000;
-                border-left: 4px solid var(--success);
+        
+        // Create particles for hero section
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random size between 2px and 6px
+                const size = Math.random() * 4 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Random opacity
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                
+                // Random animation duration and delay
+                const duration = Math.random() * 20 + 10;
+                const delay = Math.random() * 10;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.animationDelay = `${delay}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        createParticles();
+        
+        // Testimonial slider
+        let currentTestimonial = 0;
+        const testimonials = [
+            {
+                image: "https://randomuser.me/api/portraits/women/65.jpg",
+                quote: "The financial restructuring plan developed by Capro helped us secure ₹10 crore in venture funding while optimizing our capital structure. Piyush's insights were invaluable during our Series B round.",
+                name: "Neha Kapoor",
+                designation: "Founder & CEO, GreenTech Innovations",
+                rating: 5
+            },
+            {
+                image: "https://randomuser.me/api/portraits/men/32.jpg",
+                quote: "As a family-owned business transitioning to professional management, Capro provided the financial governance framework we needed. Their audit services uncovered efficiencies that improved our margins by 18%.",
+                name: "Vikram Mehta",
+                designation: "Director, Mehta Textiles Ltd.",
+                rating: 5
+            },
+            {
+                image: "https://randomuser.me/api/portraits/women/44.jpg",
+                quote: "Piyush's international tax expertise saved our company from potential double taxation issues in our European expansion. His proactive approach to compliance gives us complete peace of mind.",
+                name: "Priya Desai",
+                designation: "CFO, Global Pharma Solutions",
+                rating: 5
+            }
+        ];
+        
+        function updateTestimonial() {
+            const testimonial = testimonials[currentTestimonial];
+            const testimonialElement = document.querySelector('.testimonial-card');
+            
+            // Create rating stars
+            let stars = '';
+            for (let i = 0; i < testimonial.rating; i++) {
+                stars += '<i class="fas fa-star"></i>';
             }
             
-            .notification-content {
-                display: flex;
-                align-items: flex-start;
-                gap: 15px;
-            }
+            testimonialElement.innerHTML = `
+                <img src="${testimonial.image}" alt="Client" class="client-image">
+                <div class="rating">${stars}</div>
+                <p>"${testimonial.quote}"</p>
+                <h4 class="client-name">${testimonial.name}</h4>
+                <p class="client-designation">${testimonial.designation}</p>
+            `;
             
-            .notification-content i {
-                font-size: 24px;
-                color: var(--success);
-                margin-top: 3px;
-            }
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        }
+        
+        // Change testimonial every 6 seconds
+        setInterval(updateTestimonial, 6000);
+        
+        // Initialize first testimonial
+        updateTestimonial();
+        
+        // Scroll reveal animation
+        function scrollReveal() {
+            const revealElements = document.querySelectorAll('.reveal');
             
-            .notification-content h4 {
-                margin-bottom: 5px;
-                color: var(--dark);
-            }
-            
-            .notification-content p {
-                color: var(--gray);
-                font-size: 14px;
-            }
-            
-            @keyframes slideUp {
-                to {
-                    transform: translateY(0);
-                    opacity: 1;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Animation on scroll
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.service-card, .stat-item, .step, .contact-method');
-            
-            elements.forEach(element => {
+            revealElements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
+                const screenPosition = window.innerHeight / 1.2;
                 
                 if (elementPosition < screenPosition) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
+                    element.classList.add('active');
                 }
             });
         }
         
-        // Set initial state for animated elements
-        document.querySelectorAll('.service-card, .stat-item, .step, .contact-method').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        });
+        window.addEventListener('scroll', scrollReveal);
+        window.addEventListener('load', scrollReveal);
         
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
+        // Form submission
+        const contactForm = document.getElementById('consultationForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to your server
+            // For demo purposes, we'll just show an alert
+            alert('Thank you for your consultation request. We will contact you shortly.');
+            contactForm.reset();
+        });
     </script>
 </body>
 </html>
