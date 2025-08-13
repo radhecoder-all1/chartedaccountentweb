@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | CAPRO - Comprehensive Taxation & Financial Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Color System */
+            --primary: #0A2463;
+            --primary-light: #1A3B8B;
+            --secondary: #3E92CC;
+            --accent: #FFD166;
+            --dark: #1E1B18;
+            --light: #F7F7FF;
+            --gray: #7D8CA5;
+            
+            /* Typography */
+            --font-main: 'Montserrat', sans-serif;
+            --font-display: 'Playfair Display', serif;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 3rem;
+            --space-xl: 4rem;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(10, 36, 99, 0.08);
+            --shadow-md: 0 4px 20px rgba(10, 36, 99, 0.12);
+            --shadow-lg: 0 8px 40px rgba(10, 36, 99, 0.16);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: var(--light);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: var(--primary);
+            padding: var(--space-md) 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: var(--space-md);
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .services-hero {
+            background: linear-gradient(rgba(10, 36, 99, 0.9), rgba(10, 36, 99, 0.9)), 
+                        url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: var(--space-xl) 0;
+            text-align: center;
+        }
+
+        .services-hero h1 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .services-hero p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: var(--space-md) 0;
+            background: rgba(10, 36, 99, 0.05);
+        }
+
+        .breadcrumb ul {
+            display: flex;
+            list-style: none;
+            gap: var(--space-xs);
+        }
+
+        .breadcrumb ul li {
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb ul li:after {
+            content: '/';
+            margin-left: var(--space-xs);
+            color: var(--gray);
+        }
+
+        .breadcrumb ul li:last-child:after {
+            content: '';
+        }
+
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Services Navigation */
+        .services-nav {
+            background: var(--primary);
+            padding: var(--space-md) 0;
+            position: sticky;
+            top: 80px;
+            z-index: 90;
+        }
+
+        .services-nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+        }
+
+        .services-nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .services-nav ul li a:hover,
+        .services-nav ul li a.active {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Service Categories */
+        .service-category {
+            padding: var(--space-xl) 0;
+            scroll-margin-top: 160px;
+        }
+
+        .service-category h2 {
+            font-family: var(--font-display);
+            color: var(--primary);
+            margin-bottom: var(--space-lg);
+            text-align: center;
+            position: relative;
+        }
+
+        .service-category h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+
+        .service-content {
+            padding: var(--space-md);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-content h3 {
+            color: var(--primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .service-content p {
+            margin-bottom: var(--space-md);
+            color: var(--gray);
+            flex: 1;
+        }
+
+        .service-features {
+            margin-bottom: var(--space-md);
+        }
+
+        .service-features h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .service-features ul {
+            list-style: none;
+        }
+
+        .service-features ul li {
+            position: relative;
+            padding-left: var(--space-md);
+            margin-bottom: var(--space-xs);
+        }
+
+        .service-features ul li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .service-cta {
+            margin-top: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-block {
+            display: block;
+            text-align: center;
+            padding: var(--space-sm);
+        }
+
+        /* CTA Section */
+        .services-cta {
+            background: linear-gradient(to right, var(--primary), var(--primary-light));
+            color: white;
+            padding: var(--space-xl) 0;
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-container h2 {
+            font-family: var(--font-display);
+            margin-bottom: var(--space-md);
+        }
+
+        .cta-container p {
+            margin-bottom: var(--space-lg);
+            opacity: 0.9;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: var(--space-xl) 0;
+            background: var(--light);
+        }
+
+        .faq-container h2 {
+            text-align: center;
+            font-family: var(--font-display);
+            color: var(--primary);
+            margin-bottom: var(--space-lg);
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: var(--space-sm);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-question {
+            background: white;
+            padding: var(--space-md);
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question:after {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            background: white;
+            padding: 0 var(--space-md);
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 var(--space-md) var(--space-md);
+            max-height: 500px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: var(--space-xl) 0 var(--space-md);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+
+        .footer-col h3 {
+            font-family: var(--font-display);
+            margin-bottom: var(--space-md);
+            position: relative;
+            padding-bottom: var(--space-xs);
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .footer-col p {
+            margin-bottom: var(--space-md);
+            opacity: 0.8;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: var(--space-sm);
+        }
+
+        .footer-links ul li a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: var(--space-md);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: var(--space-md);
+            }
+            nav ul {
+                margin-top: var(--space-md);
+            }
+            .services-hero h1 {
+                font-size: 2.5rem;
+            }
+            .services-nav ul {
+                gap: var(--space-sm);
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .services-hero {
+                padding: var(--space-lg) 0;
+            }
+            .services-nav ul {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: var(--space-xs);
+                -webkit-overflow-scrolling: touch;
+            }
+            .services-nav ul li {
+                flex-shrink: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                                <img src="logomain.png" width="100px">
+
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="services-hero">
+        <div class="container">
+            <h1>Comprehensive Financial Solutions</h1>
+            <p>From tax planning to business advisory, we provide end-to-end financial services tailored to your unique needs.</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Services Navigation -->
+    <section class="services-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#tax" class="active">Tax Services</a></li>
+                <li><a href="#accounting">Accounting</a></li>
+                <li><a href="#gst">GST Solutions</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+                <li><a href="#advisory">Business Advisory</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Tax Services -->
+    <section class="service-category" id="tax">
+        <div class="container">
+            <h2>Taxation Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tax Planning">
+                    </div>
+                    <div class="service-content">
+                        <h3>Strategic Tax Planning</h3>
+                        <p>Proactive tax strategies to minimize liabilities while ensuring full compliance with regulations.</p>
+                        <div class="service-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Year-round tax planning</li>
+                                <li>Tax-efficient investment strategies</li>
+                                <li>Deduction maximization</li>
+                                <li>Multi-year tax projections</li>
+                            </ul>
+                        </div>
+                        <div class="service-cta">
+                            <a href="#" class="btn btn-block">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tax Filing">
+                    </div>
+                    <div class="service-content">
+                        <h3>Tax Return Preparation</h3>
+                        <p>Comprehensive tax return services for individuals and businesses of all sizes.</p>
+                        <div class="service-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Individual & corporate tax returns</li>
+                                <li>Tax audit support</li>
+                                <li>E-filing services</li>
+                                <li>Tax notice resolution</li>
+                            </ul>
+                        </div>
+                        <div class="service-cta">
+                            <a href="#" class="btn btn-block">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="International Tax">
+                    </div>
+                    <div class="service-content">
+                        <h3>International Taxation</h3>
+                        <p>Expert guidance for cross-border transactions, expatriates, and foreign investments.</p>
+                        <div class="service-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>DTAA advisory</li>
+                                <li>Transfer pricing</li>
+                                <li>NRI taxation</li>
+                                <li>Foreign asset reporting</li>
+                            </ul>
+                        </div>
+                        <div class="service-cta">
+                            <a href="#" class="btn btn-block">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accounting Services -->
+    <section class="service-category" id="accounting">
+        <div class="container">
+            <h2>Accounting & Bookkeeping</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bookkeeping">
+                    </div>
+                    <div class="service-content">
+                        <h3>Full-Cycle Bookkeeping</h3>
+                        <p>Comprehensive bookkeeping services to maintain accurate financial records.</p>
+                        <div class="service-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Daily transaction recording</li>
+                                <li>Bank reconciliations</li>
+                                <li>Accounts payable/receivable</li>
+                                <li>Monthly financial packages</li>
+                            </ul>
+                        </div>
+                        <div class="service-cta">
+                            <a href="#" class="btn btn-block">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Financial Reporting">
+                    </div>
+                    <div class="service-content">
+                        <h3>Financial Reporting</h3>
+                        <p>Preparation of accurate financial statements for better decision making.</p>
+                        <div class="service-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Balance sheets</li>
+                                <li>Income statements</li>
+                                <li>Cash flow statements</li>
+                                <li>Management reports</li>
+                            </ul>
+                        </div>
+                        <div class="service-cta">
+                            <a href="#" class="btn btn-block">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cloud Accounting">
+                    </div>
+                    <div class="service-content">
+                        <h3>Cloud Accounting Solutions</h3>
+                        <p>Modern accounting systems for real-time financial visibility.</p>
+                        <div class="service-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>QuickBooks Online setup</li>
+                                <li>Tally ERP implementation</li>
+                                <li>Automated workflows</li>
+                                <li>Integration with banking</li>
+                            </ul>
+                        </div>
+                        <div class="service-cta">
+                            <a href="#" class="btn btn-block">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GST Services -->
+    <section class="service-category" id="gst">
+        <div class="container">
+            <h2>GST Solutions</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="GST Registration">
+                    </div>
+                    <div class="service-content">
+                        <h3>GST Registration & Migration</h3>
+                        <p>End-to-end assistance with new GST registrations and migration from existing tax regimes.</p>
+                        <div class="service-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>New GSTIN application</li>
+                                <li>Composition scheme registration</li>
+                                <li>Multiple state registrations</li>
+                                <li>GST migration for existing businesses</li>
+                            </ul>
+                        </div>
+                        <div class="service-cta">
+                            <a href="#" class="btn btn-block">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="GST Filing">
+                    </div>
+                    <div class="service-content">
+                        <h3>GST Return Filing</h3>
+                        <p>Timely and accurate filing of all GST returns to ensure compliance.</p>
+                        <div class="service-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>GSTR-1, GSTR-3B filing</li>
+                                <li>Annual return (GSTR-9)</li>
+                                <li>Reconciliation of GST data</li>
+                                <li>Input tax credit optimization</li>
+                            </ul>
+                        </div>
+                        <div class="service-cta">
+                            <a href="#" class="btn btn-block">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="GST Audit">
+                    </div>
+                    <div class="service-content">
+                        <h3>GST Audit & Compliance</h3>
+                        <p>Comprehensive GST audit services to ensure adherence to regulations.</p>
+                        <div class="service-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>GST audit (GSTR-9C)</li>
+                                <li>Compliance health checks</li>
+                                <li>Notice response assistance</li>
+                                <li>GST litigation support</li>
+                            </ul>
+                        </div>
+                        <div class="service-cta">
+                            <a href="#" class="btn btn-block">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance Services -->
+    <section class="service-category" id="compliance">
+        <div class="container">
+            <h2>Regulatory Compliance</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Company Compliance">
+                    </div>
+                    <div class="service-content">
+                        <h3>Company Law Compliance</h3>
+                        <p>End-to-end compliance management for companies under the Companies Act.</p>
+                        <div class="service-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Annual return filing (MCA)</li>
+                                <li>Board meeting compliance</li>
+                                <li>Statutory registers maintenance</li>
+                                <li>Director KYC compliance</li>
+                            </ul>
+                        </div>
+                        <div class="service-cta">
+                            <a href="#" class="btn btn-block">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="TDS Compliance">
+                    </div>
+                    <div class="service-content">
+                        <h3>TDS/TCS Compliance</h3>
+                        <p>Comprehensive TDS management to ensure proper tax deduction and filing.</p>
+                        <div class="service-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>TDS return filing (24Q, 26Q, 27Q)</li>
+                                <li>TCS return preparation</li>
+                                <li>Challan reconciliation</li>
+                                <li>Quarterly e-TDS compliance</li>
+                            </ul>
+                        </div>
+                        <div class="service-cta">
+                            <a href="#" class="btn btn-block">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Labour Compliance">
+                    </div>
+                    <div class="service-content">
+                        <h3>Labour Law Compliance</h3>
+                        <p>End-to-end compliance with various labour regulations and statutes.</p>
+                        <div class="service-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>PF/ESI registration & filing</li>
+                                <li>Professional tax compliance</li>
+                                <li>Minimum wages compliance</li>
+                                <li>Contract labour management</li>
+                            </ul>
+                        </div>
+                        <div class="service-cta">
+                            <a href="#" class="btn btn-block">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advisory Services -->
+    <section class="service-category" id="advisory">
+        <div class="container">
+            <h2>Business Advisory</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Financial Advisory">
+                    </div>
+                    <div class="service-content">
+                        <h3>Financial Advisory</h3>
+                        <p>Strategic financial guidance to optimize performance and growth.</p>
+                        <div class="service-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Business valuation</li>
+                                <li>Financial modeling</li>
+                                <li>Cost optimization</li>
+                                <li>Profitability analysis</li>
+                            </ul>
+                        </div>
+                        <div class="service-cta">
+                            <a href="#" class="btn btn-block">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Business Setup">
+                    </div>
+                    <div class="service-content">
+                        <h3>Business Formation</h3>
+                        <p>Guidance on choosing and establishing the optimal business structure.</p>
+                        <div class="service-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Company registration (Pvt Ltd, LLP)</li>
+                                <li>Partnership formation</li>
+                                <li>Startup registration</li>
+                                <li>Business licensing</li>
+                            </ul>
+                        </div>
+                        <div class="service-cta">
+                            <a href="#" class="btn btn-block">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Risk Advisory">
+                    </div>
+                    <div class="service-content">
+                        <h3>Risk Advisory</h3>
+                        <p>Identification and mitigation of financial and operational risks.</p>
+                        <div class="service-features">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Internal controls assessment</li>
+                                <li>Fraud risk management</li>
+                                <li>Process optimization</li>
+                                <li>Compliance risk analysis</li>
+                            </ul>
+                        </div>
+                        <div class="service-cta">
+                            <a href="#" class="btn btn-block">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container faq-container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What makes CAPRO different from other CA firms?</div>
+                    <div class="faq-answer">
+                        <p>CAPRO combines 30+ years of traditional accounting expertise with cutting-edge technology solutions. Our client-centric approach means we assign a dedicated account manager to each client, ensuring personalized service and deep understanding of your business needs.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do you ensure the security of my financial data?</div>
+                    <div class="faq-answer">
+                        <p>We use bank-grade encryption for all data transmission and storage. Our systems are ISO 27001 certified, and we implement strict access controls. Regular security audits and employee training ensure your data remains completely confidential.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What is your typical response time for client queries?</div>
+                    <div class="faq-answer">
+                        <p>We guarantee a response within 4 business hours for all urgent matters. Most routine queries are addressed within 24 hours. Our client portal also provides 24/7 access to your financial documents and status updates.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do you offer services for startups and small businesses?</div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We have specialized packages for startups and SMEs that include company registration, accounting setup, tax planning, and compliance management at affordable rates. We understand the unique challenges faced by growing businesses.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How are your fees structured?</div>
+                    <div class="faq-answer">
+                        <p>We offer transparent pricing with three options: fixed-fee packages for standard services, hourly rates for specialized work, and retainer models for ongoing comprehensive support. During our initial consultation, we'll recommend the most cost-effective structure for your needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="services-cta">
+        <div class="container cta-container">
+            <h2>Ready to Optimize Your Financial Operations?</h2>
+            <p>Schedule a free 30-minute consultation with our senior advisors to discuss your specific requirements.</p>
+            <a href="contact.html" class="btn">Book Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>CAPRO.CO.IN</h3>
+                    <p>Your trusted partner for taxation, accounting, and financial advisory services since 1992.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="team.html">Our Team</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <div class="footer-links">
+                        <ul>
+                            <li><a href="#tax">Tax Planning</a></li>
+                            <li><a href="#accounting">Accounting</a></li>
+                            <li><a href="#gst">GST Services</a></li>
+                            <li><a href="#compliance">Compliance</a></li>
+                            <li><a href="#advisory">Business Advisory</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p>FF-05, Pearl Omaxe Tower<br>
+                    Netaji Subhash Place, Delhi - 110034</p>
+                    <p>Phone: +91 9811233659<br>
+                    Email: info@capro.co.in</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 CAPRO.CO.IN. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+                
+                // Close other open items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Smooth scrolling for service navigation
+        document.querySelectorAll('.services-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('.services-nav a').forEach(navLink => {
+                    navLink.classList.remove('active');
+                });
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Scroll to target section
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 120,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Update active nav link on scroll
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            
+            document.querySelectorAll('.service-category').forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                    const id = section.getAttribute('id');
+                    document.querySelectorAll('.services-nav a').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

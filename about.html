@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About CAPRO | Your Trusted Taxation Partner Since 1992</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Color System */
+            --primary: #0A2463;
+            --primary-light: #1A3B8B;
+            --secondary: #3E92CC;
+            --accent: #FFD166;
+            --dark: #1E1B18;
+            --light: #F7F7FF;
+            --gray: #7D8CA5;
+            
+            /* Typography */
+            --font-main: 'Montserrat', sans-serif;
+            --font-display: 'Playfair Display', serif;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 3rem;
+            --space-xl: 4rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: var(--light);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: var(--space-md);
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .about-hero {
+            background: linear-gradient(rgba(10, 36, 99, 0.9), rgba(10, 36, 99, 0.9)), 
+                        url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: var(--space-xl) 0;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .about-hero p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: var(--space-md) 0;
+            background: rgba(10, 36, 99, 0.05);
+        }
+
+        .breadcrumb ul {
+            display: flex;
+            list-style: none;
+            gap: var(--space-xs);
+        }
+
+        .breadcrumb ul li {
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb ul li:after {
+            content: '/';
+            margin-left: var(--space-xs);
+            color: var(--gray);
+        }
+
+        .breadcrumb ul li:last-child:after {
+            content: '';
+        }
+
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* About Intro */
+        .about-intro {
+            padding: var(--space-xl) 0;
+        }
+
+        .intro-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+        }
+
+        .intro-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .intro-image img {
+            width: 100%;
+            display: block;
+        }
+
+        .intro-content h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            margin-bottom: var(--space-md);
+            color: var(--primary);
+        }
+
+        .intro-content p {
+            margin-bottom: var(--space-md);
+            color: var(--gray);
+        }
+
+        .signature {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-top: var(--space-md);
+        }
+
+        /* Our Story */
+        .our-story {
+            background: var(--primary);
+            color: white;
+            padding: var(--space-xl) 0;
+        }
+
+        .story-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .story-container h2 {
+            font-family: var(--font-display);
+            margin-bottom: var(--space-lg);
+        }
+
+        .timeline {
+            position: relative;
+            padding: var(--space-xl) 0;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: var(--accent);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--space-xl);
+            width: 50%;
+            padding: var(--space-md);
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+            padding-right: var(--space-xl);
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+            padding-left: var(--space-xl);
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: var(--space-xs);
+        }
+
+        .timeline-content h3 {
+            margin-bottom: var(--space-xs);
+        }
+
+        .timeline-content p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Our Values */
+        .our-values {
+            padding: var(--space-xl) 0;
+            background: var(--light);
+        }
+
+        .values-container h2 {
+            text-align: center;
+            font-family: var(--font-display);
+            margin-bottom: var(--space-xl);
+            color: var(--primary);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .value-card {
+            background: white;
+            padding: var(--space-lg);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: var(--space-md);
+        }
+
+        .value-card h3 {
+            margin-bottom: var(--space-sm);
+            color: var(--primary);
+        }
+
+        /* Team Section */
+        .our-team {
+            padding: var(--space-xl) 0;
+        }
+
+        .team-container h2 {
+            text-align: center;
+            font-family: var(--font-display);
+            margin-bottom: var(--space-xl);
+            color: var(--primary);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .member-image {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .team-member:hover .member-image img {
+            transform: scale(1.05);
+        }
+
+        .member-info {
+            padding: var(--space-md);
+        }
+
+        .member-info h3 {
+            margin-bottom: var(--space-xs);
+            color: var(--primary);
+        }
+
+        .member-info p {
+            color: var(--secondary);
+            font-weight: 500;
+            margin-bottom: var(--space-md);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-sm);
+        }
+
+        .social-links a {
+            color: var(--gray);
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        /* CTA Section */
+        .about-cta {
+            background: linear-gradient(to right, var(--primary), var(--primary-light));
+            color: white;
+            padding: var(--space-xl) 0;
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-container h2 {
+            font-family: var(--font-display);
+            margin-bottom: var(--space-md);
+        }
+
+        .cta-container p {
+            margin-bottom: var(--space-lg);
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: var(--space-xl) 0 var(--space-md);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+
+        .footer-col h3 {
+            font-family: var(--font-display);
+            margin-bottom: var(--space-md);
+            position: relative;
+            padding-bottom: var(--space-xs);
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .footer-col p {
+            margin-bottom: var(--space-md);
+            opacity: 0.8;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: var(--space-sm);
+        }
+
+        .footer-links ul li a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: var(--space-md);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .intro-container {
+                grid-template-columns: 1fr;
+            }
+            .intro-image {
+                max-width: 600px;
+                margin: 0 auto var(--space-md);
+            }
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                width: 100%;
+                left: 0;
+                text-align: left;
+                padding-left: var(--space-xl);
+                padding-right: 0;
+            }
+            .timeline:before {
+                left: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: var(--space-md);
+            }
+            nav ul {
+                margin-top: var(--space-md);
+            }
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            .team-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .about-hero {
+                padding: var(--space-lg) 0;
+            }
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="logomain.png" width="100px">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>Our Story & Values</h1>
+            <p>For over three decades, CAPRO has been delivering exceptional financial solutions with integrity, expertise, and a client-first approach.</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- About Intro -->
+    <section class="about-intro">
+        <div class="container intro-container">
+            <div class="intro-image">
+                <img src="piyush.png" alt="CAPRO Team Meeting">
+            </div>
+            <div class="intro-content">
+                <h2>Who We Are</h2>
+                <p>Founded in 1992, CAPRO has grown from a small accounting practice to one of Delhi's most trusted financial advisory firms. Our team of Chartered Accountants, tax specialists, and financial advisors bring together decades of experience across industries.</p>
+                <p>We believe accounting isn't just about numbers—it's about understanding your unique business challenges and providing strategic solutions that drive growth. Our client relationships often span generations, a testament to our commitment to long-term success.</p>
+                <p>At CAPRO, we combine traditional financial expertise with cutting-edge technology to deliver comprehensive solutions tailored to your specific needs.</p>
+                <div class="signature">Piyush Singla</div>
+                <p>Founder & Managing Partner</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="our-story">
+        <div class="container story-container">
+            <h2>Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1992</div>
+                    <div class="timeline-content">
+                        <h3>Humble Beginnings</h3>
+                        <p>Founded as a small accounting practice in Pitampura with just 3 team members</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2001</div>
+                    <div class="timeline-content">
+                        <h3>First Major Expansion</h3>
+                        <p>Opened our corporate office in Netaji Subhash Place and expanded services to include tax advisory</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2010</div>
+                    <div class="timeline-content">
+                        <h3>Technology Integration</h3>
+                        <p>Pioneered digital accounting solutions in North India, serving 100+ clients</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2017</div>
+                    <div class="timeline-content">
+                        <h3>GST Implementation</h3>
+                        <p>Became a leading GST consultancy firm, helping 500+ businesses transition smoothly</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content">
+                        <h3>Present Day</h3>
+                        <p>30+ professionals serving 1000+ clients with comprehensive financial solutions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="our-values">
+        <div class="container values-container">
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Integrity</h3>
+                    <p>We maintain the highest ethical standards in all our dealings, ensuring complete transparency with our clients.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>Continuously evolving our methods to incorporate the latest technologies and financial strategies.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Excellence</h3>
+                    <p>Committed to delivering exceptional service quality and precision in every engagement.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Client-Centric</h3>
+                    <p>Your success is our success. We tailor solutions to your unique needs and goals.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Collaboration</h3>
+                    <p>We work as an extension of your team, fostering open communication and partnership.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Growth Focus</h3>
+                    <p>Our advice always looks beyond compliance to drive your business forward.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="our-team">
+        <div class="container team-container">
+            <h2>Meet Our Leadership</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Piyush Singla">
+                    </div>
+                    <div class="member-info">
+                        <h3>Piyush Singla</h3>
+                        <p>Founder & CEO</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Neha Sharma">
+                    </div>
+                    <div class="member-info">
+                        <h3>Neha Sharma</h3>
+                        <p>Taxation Director</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1562788869-4ed32648eb72?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Rahul Kapoor">
+                    </div>
+                    <div class="member-info">
+                        <h3>Rahul Kapoor</h3>
+                        <p>Audit Partner</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Priya Malhotra">
+                    </div>
+                    <div class="member-info">
+                        <h3>Priya Malhotra</h3>
+                        <p>Client Relations</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="about-cta">
+        <div class="container cta-container">
+            <h2>Ready to Experience the CAPRO Difference?</h2>
+            <p>Our team of experts is ready to provide personalized financial solutions for your business.</p>
+            <a href="contact.html" class="btn">Schedule Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>CAPRO.CO.IN</h3>
+                    <p>Your trusted partner for taxation, accounting, and financial advisory services since 1992.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="team.html">Our Team</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <div class="footer-links">
+                        <ul>
+                            <li><a href="#">Tax Planning</a></li>
+                            <li><a href="#">Accounting</a></li>
+                            <li><a href="#">GST Services</a></li>
+                            <li><a href="#">Audit & Assurance</a></li>
+                            <li><a href="#">Business Advisory</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p>FF-05, Pearl Omaxe Tower<br>
+                    Netaji Subhash Place, Delhi - 110034</p>
+                    <p>Phone: +91 9811233659<br>
+                    Email: info@capro.co.in</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 CAPRO.CO.IN. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
