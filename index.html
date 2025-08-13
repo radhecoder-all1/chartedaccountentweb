@@ -3,1511 +3,1193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CA Piyush Singla | Chartered Accountant & Financial Consultant</title>
+    <title>CAPRO | Elite Taxation & Financial Advisory</title>
+    <!-- Premium Assets -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide-core.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* ===== Global Styles ===== */
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1e40af;
-            --primary-light: #3b82f6;
-            --accent: #f59e0b;
-            --accent-dark: #d97706;
-            --dark: #1e293b;
-            --dark-gray: #334155;
-            --medium-gray: #64748b;
-            --light-gray: #e2e8f0;
-            --light: #f8fafc;
-            --white: #ffffff;
-            --success: #10b981;
-            --error: #ef4444;
+            /* Color System */
+            --primary: #0A1A3A;
+            --primary-light: #1A2B4A;
+            --secondary: #3E86F4;
+            --accent: #FFC850;
+            --accent-dark: #E6B23A;
+            --dark: #121212;
+            --light: #F8F9FF;
+            --gray: #7D8CA5;
+            
+            /* Typography */
+            --font-main: 'Montserrat', sans-serif;
+            --font-display: 'Playfair Display', serif;
+            
+            /* Spacing System */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 3rem;
+            --space-xl: 4rem;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(10, 26, 58, 0.08);
+            --shadow-md: 0 4px 20px rgba(10, 26, 58, 0.12);
+            --shadow-lg: 0 8px 40px rgba(10, 26, 58, 0.16);
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease;
+            --transition-medium: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
+        /* Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', system-ui, -apple-system, sans-serif;
         }
-        
+
         html {
             scroll-behavior: smooth;
         }
-        
+
         body {
-            background-color: var(--light);
+            font-family: var(--font-main);
             color: var(--dark);
+            background-color: var(--light);
             line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
-        
-        .container {
-            width: 90%;
-            max-width: 1320px;
-            margin: 0 auto;
+
+        ::selection {
+            background: var(--accent);
+            color: var(--primary);
         }
-        
-        section {
-            padding: 6rem 0;
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
         }
-        
-        .section-title {
-            font-size: 2.75rem;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            position: relative;
-            color: var(--dark);
+        ::-webkit-scrollbar-track {
+            background: var(--light);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
             font-weight: 700;
             line-height: 1.2;
+            color: var(--primary);
         }
-        
-        .section-subtitle {
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3.5rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
+        h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+
+        .text-lead {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--gray);
+        }
+
+        /* Layout Components */
+        .container {
+            width: 92%;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: var(--space-xl) 0;
+            position: relative;
+        }
+
+        .section-title {
             text-align: center;
-            color: var(--medium-gray);
-            max-width: 700px;
-            margin: 0 auto 4rem;
-            font-size: 1.1rem;
-            line-height: 1.7;
+            margin-bottom: var(--space-lg);
+            position: relative;
         }
-        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* Buttons */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            background: var(--primary);
-            color: var(--white);
-            padding: 0.85rem 2rem;
+            padding: 0.875rem 2rem;
             border-radius: 50px;
-            text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid var(--primary);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.875rem;
+            transition: all var(--transition-medium);
+            border: none;
             cursor: pointer;
-            font-size: 1rem;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+            gap: 8px;
         }
-        
-        .btn:hover {
-            background: var(--primary-dark);
-            border-color: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            box-shadow: none;
-        }
-        
-        .btn-outline:hover {
-            background: var(--primary);
-            color: var(--white);
-        }
-        
-        .btn-accent {
+        .btn-primary {
             background: var(--accent);
-            border-color: var(--accent);
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
-        }
-        
-        .btn-accent:hover {
-            background: var(--accent-dark);
-            border-color: var(--accent-dark);
-            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
-        }
-        
-        .text-primary {
             color: var(--primary);
+            box-shadow: var(--shadow-sm);
         }
-        
-        .text-accent {
-            color: var(--accent);
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
         }
-        
-        /* ===== Header ===== */
-        header {
+        .btn-secondary {
+            background: var(--primary);
+            color: white;
+            box-shadow: var(--shadow-sm);
+        }
+        .btn-secondary:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        .btn-arrow:after {
+            content: '→';
+            transition: transform var(--transition-fast);
+        }
+        .btn:hover .btn-arrow:after {
+            transform: translateX(4px);
+        }
+
+        /* Preloader */
+        #preloader {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
+            height: 100%;
+            background: var(--primary);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            border-top-color: var(--accent);
+            animation: spin 1s linear infinite;
+            margin-bottom: var(--space-sm);
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .preloader-text {
+            color: white;
+            font-size: 0.875rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Header - Glass Morphism */
+        header {
+            position: fixed;
+            width: 100%;
+            padding: var(--space-sm) 0;
             z-index: 1000;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            transition: all var(--transition-medium);
         }
-        
         header.scrolled {
-            padding: 0.8rem 0;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            background: rgba(10, 26, 58, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: var(--shadow-md);
+            padding: 0.75rem 0;
         }
-        
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
             text-decoration: none;
         }
-        
-        .logo-img {
-            width: 48px;
-            height: 48px;
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            margin-right: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--primary);
-            color: white;
-            border-radius: 12px;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-        
-        .logo-text h2 {
-            font-size: 1.5rem;
+            background: var(--accent);
+            border-radius: 10px;
             color: var(--primary);
+            font-size: 1.25rem;
             font-weight: 700;
-            line-height: 1.2;
+            font-family: var(--font-display);
         }
-        
-        .logo-text p {
-            font-size: 0.75rem;
-            color: var(--medium-gray);
+        .logo-text {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
             letter-spacing: 0.5px;
-            font-weight: 500;
         }
-        
+        .logo-text span {
+            color: var(--accent);
+        }
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2.25rem;
+            gap: var(--space-md);
         }
-        
         nav ul li a {
-            color: var(--dark);
+            color: white;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            position: relative;
-            font-size: 1.05rem;
-        }
-        
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: var(--primary);
-            transition: width 0.3s ease;
-            border-radius: 3px;
-        }
-        
-        nav ul li a:hover::after,
-        nav ul li a.active::after {
-            width: 100%;
-        }
-        
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: var(--dark);
-            z-index: 1001;
-        }
-        
-        /* ===== Hero Slider ===== */
-        .hero {
-            height: 100vh;
-            min-height: 800px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .swiper {
-            width: 100%;
-            height: 100%;
-        }
-        
-        .swiper-slide {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        
-        .slide-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            transform: scale(1.1);
-            transition: transform 10s linear;
-        }
-        
-        .swiper-slide-active .slide-bg {
-            transform: scale(1);
-        }
-        
-        .slide-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.85) 0%, rgba(30, 41, 59, 0.6) 100%);
-            z-index: -1;
-        }
-        
-        .slide-content {
-            text-align: center;
-            color: white;
-            padding: 0 10%;
-            z-index: 1;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .slide-content h1 {
-            font-size: 3.75rem;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            animation: fadeInUp 0.8s ease;
-        }
-        
-        .slide-content p {
-            font-size: 1.25rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-            animation: fadeInUp 0.8s ease 0.2s forwards;
-            opacity: 0;
-        }
-        
-        .hero-btns {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            animation: fadeInUp 0.8s ease 0.4s forwards;
-            opacity: 0;
-        }
-        
-        .swiper-pagination-bullet {
-            background: white;
-            opacity: 0.7;
-            width: 12px;
-            height: 12px;
-            transition: all 0.3s ease;
-        }
-        
-        .swiper-pagination-bullet-active {
-            background: var(--accent);
-            opacity: 1;
-            transform: scale(1.2);
-        }
-        
-        /* ===== About Section ===== */
-        .about {
-            background: var(--white);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .about::before {
-            content: '';
-            position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 300px;
-            height: 300px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23e2e8f0"><circle cx="25" cy="25" r="5"/><circle cx="75" cy="25" r="5"/><circle cx="25" cy="75" r="5"/><circle cx="75" cy="75" r="5"/></svg>');
-            opacity: 0.5;
-            z-index: 0;
-        }
-        
-        .about-container {
-            display: flex;
-            align-items: center;
-            gap: 4rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .about-img {
-            flex: 1;
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-        }
-        
-        .about-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-        
-        .about-img:hover img {
-            transform: scale(1.05);
-        }
-        
-        .about-badge {
-            position: absolute;
-            bottom: -30px;
-            right: -30px;
-            background: var(--primary);
-            color: white;
-            padding: 1.75rem;
-            border-radius: 15px;
-            width: 220px;
-            text-align: center;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            animation: pulse 2s infinite;
-        }
-        
-        .about-badge h3 {
-            font-size: 2.75rem;
-            margin-bottom: 0.25rem;
-            font-weight: 700;
-        }
-        
-        .about-badge p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-        
-        .about-content {
-            flex: 1;
-        }
-        
-        .section-tag {
-            display: inline-block;
-            background: rgba(37, 99, 235, 0.1);
-            color: var(--primary);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.5px;
-        }
-        
-        .about-content h3 {
-            font-size: 2.25rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
-            font-weight: 700;
-            line-height: 1.3;
-        }
-        
-        .about-content p {
-            margin-bottom: 1.5rem;
-            color: var(--medium-gray);
-            line-height: 1.8;
-        }
-        
-        .about-list {
-            margin-bottom: 2.5rem;
-        }
-        
-        .about-list li {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-            color: var(--dark-gray);
             font-weight: 500;
-        }
-        
-        .about-list i {
-            color: var(--accent);
-            font-size: 1.1rem;
-        }
-        
-        .about-btns {
-            display: flex;
-            gap: 1.5rem;
-        }
-        
-        /* ===== Services Section ===== */
-        .services {
-            background: var(--light);
+            font-size: 0.875rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
             position: relative;
+            padding: 0.5rem 0;
         }
-        
-        .services::after {
+        nav ul li a:after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width var(--transition-medium);
+        }
+        nav ul li a:hover:after,
+        nav ul li a.active:after {
             width: 100%;
-            height: 150px;
-            background: var(--white);
-            clip-path: polygon(0 70%, 100% 0, 100% 100%, 0% 100%);
         }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .service-card {
-            background: var(--white);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            border: 1px solid rgba(0, 0, 0, 0.03);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-color: rgba(37, 99, 235, 0.1);
-        }
-        
-        .service-icon {
-            height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: white;
-            font-size: 3.5rem;
-        }
-        
-        .service-content {
-            padding: 2rem;
-        }
-        
-        .service-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-            font-weight: 700;
-        }
-        
-        .service-content p {
-            color: var(--medium-gray);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-        
-        .service-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--light-gray);
-        }
-        
-        .service-price {
-            font-weight: 700;
-            color: var(--primary);
-            font-size: 1.25rem;
-        }
-        
-        /* ===== Gallery Section ===== */
-        .gallery {
-            background: var(--white);
-            padding-bottom: 8rem;
-        }
-        
-        .gallery-filter {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-        
-        .filter-btn {
-            padding: 0.6rem 1.5rem;
-            background: var(--light);
-            border: none;
+        .nav-cta {
+            background: var(--accent);
+            color: var(--primary) !important;
+            padding: 0.75rem 1.75rem;
             border-radius: 50px;
             font-weight: 600;
-            color: var(--medium-gray);
-            cursor: pointer;
-            transition: all 0.3s ease;
+            margin-left: var(--space-md);
+            transition: all var(--transition-medium);
         }
-        
-        .filter-btn.active,
-        .filter-btn:hover {
-            background: var(--primary);
+        .nav-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        .nav-cta:after {
+            display: none;
+        }
+        .hamburger {
+            display: none;
             color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
         }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .gallery-item {
+
+        /* Hero Section - Parallax */
+        .hero {
+            height: 100vh;
+            min-height: 800px;
+            display: flex;
+            align-items: center;
             position: relative;
-            border-radius: 12px;
             overflow: hidden;
-            height: 280px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .gallery-overlay {
+        .hero-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
-            display: flex;
-            align-items: flex-end;
-            padding: 1.5rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            background: linear-gradient(rgba(10, 26, 58, 0.85), rgba(10, 26, 58, 0.9)), 
+                        url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: -1;
         }
-        
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-        
-        .gallery-info {
+        .hero-content {
             color: white;
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
+            max-width: 800px;
         }
-        
-        .gallery-item:hover .gallery-info {
-            transform: translateY(0);
+        .hero-subtitle {
+            font-size: 0.875rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: var(--space-sm);
+            display: inline-block;
+            position: relative;
+            padding-left: 60px;
         }
-        
-        .gallery-info h4 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
+        .hero-subtitle:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 50px;
+            height: 1px;
+            background: var(--accent);
         }
-        
-        .gallery-info p {
-            font-size: 0.9rem;
+        .hero-title {
+            margin-bottom: var(--space-md);
+            color: white;
+        }
+        .hero-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: var(--space-lg);
             opacity: 0.9;
         }
-        
-        /* ===== Testimonials Section ===== */
-        .testimonials {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        .hero-cta {
+            display: flex;
+            gap: var(--space-sm);
+        }
+        .scroll-down {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
             color: white;
-            padding: 8rem 0;
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-15px) translateX(-50%); }
+            60% { transform: translateY(-7px) translateX(-50%); }
+        }
+
+        /* Stats Section - Animated Counters */
+        .stats {
+            background: var(--light);
+        }
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-lg);
+        }
+        .stat-card {
+            background: white;
+            padding: var(--space-lg);
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-medium);
             position: relative;
             overflow: hidden;
         }
-        
-        .testimonials::before {
+        .stat-card:before {
             content: '';
             position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent);
+            transition: all var(--transition-medium);
         }
-        
-        .testimonials::after {
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        .stat-card:hover:before {
+            height: 100%;
+            opacity: 0.1;
+        }
+        .stat-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: var(--space-sm);
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: var(--font-display);
+            color: var(--primary);
+            margin-bottom: var(--space-xs);
+        }
+        .stat-text {
+            font-weight: 500;
+            color: var(--gray);
+        }
+
+        /* About Section - Layered Design */
+        .about {
+            background: white;
+        }
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+        }
+        .about-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        .about-image img {
+            width: 100%;
+            display: block;
+            transition: transform var(--transition-slow);
+        }
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+        .about-image:after {
             content: '';
-            position: absolute;
-            bottom: -150px;
-            left: -100px;
-            width: 400px;
-            height: 400px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-        }
-        
-        .section-title.white,
-        .section-subtitle.white {
-            color: white;
-        }
-        
-        .section-subtitle.white {
-            opacity: 0.85;
-        }
-        
-        .testimonial-slider {
-            padding: 0 5%;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2.5rem;
-            border-radius: 15px;
-            margin: 1rem;
-            position: relative;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .testimonial-card::before {
-            content: '\201C';
             position: absolute;
             top: 20px;
             left: 20px;
+            right: -20px;
+            bottom: -20px;
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            z-index: -1;
+        }
+        .about-content h2 {
+            margin-bottom: var(--space-md);
+            position: relative;
+        }
+        .about-content p {
+            margin-bottom: var(--space-md);
+            color: var(--gray);
+        }
+        .signature {
+            display: inline-block;
+            margin-top: var(--space-md);
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 1.5rem;
+            color: var(--primary);
+            position: relative;
+            padding-left: 100px;
+        }
+        .signature:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 80px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        /* Services Section - Premium Cards */
+        .services {
+            background: linear-gradient(to bottom, var(--primary), var(--primary-light));
+            position: relative;
+            overflow: hidden;
+        }
+        .services:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/dark-geometric.png');
+            opacity: 0.05;
+        }
+        .services .section-title {
+            color: white;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+        }
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-medium);
+            position: relative;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        .service-icon {
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--light);
+            font-size: 3.5rem;
+            color: var(--primary);
+            transition: all var(--transition-medium);
+        }
+        .service-card:hover .service-icon {
+            background: var(--accent);
+            color: white;
+        }
+        .service-content {
+            padding: var(--space-lg);
+        }
+        .service-content h3 {
+            margin-bottom: var(--space-sm);
+        }
+        .service-content p {
+            margin-bottom: var(--space-md);
+            color: var(--gray);
+        }
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all var(--transition-medium);
+        }
+        .service-link i {
+            margin-left: 8px;
+            transition: transform var(--transition-fast);
+        }
+        .service-link:hover {
+            color: var(--secondary);
+        }
+        .service-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Testimonials - Splide Carousel */
+        .testimonials {
+            background: var(--light);
+        }
+        .testimonial-slider {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .testimonial-card {
+            background: white;
+            padding: var(--space-xl);
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            margin: 0 var(--space-sm);
+            position: relative;
+        }
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-family: var(--font-display);
             font-size: 5rem;
-            color: rgba(255, 255, 255, 0.1);
-            font-family: serif;
+            color: rgba(10, 26, 58, 0.05);
             line-height: 1;
         }
-        
-        .testimonial-content {
-            margin-bottom: 2rem;
-            color: rgba(255, 255, 255, 0.9);
-            font-style: italic;
-            position: relative;
-            z-index: 1;
-            font-size: 1.1rem;
+        .testimonial-text {
+            font-size: 1.125rem;
             line-height: 1.8;
+            margin-bottom: var(--space-lg);
+            font-style: italic;
+            color: var(--dark);
         }
-        
         .testimonial-author {
             display: flex;
             align-items: center;
-            gap: 1.25rem;
         }
-        
         .author-img {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             overflow: hidden;
-            border: 3px solid rgba(255, 255, 255, 0.2);
+            margin-right: var(--space-sm);
+            border: 3px solid var(--accent);
         }
-        
         .author-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
         .author-info h4 {
-            color: white;
-            margin-bottom: 0.25rem;
-            font-size: 1.2rem;
+            margin-bottom: 4px;
         }
-        
         .author-info p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
+            color: var(--secondary);
+            font-weight: 500;
         }
-        
-        .swiper-button-next,
-        .swiper-button-prev {
-            color: white !important;
-            background: rgba(255, 255, 255, 0.2);
+        .splide__arrow {
+            background: var(--primary);
+            opacity: 1;
             width: 50px;
             height: 50px;
-            border-radius: 50%;
-            backdrop-filter: blur(5px);
-            transition: all 0.3s ease;
         }
-        
-        .swiper-button-next:hover,
-        .swiper-button-prev:hover {
-            background: rgba(255, 255, 255, 0.3);
+        .splide__arrow svg {
+            fill: white;
         }
-        
-        .swiper-button-next::after,
-        .swiper-button-prev::after {
-            font-size: 1.25rem !important;
+        .splide__arrow--prev {
+            left: -60px;
         }
-        
-        /* ===== Contact Section ===== */
+        .splide__arrow--next {
+            right: -60px;
+        }
+        .splide__pagination__page.is-active {
+            background: var(--accent);
+        }
+
+        /* CTA Section - Gradient Background */
+        .cta {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light)), 
+                        url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            text-align: center;
+            color: white;
+        }
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .cta h2 {
+            color: white;
+            margin-bottom: var(--space-md);
+        }
+        .cta p {
+            font-size: 1.125rem;
+            margin-bottom: var(--space-lg);
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        /* Contact Section - Modern Form */
         .contact {
-            background: var(--white);
-            position: relative;
+            background: white;
         }
-        
         .contact-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 4rem;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
         }
-        
-        .contact-info {
+        .contact-info h3 {
+            margin-bottom: var(--space-lg);
+        }
+        .contact-item {
             display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
+            margin-bottom: var(--space-md);
         }
-        
-        .contact-card {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
-        }
-        
         .contact-icon {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: var(--primary);
             color: white;
-            border-radius: 15px;
+            border-radius: 50%;
             display: flex;
-            align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            align-items: center;
+            font-size: 1.25rem;
+            margin-right: var(--space-sm);
             flex-shrink: 0;
-            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
         }
-        
-        .contact-details h3 {
-            color: var(--dark);
-            margin-bottom: 0.75rem;
-            font-size: 1.3rem;
+        .contact-text h4 {
+            margin-bottom: 4px;
         }
-        
-        .contact-details p, 
-        .contact-details a {
-            color: var(--medium-gray);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            line-height: 1.7;
+        .contact-text p {
+            color: var(--gray);
         }
-        
-        .contact-details a:hover {
+        .social-links {
+            display: flex;
+            gap: var(--space-sm);
+            margin-top: var(--space-lg);
+        }
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all var(--transition-medium);
+        }
+        .social-links a:hover {
+            background: var(--accent);
             color: var(--primary);
+            transform: translateY(-5px);
         }
-        
-        .contact-form {
-            background: var(--light);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        .contact-form h3 {
+            margin-bottom: var(--space-lg);
         }
-        
         .form-group {
-            margin-bottom: 1.75rem;
+            margin-bottom: var(--space-md);
         }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.75rem;
-            color: var(--dark);
-            font-weight: 600;
-            font-size: 1.05rem;
-        }
-        
         .form-control {
             width: 100%;
-            padding: 1rem 1.5rem;
-            border: 1px solid var(--light-gray);
-            border-radius: 10px;
+            padding: 0.875rem 1.25rem;
+            border: 1px solid #e0e4f1;
+            border-radius: 8px;
             font-size: 1rem;
-            transition: all 0.3s ease;
-            background: var(--white);
+            transition: all var(--transition-fast);
         }
-        
         .form-control:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(255, 200, 80, 0.2);
             outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
-        
         textarea.form-control {
-            min-height: 180px;
-            resize: vertical;
+            min-height: 150px;
         }
-        
-        .form-submit {
-            width: 100%;
-            padding: 1.1rem;
-            font-size: 1.1rem;
-            margin-top: 1rem;
-        }
-        
-        /* ===== Footer ===== */
+
+        /* Footer - Multi-column */
         footer {
             background: var(--dark);
             color: white;
-            padding: 5rem 0 0;
-            position: relative;
+            padding: var(--space-xl) 0 var(--space-md);
         }
-        
         .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 4rem;
+            gap: var(--space-xl);
+            margin-bottom: var(--space-xl);
         }
-        
-        .footer-col h3 {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
+        .footer-col h4 {
+            margin-bottom: var(--space-lg);
             position: relative;
-            padding-bottom: 15px;
-            font-weight: 700;
+            padding-bottom: 12px;
         }
-        
-        .footer-col h3::after {
+        .footer-col h4:after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 50px;
+            width: 40px;
             height: 3px;
             background: var(--accent);
-            border-radius: 3px;
         }
-        
-        .footer-col p {
-            margin-bottom: 1.5rem;
-            color: #cbd5e1;
+        .footer-about p {
+            margin-bottom: var(--space-md);
+            opacity: 0.8;
             line-height: 1.8;
         }
-        
-        .footer-links li {
-            margin-bottom: 1rem;
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: var(--space-sm);
+        }
+        .footer-logo span {
+            color: var(--accent);
+        }
+        .footer-links ul {
             list-style: none;
         }
-        
-        .footer-links a {
-            color: #cbd5e1;
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+        .footer-links ul li a {
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all var(--transition-fast);
             display: inline-block;
-            position: relative;
-            padding-left: 1.5rem;
         }
-        
-        .footer-links a::before {
-            content: '\f054';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 0.7rem;
-            color: var(--accent);
-            transition: all 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--accent);
+        .footer-links ul li a:hover {
+            color: white;
             transform: translateX(5px);
         }
-        
-        .footer-links a:hover::before {
-            color: white;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            color: white;
-            transition: all 0.3s ease;
-            font-size: 1.1rem;
-        }
-        
-        .social-links a:hover {
-            background: var(--accent);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.2);
-        }
-        
         .newsletter-form {
             display: flex;
-            flex-direction: column;
-            gap: 1rem;
+            margin-top: var(--space-md);
         }
-        
-        .newsletter-form input {
-            padding: 0.9rem 1.25rem;
-            border-radius: 10px;
+        .newsletter-input {
+            flex: 1;
+            padding: 0.75rem 1.25rem;
             border: none;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
+            border-radius: 50px 0 0 50px;
+            font-size: 0.875rem;
         }
-        
-        .newsletter-form input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
+        .newsletter-btn {
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 0 50px 50px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-fast);
         }
-        
-        .newsletter-form .btn {
-            width: 100%;
+        .newsletter-btn:hover {
+            background: white;
         }
-        
-        .footer-bottom {
+        .copyright {
             text-align: center;
-            padding: 2rem 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #94a3b8;
-            font-size: 0.95rem;
+            padding-top: var(--space-md);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.875rem;
         }
-        
-        /* ===== Animations ===== */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.25rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-medium);
+            z-index: 99;
+            box-shadow: var(--shadow-sm);
         }
-        
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(37, 99, 235, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
-            }
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
         }
-        
-        /* ===== Responsive Design ===== */
+        .back-to-top:hover {
+            background: var(--accent);
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Adjustments */
         @media (max-width: 1200px) {
             .container {
-                width: 95%;
-                max-width: 100%;
+                width: 94%;
             }
-            
-            .about-container {
-                gap: 3rem;
+            .splide__arrow--prev {
+                left: -30px;
+            }
+            .splide__arrow--next {
+                right: -30px;
             }
         }
-        
+
         @media (max-width: 992px) {
-            section {
-                padding: 5rem 0;
+            .about-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
             }
-            
-            .about-container {
-                flex-direction: column;
-            }
-            
-            .about-img {
-                margin-bottom: 3rem;
+            .about-image {
                 max-width: 600px;
+                margin: 0 auto;
+            }
+            .about-content {
+                text-align: center;
+            }
+            .about-content h2:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .signature {
                 margin-left: auto;
                 margin-right: auto;
+                padding-left: 0;
             }
-            
-            .about-badge {
-                right: 0;
+            .signature:before {
+                display: none;
             }
-            
-            .slide-content h1 {
-                font-size: 3rem;
+            .contact-info {
+                text-align: center;
             }
-            
-            .section-title {
-                font-size: 2.5rem;
+            .contact-info h3:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .contact-item {
+                justify-content: center;
+            }
+            .social-links {
+                justify-content: center;
+            }
+            .contact-form h3:after {
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
-        
+
         @media (max-width: 768px) {
-            .menu-toggle {
+            .hamburger {
                 display: block;
             }
-            
-            nav ul {
+            nav {
                 position: fixed;
                 top: 0;
                 right: -100%;
                 width: 280px;
                 height: 100vh;
-                background: var(--white);
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: flex-start;
-                padding: 100px 2rem 2rem;
-                box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
-                transition: right 0.4s ease;
+                background: var(--primary);
+                padding: 100px 30px;
+                transition: all var(--transition-medium);
+                z-index: 1000;
             }
-            
-            nav ul.active {
+            nav.active {
                 right: 0;
             }
-            
-            nav ul li {
-                width: 100%;
-            }
-            
-            nav ul li a {
-                display: block;
-                padding: 0.75rem 0;
-                border-bottom: 1px solid var(--light-gray);
-            }
-            
-            nav ul li a::after {
-                display: none;
-            }
-            
-            .section-title {
-                font-size: 2.25rem;
-            }
-            
-            .slide-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .slide-content p {
-                font-size: 1.1rem;
-            }
-            
-            .hero-btns {
+            nav ul {
                 flex-direction: column;
-                gap: 1rem;
+                gap: var(--space-md);
             }
-            
-            .btn {
-                width: 100%;
+            .nav-cta {
+                margin-left: 0;
+                margin-top: var(--space-sm);
             }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
+            .hero {
+                min-height: 700px;
             }
-            
-            .contact-container {
-                grid-template-columns: 1fr;
+            .hero-content {
+                text-align: center;
             }
-            
-            .contact-form {
-                padding: 2rem;
+            .hero-cta {
+                justify-content: center;
+            }
+            .stats-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            .splide__arrow {
+                display: none !important;
             }
         }
-        
+
         @media (max-width: 576px) {
-            section {
-                padding: 4rem 0;
+            .section {
+                padding: var(--space-lg) 0;
             }
-            
-            .section-title {
-                font-size: 2rem;
+            .stats-container {
+                grid-template-columns: 1fr;
             }
-            
-            .slide-content {
-                padding: 0 5%;
+            .testimonial-card {
+                padding: var(--space-lg);
             }
-            
-            .slide-content h1 {
-                font-size: 2rem;
-            }
-            
-            .about-btns {
+            .testimonial-author {
                 flex-direction: column;
+                text-align: center;
             }
-            
-            .about-badge {
-                width: 180px;
-                padding: 1.25rem;
-                right: 0;
-                bottom: -20px;
+            .author-img {
+                margin-right: 0;
+                margin-bottom: var(--space-sm);
             }
-            
-            .about-badge h3 {
-                font-size: 2rem;
-            }
-            
             .footer-container {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                text-align: center;
             }
-            
-            .footer-col {
-                margin-bottom: 2rem;
+            .footer-col h4:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .newsletter-form {
+                flex-direction: column;
+            }
+            .newsletter-input {
+                border-radius: 50px;
+                margin-bottom: var(--space-sm);
+            }
+            .newsletter-btn {
+                border-radius: 50px;
+                padding: 0.75rem;
             }
         }
-        .floating-buttons {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    z-index: 1000;
-}
-
-.floating-btn {
-    width: 60px;
-    height: 60px;
-    background:#1e40af;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-    transition: all 0.4s ease;
-    text-decoration: none;
-    position: relative;
-}
-
-.floating-btn:hover {
-    transform: scale(1.2) rotate(10deg);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-}
-
-.back-to-top {
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.4s ease;
-}
-
-.back-to-top.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Responsive adjustments */
-@media (max-width: 576px) {
-    .floating-buttons {
-        bottom: 20px;
-        right: 20px;
-        gap: 15px;
-    }
-
-    .floating-btn {
-        width: 50px;
-        height: 50px;
-    }
-
-    .floating-btn::after {
-        font-size: 0.8rem;
-        padding: 6px 12px;
-    }
-}
     </style>
 </head>
 <body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+        <div class="preloader-text">CAPRO.CO.IN</div>
+    </div>
+
     <!-- Header -->
-    <header id="header">
+    <header>
         <div class="container header-container">
             <a href="#" class="logo">
-            <img src="logomain.png"width="95px">
+                <img src="logomain.png" width="100px";>
             </a>
             <nav>
-                <ul id="nav-menu">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
+                <ul>
+                    <li><a href="#about" class="active">About</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#testimonials">Clients</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="nav-cta">Consultation</a></li>
                 </ul>
             </nav>
-            
-            <div class="menu-toggle" id="menu-toggle">
+            <div class="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </header>
 
-    <!-- Hero Slider -->
+    <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="swiper hero-slider">
-            <div class="swiper-wrapper">
-                <!-- Slide 1 -->
-                <div class="swiper-slide">
-                    <img src="https://plus.unsplash.com/premium_photo-1661761077411-d50cba031848?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWNjb3VudGluZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Financial Planning" class="slide-bg">
-                    <div class="slide-overlay"></div>
-                    <div class="slide-content">
-                        <h1>Strategic Financial Solutions for Your Business</h1>
-                        <p>With over 12 years of experience in taxation and auditing, we provide comprehensive financial services tailored to your business needs.</p>
-                        <div class="hero-btns">
-                            <a href="#services" class="btn btn-accent">Our Services</a>
-                            <a href="#contact" class="btn btn-outline">Get Consultation</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Slide 2 -->
-                <div class="swiper-slide">
-                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2111&q=80" alt="Tax Services" class="slide-bg">
-                    <div class="slide-overlay"></div>
-                    <div class="slide-content">
-                        <h1>Expert Tax Planning & Compliance</h1>
-                        <p>Maximize your savings and minimize liabilities with our professional tax advisory and filing services.</p>
-                        <div class="hero-btns">
-                            <a href="#contact" class="btn btn-accent">Book Appointment</a>
-                            <a href="#about" class="btn btn-outline">About Us</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Slide 3 -->
-                <div class="swiper-slide">
-                    <img src="https://images.unsplash.com/photo-1574426414661-32be23a9b6c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGJvb2trZWVwaW5nfGVufDB8fDB8fHww" alt="Business Growth" class="slide-bg">
-                    <div class="slide-overlay"></div>
-                    <div class="slide-content">
-                        <h1>Grow Your Business with Confidence</h1>
-                        <p>From startup advisory to corporate compliance, we provide the financial expertise you need to succeed.</p>
-                        <div class="hero-btns">
-                            <a href="#testimonials" class="btn btn-accent">Client Stories</a>
-                            <a href="#contact" class="btn btn-outline">Contact Now</a>
-                        </div>
-                    </div>
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h4 class="hero-subtitle">Premium Financial Solutions</h4>
+                <h1 class="hero-title">Strategic Taxation & Growth Advisory</h1>
+                <p class="hero-text">CAPRO delivers elite accounting services with 30+ years of expertise. Our Chartered Accountants provide strategic solutions that transform financial operations and drive sustainable growth.</p>
+                <div class="hero-cta">
+                    <a href="#" class="btn btn-primary">Get Started</a>
+                    <a href="#" class="btn btn-secondary">Learn More</a>
                 </div>
             </div>
-            
-            <div class="swiper-pagination"></div>
+        </div>
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section stats">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-number" data-count="30">0</div>
+                    <div class="stat-text">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number" data-count="500">0</div>
+                    <div class="stat-text">Happy Clients</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-number" data-count="25">0</div>
+                    <div class="stat-text">Industry Awards</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-number" data-count="100">0</div>
+                    <div class="stat-text">Services Offered</div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about">
+    <section class="section about" id="about">
         <div class="container">
-            <span class="section-tag">About Me</span>
-            <h2 class="section-title">Professional <span class="text-primary">Chartered Accountant</span> in Noida</h2>
-            <p class="section-subtitle">With a commitment to excellence and client satisfaction, I provide personalized financial solutions to help businesses thrive.</p>
-            
             <div class="about-container">
-                <div class="about-img">
-                    <img src="piyush.png" alt="CA Piyush Singla">
-                    <div class="about-badge">
-                        <h3>12+</h3>
-                        <p>Years of Experience</p>
-                    </div>
+                <div class="about-image">
+                    <img src="piyush.png" alt="CAPRO Team Discussion">
                 </div>
-                
                 <div class="about-content">
-                    <h3>Helping Businesses Achieve Financial Success</h3>
-                    <p>I am Piyush Singla, a qualified Chartered Accountant with extensive experience in taxation, auditing, and financial consulting. My practice is built on the principles of integrity, professionalism, and personalized service.</p>
-                    
-                    <p>After completing my CA in 2010 from The Institute of Chartered Accountants of India, I've worked with businesses across various sectors, helping them navigate complex financial landscapes while optimizing their tax positions.</p>
-                    
-                    <ul class="about-list">
-                        <li><i class="fas fa-check"></i> Member of ICAI since 2010</li>
-                        <li><i class="fas fa-check"></i> Specialized in GST Implementation & Compliance</li>
-                        <li><i class="fas fa-check"></i> Expert in Income Tax Planning & Filing</li>
-                        <li><i class="fas fa-check"></i> Corporate Audit & Financial Reporting</li>
-                        <li><i class="fas fa-check"></i> Business Advisory & Startup Consulting</li>
-                    </ul>
-                    
-                    <div class="about-btns">
-                        <a href="#contact" class="btn">Contact Me</a>
-                    </div>
+                    <h2>Our Commitment to Excellence</h2>
+                    <p class="text-lead">At CAPRO, we transcend traditional accounting by combining technical mastery with strategic foresight. Our approach integrates deep financial expertise with cutting-edge technology to deliver transformative results.</p>
+                    <p>We believe in building enduring partnerships through transparency, innovation, and an unwavering commitment to our clients' success. Each engagement is led by senior professionals who become true extensions of your team.</p>
+                    <p>Our methodology combines rigorous analysis with practical business acumen to create customized solutions that address both immediate challenges and long-term objectives.</p>
+                    <div class="signature">Piyush Singla</div>
+                    <p>Founder & Managing Partner</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="services" id="services">
+    <section class="section services" id="services">
         <div class="container">
-            <span class="section-tag">Services</span>
-            <h2 class="section-title">Professional <span class="text-primary">Financial Services</span></h2>
-            <p class="section-subtitle">Comprehensive accounting and taxation solutions tailored to meet your business requirements and ensure regulatory compliance.</p>
-            
+            <h2 class="section-title">Our Premium Services</h2>
             <div class="services-grid">
-                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Strategic Tax Planning</h3>
+                        <p>Comprehensive tax strategies that minimize liabilities while ensuring full compliance with evolving regulations.</p>
+                        <a href="#" class="service-link">Explore Service <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-calculator"></i>
                     </div>
                     <div class="service-content">
-                        <h3>Taxation Services</h3>
-                        <p>Comprehensive tax planning and compliance services including Income Tax, GST, TDS, and International Taxation to optimize your tax position.</p>
-                        <div class="service-meta">
-                            <a href="#contact" class="btn btn-outline">Get Service</a>
-                            <span class="service-price">From ₹5,000</span>
-                        </div>
+                        <h3>Advanced Accounting</h3>
+                        <p>Cloud-based financial management with real-time reporting and AI-driven business insights.</p>
+                        <a href="#" class="service-link">Explore Service <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                
-                <!-- Service 2 -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-search-dollar"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Auditing & Assurance</h3>
-                        <p>Professional audit services including statutory audits, internal audits, tax audits, and other assurance engagements for businesses.</p>
-                        <div class="service-meta">
-                            <a href="#contact" class="btn btn-outline">Get Service</a>
-                            <span class="service-price">From ₹15,000</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Service 3 -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-landmark"></i>
                     </div>
                     <div class="service-content">
-                        <h3>GST Services</h3>
-                        <p>End-to-end GST solutions including registration, return filing, refunds, and advisory services to ensure seamless compliance.</p>
-                        <div class="service-meta">
-                            <a href="#contact" class="btn btn-outline">Get Service</a>
-                            <span class="service-price">From ₹3,000</span>
-                        </div>
+                        <h3>GST Advisory</h3>
+                        <p>End-to-end GST solutions from registration to filing, with strategic optimization of input credits.</p>
+                        <a href="#" class="service-link">Explore Service <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                
-                <!-- Service 4 -->
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-briefcase"></i>
+                        <i class="fas fa-building"></i>
                     </div>
                     <div class="service-content">
-                        <h3>Company Law Services</h3>
-                        <p>Incorporation, compliance, ROC filings, and other corporate legal services to keep your business in good standing.</p>
-                        <div class="service-meta">
-                            <a href="#contact" class="btn btn-outline">Get Service</a>
-                            <span class="service-price">From ₹10,000</span>
-                        </div>
+                        <h3>Corporate Structuring</h3>
+                        <p>Optimal business entity formation and restructuring for tax efficiency and operational flexibility.</p>
+                        <a href="#" class="service-link">Explore Service <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                
-                <!-- Service 5 -->
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-balance-scale"></i>
                     </div>
                     <div class="service-content">
-                        <h3>Financial Planning</h3>
-                        <p>Strategic financial planning, investment advisory, and wealth management services for individuals and businesses.</p>
-                        <div class="service-meta">
-                            <a href="#contact" class="btn btn-outline">Get Service</a>
-                            <span class="service-price">From ₹8,000</span>
-                        </div>
+                        <h3>Regulatory Compliance</h3>
+                        <p>Comprehensive compliance management including ROC filings, RBI regulations, and industry mandates.</p>
+                        <a href="#" class="service-link">Explore Service <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                
-                <!-- Service 6 -->
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-lightbulb"></i>
+                        <i class="fas fa-search-dollar"></i>
                     </div>
                     <div class="service-content">
-                        <h3>Business Advisory</h3>
-                        <p>Expert advice on business setup, expansion, mergers, acquisitions, and other strategic financial decisions.</p>
-                        <div class="service-meta">
-                            <a href="#contact" class="btn btn-outline">Get Service</a>
-                            <span class="service-price">From ₹12,000</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="gallery" id="gallery">
-        <div class="container">
-            <span class="section-tag">Gallery</span>
-            <h2 class="section-title">Our <span class="text-primary">Professional</span> Journey</h2>
-            <p class="section-subtitle">Moments from our professional engagements, client meetings, and industry events.</p>
-            
-            <div class="gallery-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="seminars">Seminars</button>
-                <button class="filter-btn" data-filter="meetings">Client Meetings</button>
-                <button class="filter-btn" data-filter="awards">Awards</button>
-            </div>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item" data-category="seminars">
-                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Tax Seminar">
-                    <div class="gallery-overlay">
-                        <div class="gallery-info">
-                            <h4>GST Seminar 2023</h4>
-                            <p>Speaking at National GST Conference</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="meetings">
-                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2111&q=80" alt="Client Meeting">
-                    <div class="gallery-overlay">
-                        <div class="gallery-info">
-                            <h4>Annual Review Meeting</h4>
-                            <p>With TechSolutions Pvt. Ltd.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="awards">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Award Ceremony">
-                    <div class="gallery-overlay">
-                        <div class="gallery-info">
-                            <h4>Best CA Award 2022</h4>
-                            <p>National Finance Excellence Awards</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="seminars">
-                    <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Workshop">
-                    <div class="gallery-overlay">
-                        <div class="gallery-info">
-                            <h4>Startup Taxation Workshop</h4>
-                            <p>At Indian Startup Conclave</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="meetings">
-                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Consultation">
-                    <div class="gallery-overlay">
-                        <div class="gallery-info">
-                            <h4>Business Consultation</h4>
-                            <p>With Retail Chain Client</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item" data-category="awards">
-                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Recognition">
-                    <div class="gallery-overlay">
-                        <div class="gallery-info">
-                            <h4>Industry Recognition</h4>
-                            <p>Finance Leaders Summit 2023</p>
-                        </div>
+                        <h3>Forensic Accounting</h3>
+                        <p>Specialized financial investigations to detect anomalies, prevent fraud, and support litigation.</p>
+                        <a href="#" class="service-link">Explore Service <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -1515,187 +1197,127 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
+    <section class="section testimonials" id="testimonials">
         <div class="container">
-            <span class="section-tag">Testimonials</span>
-            <h2 class="section-title white">What Our <span class="text-accent">Clients</span> Say</h2>
-            <p class="section-subtitle white">Hear from businesses and individuals who have benefited from our professional services.</p>
-            
-            <div class="testimonial-slider swiper">
-                <div class="swiper-wrapper">
-                    <!-- Testimonial 1 -->
-                    <div class="swiper-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <p>CA Piyush Singla has been handling our company's taxation for the past 5 years. His expertise in GST and tax planning has saved us significant money while ensuring full compliance. What I appreciate most is his proactive approach - he always keeps us informed about upcoming changes that might affect our business.</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-img">
-                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Sharma">
-                                </div>
-                                <div class="author-info">
-                                    <h4>Rahul Sharma</h4>
-                                    <p>Director, TechSolutions Pvt. Ltd.</p>
+            <h2 class="section-title">Trusted by Industry Leaders</h2>
+            <div class="testimonial-slider splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">CAPRO's strategic tax planning saved our manufacturing group ₹1.2 crore in the first year while ensuring full compliance. Their team combines technical mastery with practical business acumen that's rare in the industry.</p>
+                                <div class="testimonial-author">
+                                    <div class="author-img">
+                                        <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Rajiv Malhotra">
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Rajiv Malhotra</h4>
+                                        <p>CFO, Sterling Manufacturing</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Testimonial 2 -->
-                    <div class="swiper-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <p>As a startup founder, I was completely lost when it came to company incorporation and tax compliance. CA Piyush guided us through every step and made the process seamless. His advice on structuring our finances has been invaluable for our growth. We've since expanded to 3 cities and his strategic input has been crucial.</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-img">
-                                    <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Arjun Mehta">
-                                </div>
-                                <div class="author-info">
-                                    <h4>Arjun Mehta</h4>
-                                    <p>Founder, AppInnovate</p>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">As a fast-growing startup, we needed accounting partners who could scale with our rapid expansion. CAPRO implemented cloud systems that grew seamlessly with us across multiple states while providing strategic CFO-level insights.</p>
+                                <div class="testimonial-author">
+                                    <div class="author-img">
+                                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Priya Sharma">
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Priya Sharma</h4>
+                                        <p>CEO, TechNova Solutions</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Testimonial 3 -->
-                    <div class="swiper-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <p>We've been working with CA Piyush for our audit and compliance needs for several years now. His attention to detail and thorough understanding of accounting standards is impressive. The audit process is smooth and he provides practical recommendations to improve our financial processes. Highly recommended for any business looking for professional CA services.</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-img">
-                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Patel">
-                                </div>
-                                <div class="author-info">
-                                    <h4>Priya Patel</h4>
-                                    <p>CFO, GreenEarth Organics</p>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">The forensic accounting team uncovered ₹2.8 crore in fraudulent transactions our internal controls missed. Their detailed report and expert testimony were instrumental in our legal recovery and subsequent process improvements.</p>
+                                <div class="testimonial-author">
+                                    <div class="author-img">
+                                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Vikram Patel">
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Vikram Patel</h4>
+                                        <p>Director, Patel Constructions</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Testimonial 4 -->
-                    <div class="swiper-slide">
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <p>What sets CA Piyush apart is his ability to explain complex financial matters in simple terms. He doesn't just file returns but educates us on tax optimization strategies. Our business finances have never been better organized. The personalized service and quick response to queries make him our trusted financial advisor.</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-img">
-                                    <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Neha Gupta">
-                                </div>
-                                <div class="author-info">
-                                    <h4>Neha Gupta</h4>
-                                    <p>Owner, FashionHub Retail</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
-                
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta">
+        <div class="container">
+            <div class="cta-container">
+                <h2>Ready to Elevate Your Financial Strategy?</h2>
+                <p>Schedule a complimentary consultation with our senior partners. We'll analyze your current position and identify opportunities for tax optimization, operational efficiency, and strategic growth.</p>
+                <a href="#" class="btn btn-primary btn-arrow">Book Expert Consultation</a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section class="section contact" id="contact">
         <div class="container">
-            <span class="section-tag">Contact</span>
-            <h2 class="section-title">Get In <span class="text-primary">Touch</span></h2>
-            <p class="section-subtitle">Reach out for professional consultation or to discuss your accounting and taxation needs.</p>
-            
             <div class="contact-container">
                 <div class="contact-info">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Phone</h3>
-                            <a href="tel:+919876543210">+91 98765 43210</a>
-                            <p>Monday to Friday, 9:30 AM - 6:30 PM</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Email</h3>
-                            <a href="mailto:piyush@caservices.com">piyush@caservices.com</a>
-                            <p>Response within 24 hours</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-card">
+                    <h3>Connect With Our Experts</h3>
+                    <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <div class="contact-details">
-                            <h3>Office Address</h3>
-                            <p>123 Financial Street, Sector 18<br>Noida, Uttar Pradesh - 201301</p>
-                            <a href="#" class="text-primary">Get Directions</a>
+                        <div class="contact-text">
+                            <h4>Corporate Headquarters</h4>
+                            <p>FF-05, Pearl Omaxe Tower, Netaji Subhash Place, Pitampura, Delhi - 110034</p>
                         </div>
                     </div>
-                    
-                    <div class="contact-card">
+                    <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-calendar-alt"></i>
+                            <i class="fas fa-phone-alt"></i>
                         </div>
-                        <div class="contact-details">
-                            <h3>Appointments</h3>
-                            <p>Book a consultation at your convenience</p>
-                            <a href="#" class="btn">Book Now</a>
+                        <div class="contact-text">
+                            <h4>Contact Numbers</h4>
+                            <p>+91 9811233659<br>+91 8595369403</p>
                         </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email Addresses</h4>
+                            <p>info@capro.co.in<br>support@capro.co.in</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <h3>Send Us a Message</h3>
+                    <form>
                         <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                            <input type="text" class="form-control" placeholder="Your Name" required>
                         </div>
-                        
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                            <input type="email" class="form-control" placeholder="Your Email" required>
                         </div>
-                        
                         <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+                            <input type="tel" class="form-control" placeholder="Phone Number">
                         </div>
-                        
                         <div class="form-group">
-                            <label for="service">Service Required</label>
-                            <select id="service" class="form-control">
-                                <option value="">Select a service</option>
-                                <option value="taxation">Taxation Services</option>
-                                <option value="audit">Auditing Services</option>
-                                <option value="gst">GST Services</option>
-                                <option value="company-law">Company Law Services</option>
-                                <option value="financial-planning">Financial Planning</option>
-                                <option value="business-advisory">Business Advisory</option>
-                                <option value="other">Other</option>
-                            </select>
+                            <textarea class="form-control" placeholder="Your Message" required></textarea>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" class="form-control" placeholder="How can we help you?" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn form-submit">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
+                        <button type="submit" class="btn btn-secondary">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -1706,142 +1328,262 @@
     <footer>
         <div class="container">
             <div class="footer-container">
-                <div class="footer-col">
-                    <h3>CA Piyush Singla</h3>
-                    <p>Providing professional accounting, taxation, and financial advisory services to businesses and individuals since 2010.</p>
+                <div class="footer-col footer-about">
+                    <div class="footer-logo">CAPRO.<span>CO.IN</span></div>
+                    <p>Delivering premium financial advisory services since 1992. Our team of Chartered Accountants and CPAs provide strategic solutions for businesses and high-net-worth individuals.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
+                <div class="footer-col footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#testimonials">Client Success</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-col">
-                    <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Taxation Services</a></li>
-                        <li><a href="#">Auditing & Assurance</a></li>
-                        <li><a href="#">GST Services</a></li>
-                        <li><a href="#">Company Law Services</a></li>
-                        <li><a href="#">Financial Planning</a></li>
-                        <li><a href="#">Business Advisory</a></li>
+                <div class="footer-col footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Tax Advisory</a></li>
+                        <li><a href="#">Audit & Assurance</a></li>
+                        <li><a href="#">Business Consulting</a></li>
+                        <li><a href="#">Wealth Management</a></li>
+                        <li><a href="#">International Tax</a></li>
+                        <li><a href="#">Risk Advisory</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-col">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to our newsletter for financial updates, tax tips, and business insights.</p>
+                <div class="footer-col footer-newsletter">
+                    <h4>Insights Newsletter</h4>
+                    <p>Subscribe to receive financial strategies, tax updates, and growth insights directly to your inbox.</p>
                     <form class="newsletter-form">
-                        <input type="email" placeholder="Your Email Address" required>
-                        <button type="submit" class="btn btn-accent">Subscribe</button>
+                        <input type="email" class="newsletter-input" placeholder="Your Email Address">
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
                     </form>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 CA Piyush Singla. All Rights Reserved. | <a href="#" style="color: var(--accent);">Privacy Policy</a> | <a href="#" style="color: var(--accent);">Terms of Service</a></p>
+            <div class="copyright">
+                <p>&copy; 2023 CAPRO.CO.IN. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
             </div>
         </div>
     </footer>
-<!-- Floating Buttons -->
-<div class="floating-buttons" role="navigation">
-    <a href="https://wa.me/919876543210" class="floating-btn whatsapp-btn" target="_blank" aria-label="Contact us on WhatsApp">
-        <i class="fab fa-whatsapp" aria-hidden="true"></i>
-    </a>
-    <a href="#home" class="floating-btn back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up" aria-hidden="true"></i>
-    </a>
-</div>
-    <!-- JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- Back to Top -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    
     <script>
-        // Mobile Menu Toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const navMenu = document.getElementById('nav-menu');
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            gsap.to(preloader, {
+                opacity: 0,
+                duration: 0.8,
+                ease: "power2.out",
+                onComplete: function() {
+                    preloader.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('nav');
         
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            menuToggle.innerHTML = navMenu.classList.contains('active') ? 
+        hamburger.addEventListener('click', function() {
+            nav.classList.toggle('active');
+            hamburger.innerHTML = nav.classList.contains('active') ? 
                 '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        // Close mobile menu when clicking on nav links
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Sticky Header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Splide Testimonials
+        new Splide('.splide', {
+            type: 'loop',
+            perPage: 1,
+            autoplay: true,
+            interval: 5000,
+            pauseOnHover: true,
+            pauseOnFocus: true,
+            arrows: true,
+            pagination: false,
+            breakpoints: {
+                992: {
+                    arrows: false,
+                    pagination: true
+                }
+            }
+        }).mount();
+
+        // Animated Counter
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if(count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Hero Animation
+        gsap.from('.hero-subtitle', {
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            delay: 0.5,
+            ease: "power2.out"
         });
         
-        // Close menu when clicking on a link
-        document.querySelectorAll('#nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        gsap.from('.hero-title', {
+            opacity: 0,
+            y: 40,
+            duration: 1,
+            delay: 0.7,
+            ease: "power2.out"
+        });
+        
+        gsap.from('.hero-text', {
+            opacity: 0,
+            y: 40,
+            duration: 1,
+            delay: 0.9,
+            ease: "power2.out"
+        });
+        
+        gsap.from('.hero-cta', {
+            opacity: 0,
+            y: 40,
+            duration: 1,
+            delay: 1.1,
+            ease: "power2.out"
+        });
+        
+        // Stats Animation
+        gsap.utils.toArray('.stat-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                delay: i * 0.1,
+                ease: "back.out(1.2)",
+                onComplete: animateCounters
             });
         });
         
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
+        // About Section Animation
+        gsap.from('.about-image', {
+            scrollTrigger: {
+                trigger: '.about',
+                start: "top 70%",
+                toggleActions: "play none none none"
+            },
+            x: -100,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out"
+        });
+        
+        gsap.from('.about-content', {
+            scrollTrigger: {
+                trigger: '.about',
+                start: "top 70%",
+                toggleActions: "play none none none"
+            },
+            x: 100,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out"
+        });
+        
+        // Service Cards Animation
+        gsap.utils.toArray('.service-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.6,
+                delay: i * 0.1,
+                ease: "back.out(1.2)"
+            });
+        });
+        
+        // Back to Top Button
+        const backToTop = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('active');
             } else {
-                header.classList.remove('scrolled');
+                backToTop.classList.remove('active');
             }
         });
         
-        // Initialize Hero Slider
-        const heroSlider = new Swiper('.hero-slider', {
-            loop: true,
-            autoplay: {
-                delay: 6000,
-                disableOnInteraction: false,
-            },
-            effect: 'fade',
-            fadeEffect: {
-                crossFade: true
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
+        backToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
-        
-        // Initialize Testimonial Slider
-        const testimonialSlider = new Swiper('.testimonial-slider', {
-            loop: true,
-            slidesPerView: 1,
-            spaceBetween: 30,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                }
-            }
-        });
-        
-        // Smooth scrolling for navigation links
+
+        // Smooth Scrolling for Anchor Links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
                 const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
+                if(targetId === '#') return;
                 
-                if (targetElement) {
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
@@ -1849,107 +1591,6 @@
                 }
             });
         });
-        
-        // Gallery filter
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                const filter = btn.getAttribute('data-filter');
-                
-                galleryItems.forEach(item => {
-                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-        
-        // Contact form submission
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get form values
-                const name = this.querySelector('#name').value;
-                const email = this.querySelector('#email').value;
-                const service = this.querySelector('#service').value;
-                
-                // Show success message
-                const successMsg = `Thank you, ${name}! Your message has been sent. We will contact you at ${email} regarding ${service || 'your inquiry'} soon.`;
-                alert(successMsg);
-                
-                // Reset form
-                this.reset();
-            });
-        }
-        
-        // Newsletter form submission
-        const newsletterForm = document.querySelector('.newsletter-form');
-        if (newsletterForm) {
-            newsletterForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const emailInput = this.querySelector('input[type="email"]');
-                alert(`Thank you for subscribing with ${emailInput.value}! You'll receive our next newsletter.`);
-                emailInput.value = '';
-            });
-        }
-        
-        // Animation on scroll
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.about-content, .service-card, .gallery-item, .contact-card');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
-            });
-        };
-
-        // Back to Top Button Visibility
-const backToTop = document.querySelector('.back-to-top');
-window.addEventListener('scroll', () => {
-    backToTop.classList.toggle('visible', window.scrollY > 300);
-});
-
-// Smooth Scrolling (already in your code)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth',
-            });
-        }
-    });
-});
-        
-        // Set initial state for animated elements
-        document.querySelectorAll('.about-content, .service-card, .gallery-item, .contact-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        });
-        
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
     </script>
 </body>
 </html>
-
